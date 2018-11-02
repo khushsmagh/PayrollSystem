@@ -16,7 +16,7 @@ namespace payroll_system
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Payroll());
+            Application.Run(new User_Login());
         }
     }
 }

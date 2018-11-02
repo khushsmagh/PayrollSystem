@@ -16,5 +16,10 @@ namespace payroll_system
         {
             InitializeComponent();
         }
+
+        private void Payroll_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
