@@ -28,32 +28,127 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.loginButton = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.clockOutButton = new System.Windows.Forms.Button();
+            this.clockInButton = new System.Windows.Forms.Button();
+            this.usernameTextBox = new System.Windows.Forms.TextBox();
+            this.passwordTextBox = new System.Windows.Forms.TextBox();
+            this.employeeNumber = new System.Windows.Forms.Label();
+            this.employeeNumberTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // loginButton
             // 
-            this.button1.Location = new System.Drawing.Point(93, 82);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.loginButton.Location = new System.Drawing.Point(135, 400);
+            this.loginButton.Name = "loginButton";
+            this.loginButton.Size = new System.Drawing.Size(146, 65);
+            this.loginButton.TabIndex = 0;
+            this.loginButton.Text = "Login";
+            this.loginButton.UseVisualStyleBackColor = true;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 649);
+            this.splitter1.TabIndex = 1;
+            this.splitter1.TabStop = false;
+            // 
+            // clockOutButton
+            // 
+            this.clockOutButton.Location = new System.Drawing.Point(693, 489);
+            this.clockOutButton.Name = "clockOutButton";
+            this.clockOutButton.Size = new System.Drawing.Size(146, 65);
+            this.clockOutButton.TabIndex = 2;
+            this.clockOutButton.Text = "Clock-out";
+            this.clockOutButton.UseVisualStyleBackColor = true;
+            // 
+            // clockInButton
+            // 
+            this.clockInButton.Location = new System.Drawing.Point(693, 330);
+            this.clockInButton.Name = "clockInButton";
+            this.clockInButton.Size = new System.Drawing.Size(146, 65);
+            this.clockInButton.TabIndex = 3;
+            this.clockInButton.Text = "Clock-in";
+            this.clockInButton.UseVisualStyleBackColor = true;
+            // 
+            // usernameTextBox
+            // 
+            this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.usernameTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.usernameTextBox.Location = new System.Drawing.Point(116, 136);
+            this.usernameTextBox.Name = "usernameTextBox";
+            this.usernameTextBox.Size = new System.Drawing.Size(196, 34);
+            this.usernameTextBox.TabIndex = 4;
+            this.usernameTextBox.Text = "Username";
+            this.usernameTextBox.Enter += new System.EventHandler(this.usernameTextBox_Enter);
+            this.usernameTextBox.Leave += new System.EventHandler(this.usernameTextBox_Leave);
+            // 
+            // passwordTextBox
+            // 
+            this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.passwordTextBox.Location = new System.Drawing.Point(116, 276);
+            this.passwordTextBox.Name = "passwordTextBox";
+            this.passwordTextBox.Size = new System.Drawing.Size(196, 34);
+            this.passwordTextBox.TabIndex = 5;
+            this.passwordTextBox.Text = "Password";
+            this.passwordTextBox.Enter += new System.EventHandler(this.passwordTextBox_Enter);
+            this.passwordTextBox.Leave += new System.EventHandler(this.passwordTextBox_Leave);
+            // 
+            // employeeNumber
+            // 
+            this.employeeNumber.AutoSize = true;
+            this.employeeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeNumber.Location = new System.Drawing.Point(659, 125);
+            this.employeeNumber.Name = "employeeNumber";
+            this.employeeNumber.Size = new System.Drawing.Size(215, 29);
+            this.employeeNumber.TabIndex = 7;
+            this.employeeNumber.Text = "Employee Number";
+            // 
+            // employeeNumberTextBox
+            // 
+            this.employeeNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.employeeNumberTextBox.ForeColor = System.Drawing.Color.Silver;
+            this.employeeNumberTextBox.Location = new System.Drawing.Point(664, 200);
+            this.employeeNumberTextBox.Name = "employeeNumberTextBox";
+            this.employeeNumberTextBox.Size = new System.Drawing.Size(196, 34);
+            this.employeeNumberTextBox.TabIndex = 8;
+            this.employeeNumberTextBox.Text = "12345";
+            this.employeeNumberTextBox.Enter += new System.EventHandler(this.employeeNumberTextBox_Enter);
+            this.employeeNumberTextBox.Leave += new System.EventHandler(this.employeeNumberTextBox_Leave);
             // 
             // User_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(282, 253);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(1063, 649);
+            this.Controls.Add(this.employeeNumberTextBox);
+            this.Controls.Add(this.employeeNumber);
+            this.Controls.Add(this.passwordTextBox);
+            this.Controls.Add(this.usernameTextBox);
+            this.Controls.Add(this.clockInButton);
+            this.Controls.Add(this.clockOutButton);
+            this.Controls.Add(this.splitter1);
+            this.Controls.Add(this.loginButton);
             this.Name = "User_Login";
             this.Text = "User_Login";
+            this.Load += new System.EventHandler(this.User_Login_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button loginButton;
+        private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button clockOutButton;
+        private System.Windows.Forms.Button clockInButton;
+        private System.Windows.Forms.TextBox usernameTextBox;
+        private System.Windows.Forms.TextBox passwordTextBox;
+        private System.Windows.Forms.Label employeeNumber;
+        private System.Windows.Forms.TextBox employeeNumberTextBox;
     }
 }
