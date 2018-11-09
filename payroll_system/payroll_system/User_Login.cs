@@ -7,6 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.IO;
+
 
 namespace payroll_system
 {
@@ -19,6 +22,35 @@ namespace payroll_system
 
         private void User_Login_Load(object sender, EventArgs e)
         {
+            try
+
+            {
+
+                String str = "Server=199.103.60.77;Database=ssaini516;UID=ssaini516;Password=6384344933383240";
+                var query = "select * from TStudents";
+                List<string> student = new List<string>();
+                SqlConnection con = new SqlConnection(str);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(query,con);
+                SqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    MessageBox.Show(reader[1].ToString());
+                }
+                reader.Close();
+                con.Close();
+
+            }
+
+            catch (Exception es)
+
+            {
+
+                MessageBox.Show(es.Message);
+
+
+
+            }
 
         }
 
