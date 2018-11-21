@@ -15,9 +15,12 @@ namespace payroll_system
 {
     public partial class User_Login : Form
     {
+        public static String str = "Server=199.103.60.77;Database=ssaini516;UID=ssaini516;Password=6384344933383240";
+        SqlConnection con = new SqlConnection(str);
         public User_Login()
         {
             InitializeComponent();
+
         }
 
         private void User_Login_Load(object sender, EventArgs e)
@@ -25,20 +28,7 @@ namespace payroll_system
             try
 
             {
-
-                String str = "Server=199.103.60.77;Database=ssaini516;UID=ssaini516;Password=6384344933383240";
-                var query = "select * from TStudents";
-                List<string> student = new List<string>();
-                SqlConnection con = new SqlConnection(str);
                 con.Open();
-                SqlCommand cmd = new SqlCommand(query,con);
-                SqlDataReader reader = cmd.ExecuteReader();
-                while (reader.Read())
-                {
-                    MessageBox.Show(reader[1].ToString());
-                }
-                reader.Close();
-                con.Close();
 
             }
 
@@ -106,6 +96,30 @@ namespace payroll_system
                 employeeNumberTextBox.Text = "";
             }
             employeeNumberTextBox.ForeColor = Color.Black;
+        }
+
+        private void loginButton_Click(object sender, EventArgs e)
+        {
+            string userName = usernameTextBox.Text;
+            MessageBox.Show(userName);
+            int password = int.Parse(passwordTextBox.Text);
+            var query = "select CustomerId from Customer where CustomerName  = " + "'"+ userName + "'";
+            SqlCommand cmd = new SqlCommand(query, con);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                if(password == int.Parse(reader[0].ToString()))
+                {
+                    MessageBox.Show("succefully logged in");
+                }
+                else
+                {
+                    MessageBox.Show("password is wrong");
+                }
+            }
+            reader.Close();
+            con.Close();
+
         }
     }
 }

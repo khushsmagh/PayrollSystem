@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="retailmgmt" Class="LINQToSQLDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=199.103.60.77;Initial Catalog=retailmgmt;Persist Security Info=True;User ID=retailmgmt" SettingsObjectName="payroll_system.Properties.Settings" SettingsPropertyName="retailmgmtConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.PR_Employee" Member="PR_Employees">
+    <Type Name="PR_Employee">
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="FirstName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="LastName" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="DOB" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="DateHired" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="HourlyRate" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PR_Employee_PR_Payslip" Member="PR_Payslips" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Payslip" />
+      <Association Name="PR_Employee_PR_Schedule" Member="PR_Schedules" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Schedule" />
+      <Association Name="PR_Employee_PR_Timesheet" Member="PR_Timesheets" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Timesheet" />
+      <Association Name="PR_Employee_PR_User_Login" Member="PR_User_Logins" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_User_Login" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PR_Payslip" Member="PR_Payslips">
+    <Type Name="PR_Payslip">
+      <Column Name="PaySlipId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="DateFrom" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="EndDate" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="TotalHours" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Column Name="TotalMoney" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
+      <Association Name="PR_Employee_PR_Payslip" Member="PR_Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PR_Schedule" Member="PR_Schedules">
+    <Type Name="PR_Schedule">
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Shift" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="PR_Employee_PR_Schedule" Member="PR_Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PR_Timesheet" Member="PR_Timesheets">
+    <Type Name="PR_Timesheet">
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CLockInTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="ClockOutTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="TotalHours" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
+      <Association Name="PR_Employee_PR_Timesheet" Member="PR_Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PR_User_Login" Member="PR_User_Logins">
+    <Type Name="PR_User_Login">
+      <Column Name="UserId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="UserName" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Association Name="PR_Employee_PR_User_Login" Member="PR_Employee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="PR_Employee" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

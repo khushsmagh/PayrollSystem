@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 10.5" name="LINQToSQL">
+  <DataContextMoniker Name="/LINQToSQLDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6f426936-45e8-4342-ad78-d5636833835d" absoluteBounds="0.875, 0.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/LINQToSQLDataContext/PR_Employee" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3f723145-3baf-4627-adcd-dde863436420" absoluteBounds="0.89000000000000012, 1.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="370d8f04-9e79-4507-81e3-f8c29c485578" absoluteBounds="1.875, 3.375, 2, 1.9631982421875">
+      <DataClassMoniker Name="/LINQToSQLDataContext/PR_Payslip" />
+      <nestedChildShapes>
+        <elementListCompartment Id="7a90a494-bc81-414b-9afd-1387045367f4" absoluteBounds="1.8900000000000001, 3.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.375 : 2.90549967447917); (2.375 : 3.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQToSQLDataContext/PR_Employee/PR_Employee_PR_Payslip" />
+      <nodes>
+        <classShapeMoniker Id="6f426936-45e8-4342-ad78-d5636833835d" />
+        <classShapeMoniker Id="370d8f04-9e79-4507-81e3-f8c29c485578" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="c1576227-bcad-4c20-9b8e-f8496142e1a1" absoluteBounds="4.375, 1.75, 2, 1.3862939453125">
+      <DataClassMoniker Name="/LINQToSQLDataContext/PR_Schedule" />
+      <nestedChildShapes>
+        <elementListCompartment Id="38c39264-832b-4e86-a184-5a68b9e8d818" absoluteBounds="4.39, 2.21, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.875 : 2.32774983723958); (4.375 : 2.32774983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQToSQLDataContext/PR_Employee/PR_Employee_PR_Schedule" />
+      <nodes>
+        <classShapeMoniker Id="6f426936-45e8-4342-ad78-d5636833835d" />
+        <classShapeMoniker Id="c1576227-bcad-4c20-9b8e-f8496142e1a1" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="64fe3aa8-9dd7-4a19-ba42-baa3e420f0ee" absoluteBounds="3.625, 8.5, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/LINQToSQLDataContext/PR_Timesheet" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c86c070-8427-4239-a002-90525ecd891f" absoluteBounds="3.64, 8.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aa8ecb19-8ca2-47a6-932a-502fe0f78cc0" absoluteBounds="3.625, 6.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LINQToSQLDataContext/PR_User_Login" />
+      <nestedChildShapes>
+        <elementListCompartment Id="1ece9844-646c-450d-8ac5-730eaa3f2463" absoluteBounds="3.64, 6.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.34375 : 2.90549967447917); (1.34375 : 9.38544840494792); (3.625 : 9.38544840494792)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQToSQLDataContext/PR_Employee/PR_Employee_PR_Timesheet" />
+      <nodes>
+        <classShapeMoniker Id="6f426936-45e8-4342-ad78-d5636833835d" />
+        <classShapeMoniker Id="64fe3aa8-9dd7-4a19-ba42-baa3e420f0ee" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(1.6093775 : 2.90549967447917); (1.6093775 : 6.91429768880208); (3.625 : 6.91429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/LINQToSQLDataContext/PR_Employee/PR_Employee_PR_User_Login" />
+      <nodes>
+        <classShapeMoniker Id="6f426936-45e8-4342-ad78-d5636833835d" />
+        <classShapeMoniker Id="aa8ecb19-8ca2-47a6-932a-502fe0f78cc0" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
