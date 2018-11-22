@@ -47,7 +47,6 @@
             this.payslip = new System.Windows.Forms.TabPage();
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -63,7 +62,7 @@
             this.tabControl1.Controls.Add(this.timesheet);
             this.tabControl1.Controls.Add(this.payslip);
             this.tabControl1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 37);
+            this.tabControl1.Location = new System.Drawing.Point(12, 38);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -76,7 +75,6 @@
             // 
             this.personal_Info.AutoScroll = true;
             this.personal_Info.BackColor = System.Drawing.Color.Transparent;
-            this.personal_Info.Controls.Add(this.richTextBox1);
             this.personal_Info.Controls.Add(this.hourly_rate);
             this.personal_Info.Controls.Add(this.date_hired);
             this.personal_Info.Controls.Add(this.position);
@@ -257,9 +255,9 @@
             // 
             this.employee_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.employee_name.Font = new System.Drawing.Font("Arial Black", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_name.Location = new System.Drawing.Point(483, 22);
+            this.employee_name.Location = new System.Drawing.Point(521, 22);
             this.employee_name.Name = "employee_name";
-            this.employee_name.Size = new System.Drawing.Size(304, 23);
+            this.employee_name.Size = new System.Drawing.Size(266, 23);
             this.employee_name.TabIndex = 1;
             this.employee_name.Text = "Employee Name";
             this.employee_name.TextAlign = System.Drawing.ContentAlignment.BottomRight;
@@ -276,14 +274,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Location = new System.Drawing.Point(369, 321);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(326, 96);
-            this.richTextBox1.TabIndex = 13;
-            this.richTextBox1.Text = "";
-            // 
             // Payroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -296,6 +286,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Payroll";
             this.Text = "Payroll";
+            this.Load += new System.EventHandler(this.Payroll_Load);
             this.tabControl1.ResumeLayout(false);
             this.personal_Info.ResumeLayout(false);
             this.personal_Info.PerformLayout();
@@ -325,7 +316,6 @@
         private System.Windows.Forms.Label first_name;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
     }
 }
 
