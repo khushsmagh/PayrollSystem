@@ -20,33 +20,33 @@ namespace payroll_system {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("PayrollDBDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("PayrollDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PayrollDBDataSet : global::System.Data.DataSet {
+    public partial class PayrollDataSet : global::System.Data.DataSet {
         
-        private PR_EmployeeDataTable tablePR_Employee;
+        private TEmployeeDataTable tableTEmployee;
         
-        private PR_PayslipDataTable tablePR_Payslip;
+        private TPayslipDataTable tableTPayslip;
         
-        private PR_ScheduleDataTable tablePR_Schedule;
+        private TScheduleDataTable tableTSchedule;
         
-        private PR_TimesheetDataTable tablePR_Timesheet;
+        private TTimesheetDataTable tableTTimesheet;
         
-        private PR_User_LoginDataTable tablePR_User_Login;
+        private TUserLoginDataTable tableTUserLogin;
         
-        private global::System.Data.DataRelation relationFK__PR_Paysli__Emplo__5812160E;
+        private global::System.Data.DataRelation relationFK__TPayslip__Employ__793DFFAF;
         
-        private global::System.Data.DataRelation relationFK__PR_Schedu__Emplo__534D60F1;
+        private global::System.Data.DataRelation relationFK__TSchedule__Emplo__74794A92;
         
-        private global::System.Data.DataRelation relationFK__PR_Timesh__Emplo__5535A963;
+        private global::System.Data.DataRelation relationFK__TTimeshee__Emplo__76619304;
         
-        private global::System.Data.DataRelation relationFK__PR_User_L__Emplo__5AEE82B9;
+        private global::System.Data.DataRelation relationFK__TUserLogi__Emplo__7C1A6C5A;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PayrollDBDataSet() {
+        public PayrollDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -57,7 +57,7 @@ namespace payroll_system {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected PayrollDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PayrollDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -70,20 +70,20 @@ namespace payroll_system {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["PR_Employee"] != null)) {
-                    base.Tables.Add(new PR_EmployeeDataTable(ds.Tables["PR_Employee"]));
+                if ((ds.Tables["TEmployee"] != null)) {
+                    base.Tables.Add(new TEmployeeDataTable(ds.Tables["TEmployee"]));
                 }
-                if ((ds.Tables["PR_Payslip"] != null)) {
-                    base.Tables.Add(new PR_PayslipDataTable(ds.Tables["PR_Payslip"]));
+                if ((ds.Tables["TPayslip"] != null)) {
+                    base.Tables.Add(new TPayslipDataTable(ds.Tables["TPayslip"]));
                 }
-                if ((ds.Tables["PR_Schedule"] != null)) {
-                    base.Tables.Add(new PR_ScheduleDataTable(ds.Tables["PR_Schedule"]));
+                if ((ds.Tables["TSchedule"] != null)) {
+                    base.Tables.Add(new TScheduleDataTable(ds.Tables["TSchedule"]));
                 }
-                if ((ds.Tables["PR_Timesheet"] != null)) {
-                    base.Tables.Add(new PR_TimesheetDataTable(ds.Tables["PR_Timesheet"]));
+                if ((ds.Tables["TTimesheet"] != null)) {
+                    base.Tables.Add(new TTimesheetDataTable(ds.Tables["TTimesheet"]));
                 }
-                if ((ds.Tables["PR_User_Login"] != null)) {
-                    base.Tables.Add(new PR_User_LoginDataTable(ds.Tables["PR_User_Login"]));
+                if ((ds.Tables["TUserLogin"] != null)) {
+                    base.Tables.Add(new TUserLoginDataTable(ds.Tables["TUserLogin"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -107,9 +107,9 @@ namespace payroll_system {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PR_EmployeeDataTable PR_Employee {
+        public TEmployeeDataTable TEmployee {
             get {
-                return this.tablePR_Employee;
+                return this.tableTEmployee;
             }
         }
         
@@ -117,9 +117,9 @@ namespace payroll_system {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PR_PayslipDataTable PR_Payslip {
+        public TPayslipDataTable TPayslip {
             get {
-                return this.tablePR_Payslip;
+                return this.tableTPayslip;
             }
         }
         
@@ -127,9 +127,9 @@ namespace payroll_system {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PR_ScheduleDataTable PR_Schedule {
+        public TScheduleDataTable TSchedule {
             get {
-                return this.tablePR_Schedule;
+                return this.tableTSchedule;
             }
         }
         
@@ -137,9 +137,9 @@ namespace payroll_system {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PR_TimesheetDataTable PR_Timesheet {
+        public TTimesheetDataTable TTimesheet {
             get {
-                return this.tablePR_Timesheet;
+                return this.tableTTimesheet;
             }
         }
         
@@ -147,9 +147,9 @@ namespace payroll_system {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public PR_User_LoginDataTable PR_User_Login {
+        public TUserLoginDataTable TUserLogin {
             get {
-                return this.tablePR_User_Login;
+                return this.tableTUserLogin;
             }
         }
         
@@ -195,7 +195,7 @@ namespace payroll_system {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PayrollDBDataSet cln = ((PayrollDBDataSet)(base.Clone()));
+            PayrollDataSet cln = ((PayrollDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -220,20 +220,20 @@ namespace payroll_system {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["PR_Employee"] != null)) {
-                    base.Tables.Add(new PR_EmployeeDataTable(ds.Tables["PR_Employee"]));
+                if ((ds.Tables["TEmployee"] != null)) {
+                    base.Tables.Add(new TEmployeeDataTable(ds.Tables["TEmployee"]));
                 }
-                if ((ds.Tables["PR_Payslip"] != null)) {
-                    base.Tables.Add(new PR_PayslipDataTable(ds.Tables["PR_Payslip"]));
+                if ((ds.Tables["TPayslip"] != null)) {
+                    base.Tables.Add(new TPayslipDataTable(ds.Tables["TPayslip"]));
                 }
-                if ((ds.Tables["PR_Schedule"] != null)) {
-                    base.Tables.Add(new PR_ScheduleDataTable(ds.Tables["PR_Schedule"]));
+                if ((ds.Tables["TSchedule"] != null)) {
+                    base.Tables.Add(new TScheduleDataTable(ds.Tables["TSchedule"]));
                 }
-                if ((ds.Tables["PR_Timesheet"] != null)) {
-                    base.Tables.Add(new PR_TimesheetDataTable(ds.Tables["PR_Timesheet"]));
+                if ((ds.Tables["TTimesheet"] != null)) {
+                    base.Tables.Add(new TTimesheetDataTable(ds.Tables["TTimesheet"]));
                 }
-                if ((ds.Tables["PR_User_Login"] != null)) {
-                    base.Tables.Add(new PR_User_LoginDataTable(ds.Tables["PR_User_Login"]));
+                if ((ds.Tables["TUserLogin"] != null)) {
+                    base.Tables.Add(new TUserLoginDataTable(ds.Tables["TUserLogin"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -268,105 +268,105 @@ namespace payroll_system {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tablePR_Employee = ((PR_EmployeeDataTable)(base.Tables["PR_Employee"]));
+            this.tableTEmployee = ((TEmployeeDataTable)(base.Tables["TEmployee"]));
             if ((initTable == true)) {
-                if ((this.tablePR_Employee != null)) {
-                    this.tablePR_Employee.InitVars();
+                if ((this.tableTEmployee != null)) {
+                    this.tableTEmployee.InitVars();
                 }
             }
-            this.tablePR_Payslip = ((PR_PayslipDataTable)(base.Tables["PR_Payslip"]));
+            this.tableTPayslip = ((TPayslipDataTable)(base.Tables["TPayslip"]));
             if ((initTable == true)) {
-                if ((this.tablePR_Payslip != null)) {
-                    this.tablePR_Payslip.InitVars();
+                if ((this.tableTPayslip != null)) {
+                    this.tableTPayslip.InitVars();
                 }
             }
-            this.tablePR_Schedule = ((PR_ScheduleDataTable)(base.Tables["PR_Schedule"]));
+            this.tableTSchedule = ((TScheduleDataTable)(base.Tables["TSchedule"]));
             if ((initTable == true)) {
-                if ((this.tablePR_Schedule != null)) {
-                    this.tablePR_Schedule.InitVars();
+                if ((this.tableTSchedule != null)) {
+                    this.tableTSchedule.InitVars();
                 }
             }
-            this.tablePR_Timesheet = ((PR_TimesheetDataTable)(base.Tables["PR_Timesheet"]));
+            this.tableTTimesheet = ((TTimesheetDataTable)(base.Tables["TTimesheet"]));
             if ((initTable == true)) {
-                if ((this.tablePR_Timesheet != null)) {
-                    this.tablePR_Timesheet.InitVars();
+                if ((this.tableTTimesheet != null)) {
+                    this.tableTTimesheet.InitVars();
                 }
             }
-            this.tablePR_User_Login = ((PR_User_LoginDataTable)(base.Tables["PR_User_Login"]));
+            this.tableTUserLogin = ((TUserLoginDataTable)(base.Tables["TUserLogin"]));
             if ((initTable == true)) {
-                if ((this.tablePR_User_Login != null)) {
-                    this.tablePR_User_Login.InitVars();
+                if ((this.tableTUserLogin != null)) {
+                    this.tableTUserLogin.InitVars();
                 }
             }
-            this.relationFK__PR_Paysli__Emplo__5812160E = this.Relations["FK__PR_Paysli__Emplo__5812160E"];
-            this.relationFK__PR_Schedu__Emplo__534D60F1 = this.Relations["FK__PR_Schedu__Emplo__534D60F1"];
-            this.relationFK__PR_Timesh__Emplo__5535A963 = this.Relations["FK__PR_Timesh__Emplo__5535A963"];
-            this.relationFK__PR_User_L__Emplo__5AEE82B9 = this.Relations["FK__PR_User_L__Emplo__5AEE82B9"];
+            this.relationFK__TPayslip__Employ__793DFFAF = this.Relations["FK__TPayslip__Employ__793DFFAF"];
+            this.relationFK__TSchedule__Emplo__74794A92 = this.Relations["FK__TSchedule__Emplo__74794A92"];
+            this.relationFK__TTimeshee__Emplo__76619304 = this.Relations["FK__TTimeshee__Emplo__76619304"];
+            this.relationFK__TUserLogi__Emplo__7C1A6C5A = this.Relations["FK__TUserLogi__Emplo__7C1A6C5A"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "PayrollDBDataSet";
+            this.DataSetName = "PayrollDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/PayrollDBDataSet.xsd";
+            this.Namespace = "http://tempuri.org/PayrollDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tablePR_Employee = new PR_EmployeeDataTable();
-            base.Tables.Add(this.tablePR_Employee);
-            this.tablePR_Payslip = new PR_PayslipDataTable();
-            base.Tables.Add(this.tablePR_Payslip);
-            this.tablePR_Schedule = new PR_ScheduleDataTable();
-            base.Tables.Add(this.tablePR_Schedule);
-            this.tablePR_Timesheet = new PR_TimesheetDataTable();
-            base.Tables.Add(this.tablePR_Timesheet);
-            this.tablePR_User_Login = new PR_User_LoginDataTable();
-            base.Tables.Add(this.tablePR_User_Login);
-            this.relationFK__PR_Paysli__Emplo__5812160E = new global::System.Data.DataRelation("FK__PR_Paysli__Emplo__5812160E", new global::System.Data.DataColumn[] {
-                        this.tablePR_Employee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePR_Payslip.EmployeeIdColumn}, false);
-            this.Relations.Add(this.relationFK__PR_Paysli__Emplo__5812160E);
-            this.relationFK__PR_Schedu__Emplo__534D60F1 = new global::System.Data.DataRelation("FK__PR_Schedu__Emplo__534D60F1", new global::System.Data.DataColumn[] {
-                        this.tablePR_Employee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePR_Schedule.EmployeeIdColumn}, false);
-            this.Relations.Add(this.relationFK__PR_Schedu__Emplo__534D60F1);
-            this.relationFK__PR_Timesh__Emplo__5535A963 = new global::System.Data.DataRelation("FK__PR_Timesh__Emplo__5535A963", new global::System.Data.DataColumn[] {
-                        this.tablePR_Employee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePR_Timesheet.EmployeeIdColumn}, false);
-            this.Relations.Add(this.relationFK__PR_Timesh__Emplo__5535A963);
-            this.relationFK__PR_User_L__Emplo__5AEE82B9 = new global::System.Data.DataRelation("FK__PR_User_L__Emplo__5AEE82B9", new global::System.Data.DataColumn[] {
-                        this.tablePR_Employee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePR_User_Login.EmployeeIdColumn}, false);
-            this.Relations.Add(this.relationFK__PR_User_L__Emplo__5AEE82B9);
+            this.tableTEmployee = new TEmployeeDataTable();
+            base.Tables.Add(this.tableTEmployee);
+            this.tableTPayslip = new TPayslipDataTable();
+            base.Tables.Add(this.tableTPayslip);
+            this.tableTSchedule = new TScheduleDataTable();
+            base.Tables.Add(this.tableTSchedule);
+            this.tableTTimesheet = new TTimesheetDataTable();
+            base.Tables.Add(this.tableTTimesheet);
+            this.tableTUserLogin = new TUserLoginDataTable();
+            base.Tables.Add(this.tableTUserLogin);
+            this.relationFK__TPayslip__Employ__793DFFAF = new global::System.Data.DataRelation("FK__TPayslip__Employ__793DFFAF", new global::System.Data.DataColumn[] {
+                        this.tableTEmployee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTPayslip.EmployeeIdColumn}, false);
+            this.Relations.Add(this.relationFK__TPayslip__Employ__793DFFAF);
+            this.relationFK__TSchedule__Emplo__74794A92 = new global::System.Data.DataRelation("FK__TSchedule__Emplo__74794A92", new global::System.Data.DataColumn[] {
+                        this.tableTEmployee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTSchedule.EmployeeIdColumn}, false);
+            this.Relations.Add(this.relationFK__TSchedule__Emplo__74794A92);
+            this.relationFK__TTimeshee__Emplo__76619304 = new global::System.Data.DataRelation("FK__TTimeshee__Emplo__76619304", new global::System.Data.DataColumn[] {
+                        this.tableTEmployee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTTimesheet.EmployeeIdColumn}, false);
+            this.Relations.Add(this.relationFK__TTimeshee__Emplo__76619304);
+            this.relationFK__TUserLogi__Emplo__7C1A6C5A = new global::System.Data.DataRelation("FK__TUserLogi__Emplo__7C1A6C5A", new global::System.Data.DataColumn[] {
+                        this.tableTEmployee.EmployeeIdColumn}, new global::System.Data.DataColumn[] {
+                        this.tableTUserLogin.EmployeeIdColumn}, false);
+            this.Relations.Add(this.relationFK__TUserLogi__Emplo__7C1A6C5A);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePR_Employee() {
+        private bool ShouldSerializeTEmployee() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePR_Payslip() {
+        private bool ShouldSerializeTPayslip() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePR_Schedule() {
+        private bool ShouldSerializeTSchedule() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePR_Timesheet() {
+        private bool ShouldSerializeTTimesheet() {
             return false;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializePR_User_Login() {
+        private bool ShouldSerializeTUserLogin() {
             return false;
         }
         
@@ -381,7 +381,7 @@ namespace payroll_system {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PayrollDBDataSet ds = new PayrollDBDataSet();
+            PayrollDataSet ds = new PayrollDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -426,26 +426,26 @@ namespace payroll_system {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PR_EmployeeRowChangeEventHandler(object sender, PR_EmployeeRowChangeEvent e);
+        public delegate void TEmployeeRowChangeEventHandler(object sender, TEmployeeRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PR_PayslipRowChangeEventHandler(object sender, PR_PayslipRowChangeEvent e);
+        public delegate void TPayslipRowChangeEventHandler(object sender, TPayslipRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PR_ScheduleRowChangeEventHandler(object sender, PR_ScheduleRowChangeEvent e);
+        public delegate void TScheduleRowChangeEventHandler(object sender, TScheduleRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PR_TimesheetRowChangeEventHandler(object sender, PR_TimesheetRowChangeEvent e);
+        public delegate void TTimesheetRowChangeEventHandler(object sender, TTimesheetRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void PR_User_LoginRowChangeEventHandler(object sender, PR_User_LoginRowChangeEvent e);
+        public delegate void TUserLoginRowChangeEventHandler(object sender, TUserLoginRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PR_EmployeeDataTable : global::System.Data.TypedTableBase<PR_EmployeeRow> {
+        public partial class TEmployeeDataTable : global::System.Data.TypedTableBase<TEmployeeRow> {
             
             private global::System.Data.DataColumn columnEmployeeId;
             
@@ -463,8 +463,8 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeDataTable() {
-                this.TableName = "PR_Employee";
+            public TEmployeeDataTable() {
+                this.TableName = "TEmployee";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -472,7 +472,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_EmployeeDataTable(global::System.Data.DataTable table) {
+            internal TEmployeeDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -489,7 +489,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PR_EmployeeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TEmployeeDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -561,34 +561,34 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow this[int index] {
+            public TEmployeeRow this[int index] {
                 get {
-                    return ((PR_EmployeeRow)(this.Rows[index]));
+                    return ((TEmployeeRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_EmployeeRowChangeEventHandler PR_EmployeeRowChanging;
+            public event TEmployeeRowChangeEventHandler TEmployeeRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_EmployeeRowChangeEventHandler PR_EmployeeRowChanged;
+            public event TEmployeeRowChangeEventHandler TEmployeeRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_EmployeeRowChangeEventHandler PR_EmployeeRowDeleting;
+            public event TEmployeeRowChangeEventHandler TEmployeeRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_EmployeeRowChangeEventHandler PR_EmployeeRowDeleted;
+            public event TEmployeeRowChangeEventHandler TEmployeeRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPR_EmployeeRow(PR_EmployeeRow row) {
+            public void AddTEmployeeRow(TEmployeeRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow AddPR_EmployeeRow(string FirstName, string LastName, System.DateTime DOB, System.DateTime DateHired, string Position, decimal HourlyRate) {
-                PR_EmployeeRow rowPR_EmployeeRow = ((PR_EmployeeRow)(this.NewRow()));
+            public TEmployeeRow AddTEmployeeRow(string FirstName, string LastName, System.DateTime DOB, System.DateTime DateHired, string Position, decimal HourlyRate) {
+                TEmployeeRow rowTEmployeeRow = ((TEmployeeRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         FirstName,
@@ -597,22 +597,22 @@ namespace payroll_system {
                         DateHired,
                         Position,
                         HourlyRate};
-                rowPR_EmployeeRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPR_EmployeeRow);
-                return rowPR_EmployeeRow;
+                rowTEmployeeRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTEmployeeRow);
+                return rowTEmployeeRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow FindByEmployeeId(int EmployeeId) {
-                return ((PR_EmployeeRow)(this.Rows.Find(new object[] {
+            public TEmployeeRow FindByEmployeeId(int EmployeeId) {
+                return ((TEmployeeRow)(this.Rows.Find(new object[] {
                             EmployeeId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PR_EmployeeDataTable cln = ((PR_EmployeeDataTable)(base.Clone()));
+                TEmployeeDataTable cln = ((TEmployeeDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -620,7 +620,7 @@ namespace payroll_system {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PR_EmployeeDataTable();
+                return new TEmployeeDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -673,28 +673,28 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow NewPR_EmployeeRow() {
-                return ((PR_EmployeeRow)(this.NewRow()));
+            public TEmployeeRow NewTEmployeeRow() {
+                return ((TEmployeeRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PR_EmployeeRow(builder);
+                return new TEmployeeRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PR_EmployeeRow);
+                return typeof(TEmployeeRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PR_EmployeeRowChanged != null)) {
-                    this.PR_EmployeeRowChanged(this, new PR_EmployeeRowChangeEvent(((PR_EmployeeRow)(e.Row)), e.Action));
+                if ((this.TEmployeeRowChanged != null)) {
+                    this.TEmployeeRowChanged(this, new TEmployeeRowChangeEvent(((TEmployeeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -702,8 +702,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PR_EmployeeRowChanging != null)) {
-                    this.PR_EmployeeRowChanging(this, new PR_EmployeeRowChangeEvent(((PR_EmployeeRow)(e.Row)), e.Action));
+                if ((this.TEmployeeRowChanging != null)) {
+                    this.TEmployeeRowChanging(this, new TEmployeeRowChangeEvent(((TEmployeeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -711,8 +711,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PR_EmployeeRowDeleted != null)) {
-                    this.PR_EmployeeRowDeleted(this, new PR_EmployeeRowChangeEvent(((PR_EmployeeRow)(e.Row)), e.Action));
+                if ((this.TEmployeeRowDeleted != null)) {
+                    this.TEmployeeRowDeleted(this, new TEmployeeRowChangeEvent(((TEmployeeRow)(e.Row)), e.Action));
                 }
             }
             
@@ -720,14 +720,14 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PR_EmployeeRowDeleting != null)) {
-                    this.PR_EmployeeRowDeleting(this, new PR_EmployeeRowChangeEvent(((PR_EmployeeRow)(e.Row)), e.Action));
+                if ((this.TEmployeeRowDeleting != null)) {
+                    this.TEmployeeRowDeleting(this, new TEmployeeRowChangeEvent(((TEmployeeRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePR_EmployeeRow(PR_EmployeeRow row) {
+            public void RemoveTEmployeeRow(TEmployeeRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -736,7 +736,7 @@ namespace payroll_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PayrollDBDataSet ds = new PayrollDBDataSet();
+                PayrollDataSet ds = new PayrollDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -754,7 +754,7 @@ namespace payroll_system {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PR_EmployeeDataTable";
+                attribute2.FixedValue = "TEmployeeDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -800,7 +800,7 @@ namespace payroll_system {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PR_PayslipDataTable : global::System.Data.TypedTableBase<PR_PayslipRow> {
+        public partial class TPayslipDataTable : global::System.Data.TypedTableBase<TPayslipRow> {
             
             private global::System.Data.DataColumn columnPaySlipId;
             
@@ -816,8 +816,8 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipDataTable() {
-                this.TableName = "PR_Payslip";
+            public TPayslipDataTable() {
+                this.TableName = "TPayslip";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -825,7 +825,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_PayslipDataTable(global::System.Data.DataTable table) {
+            internal TPayslipDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -842,7 +842,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PR_PayslipDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TPayslipDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -906,34 +906,34 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRow this[int index] {
+            public TPayslipRow this[int index] {
                 get {
-                    return ((PR_PayslipRow)(this.Rows[index]));
+                    return ((TPayslipRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_PayslipRowChangeEventHandler PR_PayslipRowChanging;
+            public event TPayslipRowChangeEventHandler TPayslipRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_PayslipRowChangeEventHandler PR_PayslipRowChanged;
+            public event TPayslipRowChangeEventHandler TPayslipRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_PayslipRowChangeEventHandler PR_PayslipRowDeleting;
+            public event TPayslipRowChangeEventHandler TPayslipRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_PayslipRowChangeEventHandler PR_PayslipRowDeleted;
+            public event TPayslipRowChangeEventHandler TPayslipRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPR_PayslipRow(PR_PayslipRow row) {
+            public void AddTPayslipRow(TPayslipRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRow AddPR_PayslipRow(PR_EmployeeRow parentPR_EmployeeRowByFK__PR_Paysli__Emplo__5812160E, System.DateTime DateFrom, System.DateTime EndDate, decimal TotalHours, decimal TotalMoney) {
-                PR_PayslipRow rowPR_PayslipRow = ((PR_PayslipRow)(this.NewRow()));
+            public TPayslipRow AddTPayslipRow(TEmployeeRow parentTEmployeeRowByFK__TPayslip__Employ__793DFFAF, System.DateTime DateFrom, System.DateTime EndDate, decimal TotalHours, decimal TotalMoney) {
+                TPayslipRow rowTPayslipRow = ((TPayslipRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
@@ -941,25 +941,25 @@ namespace payroll_system {
                         EndDate,
                         TotalHours,
                         TotalMoney};
-                if ((parentPR_EmployeeRowByFK__PR_Paysli__Emplo__5812160E != null)) {
-                    columnValuesArray[1] = parentPR_EmployeeRowByFK__PR_Paysli__Emplo__5812160E[0];
+                if ((parentTEmployeeRowByFK__TPayslip__Employ__793DFFAF != null)) {
+                    columnValuesArray[1] = parentTEmployeeRowByFK__TPayslip__Employ__793DFFAF[0];
                 }
-                rowPR_PayslipRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPR_PayslipRow);
-                return rowPR_PayslipRow;
+                rowTPayslipRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTPayslipRow);
+                return rowTPayslipRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRow FindByPaySlipId(int PaySlipId) {
-                return ((PR_PayslipRow)(this.Rows.Find(new object[] {
+            public TPayslipRow FindByPaySlipId(int PaySlipId) {
+                return ((TPayslipRow)(this.Rows.Find(new object[] {
                             PaySlipId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PR_PayslipDataTable cln = ((PR_PayslipDataTable)(base.Clone()));
+                TPayslipDataTable cln = ((TPayslipDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -967,7 +967,7 @@ namespace payroll_system {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PR_PayslipDataTable();
+                return new TPayslipDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1012,28 +1012,28 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRow NewPR_PayslipRow() {
-                return ((PR_PayslipRow)(this.NewRow()));
+            public TPayslipRow NewTPayslipRow() {
+                return ((TPayslipRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PR_PayslipRow(builder);
+                return new TPayslipRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PR_PayslipRow);
+                return typeof(TPayslipRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PR_PayslipRowChanged != null)) {
-                    this.PR_PayslipRowChanged(this, new PR_PayslipRowChangeEvent(((PR_PayslipRow)(e.Row)), e.Action));
+                if ((this.TPayslipRowChanged != null)) {
+                    this.TPayslipRowChanged(this, new TPayslipRowChangeEvent(((TPayslipRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1041,8 +1041,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PR_PayslipRowChanging != null)) {
-                    this.PR_PayslipRowChanging(this, new PR_PayslipRowChangeEvent(((PR_PayslipRow)(e.Row)), e.Action));
+                if ((this.TPayslipRowChanging != null)) {
+                    this.TPayslipRowChanging(this, new TPayslipRowChangeEvent(((TPayslipRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1050,8 +1050,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PR_PayslipRowDeleted != null)) {
-                    this.PR_PayslipRowDeleted(this, new PR_PayslipRowChangeEvent(((PR_PayslipRow)(e.Row)), e.Action));
+                if ((this.TPayslipRowDeleted != null)) {
+                    this.TPayslipRowDeleted(this, new TPayslipRowChangeEvent(((TPayslipRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1059,14 +1059,14 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PR_PayslipRowDeleting != null)) {
-                    this.PR_PayslipRowDeleting(this, new PR_PayslipRowChangeEvent(((PR_PayslipRow)(e.Row)), e.Action));
+                if ((this.TPayslipRowDeleting != null)) {
+                    this.TPayslipRowDeleting(this, new TPayslipRowChangeEvent(((TPayslipRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePR_PayslipRow(PR_PayslipRow row) {
+            public void RemoveTPayslipRow(TPayslipRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1075,7 +1075,7 @@ namespace payroll_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PayrollDBDataSet ds = new PayrollDBDataSet();
+                PayrollDataSet ds = new PayrollDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1093,7 +1093,7 @@ namespace payroll_system {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PR_PayslipDataTable";
+                attribute2.FixedValue = "TPayslipDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1139,7 +1139,7 @@ namespace payroll_system {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PR_ScheduleDataTable : global::System.Data.TypedTableBase<PR_ScheduleRow> {
+        public partial class TScheduleDataTable : global::System.Data.TypedTableBase<TScheduleRow> {
             
             private global::System.Data.DataColumn columnEmployeeId;
             
@@ -1149,8 +1149,8 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleDataTable() {
-                this.TableName = "PR_Schedule";
+            public TScheduleDataTable() {
+                this.TableName = "TSchedule";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1158,7 +1158,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_ScheduleDataTable(global::System.Data.DataTable table) {
+            internal TScheduleDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1175,7 +1175,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PR_ScheduleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TScheduleDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1215,50 +1215,50 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleRow this[int index] {
+            public TScheduleRow this[int index] {
                 get {
-                    return ((PR_ScheduleRow)(this.Rows[index]));
+                    return ((TScheduleRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_ScheduleRowChangeEventHandler PR_ScheduleRowChanging;
+            public event TScheduleRowChangeEventHandler TScheduleRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_ScheduleRowChangeEventHandler PR_ScheduleRowChanged;
+            public event TScheduleRowChangeEventHandler TScheduleRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_ScheduleRowChangeEventHandler PR_ScheduleRowDeleting;
+            public event TScheduleRowChangeEventHandler TScheduleRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_ScheduleRowChangeEventHandler PR_ScheduleRowDeleted;
+            public event TScheduleRowChangeEventHandler TScheduleRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPR_ScheduleRow(PR_ScheduleRow row) {
+            public void AddTScheduleRow(TScheduleRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleRow AddPR_ScheduleRow(PR_EmployeeRow parentPR_EmployeeRowByFK__PR_Schedu__Emplo__534D60F1, System.DateTime Date, string Shift) {
-                PR_ScheduleRow rowPR_ScheduleRow = ((PR_ScheduleRow)(this.NewRow()));
+            public TScheduleRow AddTScheduleRow(TEmployeeRow parentTEmployeeRowByFK__TSchedule__Emplo__74794A92, System.DateTime Date, string Shift) {
+                TScheduleRow rowTScheduleRow = ((TScheduleRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Date,
                         Shift};
-                if ((parentPR_EmployeeRowByFK__PR_Schedu__Emplo__534D60F1 != null)) {
-                    columnValuesArray[0] = parentPR_EmployeeRowByFK__PR_Schedu__Emplo__534D60F1[0];
+                if ((parentTEmployeeRowByFK__TSchedule__Emplo__74794A92 != null)) {
+                    columnValuesArray[0] = parentTEmployeeRowByFK__TSchedule__Emplo__74794A92[0];
                 }
-                rowPR_ScheduleRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPR_ScheduleRow);
-                return rowPR_ScheduleRow;
+                rowTScheduleRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTScheduleRow);
+                return rowTScheduleRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PR_ScheduleDataTable cln = ((PR_ScheduleDataTable)(base.Clone()));
+                TScheduleDataTable cln = ((TScheduleDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1266,7 +1266,7 @@ namespace payroll_system {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PR_ScheduleDataTable();
+                return new TScheduleDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1293,28 +1293,28 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleRow NewPR_ScheduleRow() {
-                return ((PR_ScheduleRow)(this.NewRow()));
+            public TScheduleRow NewTScheduleRow() {
+                return ((TScheduleRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PR_ScheduleRow(builder);
+                return new TScheduleRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PR_ScheduleRow);
+                return typeof(TScheduleRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PR_ScheduleRowChanged != null)) {
-                    this.PR_ScheduleRowChanged(this, new PR_ScheduleRowChangeEvent(((PR_ScheduleRow)(e.Row)), e.Action));
+                if ((this.TScheduleRowChanged != null)) {
+                    this.TScheduleRowChanged(this, new TScheduleRowChangeEvent(((TScheduleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1322,8 +1322,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PR_ScheduleRowChanging != null)) {
-                    this.PR_ScheduleRowChanging(this, new PR_ScheduleRowChangeEvent(((PR_ScheduleRow)(e.Row)), e.Action));
+                if ((this.TScheduleRowChanging != null)) {
+                    this.TScheduleRowChanging(this, new TScheduleRowChangeEvent(((TScheduleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1331,8 +1331,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PR_ScheduleRowDeleted != null)) {
-                    this.PR_ScheduleRowDeleted(this, new PR_ScheduleRowChangeEvent(((PR_ScheduleRow)(e.Row)), e.Action));
+                if ((this.TScheduleRowDeleted != null)) {
+                    this.TScheduleRowDeleted(this, new TScheduleRowChangeEvent(((TScheduleRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1340,14 +1340,14 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PR_ScheduleRowDeleting != null)) {
-                    this.PR_ScheduleRowDeleting(this, new PR_ScheduleRowChangeEvent(((PR_ScheduleRow)(e.Row)), e.Action));
+                if ((this.TScheduleRowDeleting != null)) {
+                    this.TScheduleRowDeleting(this, new TScheduleRowChangeEvent(((TScheduleRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePR_ScheduleRow(PR_ScheduleRow row) {
+            public void RemoveTScheduleRow(TScheduleRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1356,7 +1356,7 @@ namespace payroll_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PayrollDBDataSet ds = new PayrollDBDataSet();
+                PayrollDataSet ds = new PayrollDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1374,7 +1374,7 @@ namespace payroll_system {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PR_ScheduleDataTable";
+                attribute2.FixedValue = "TScheduleDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1420,7 +1420,7 @@ namespace payroll_system {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PR_TimesheetDataTable : global::System.Data.TypedTableBase<PR_TimesheetRow> {
+        public partial class TTimesheetDataTable : global::System.Data.TypedTableBase<TTimesheetRow> {
             
             private global::System.Data.DataColumn columnEmployeeId;
             
@@ -1434,8 +1434,8 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetDataTable() {
-                this.TableName = "PR_Timesheet";
+            public TTimesheetDataTable() {
+                this.TableName = "TTimesheet";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1443,7 +1443,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_TimesheetDataTable(global::System.Data.DataTable table) {
+            internal TTimesheetDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1460,7 +1460,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PR_TimesheetDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TTimesheetDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1516,52 +1516,52 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetRow this[int index] {
+            public TTimesheetRow this[int index] {
                 get {
-                    return ((PR_TimesheetRow)(this.Rows[index]));
+                    return ((TTimesheetRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_TimesheetRowChangeEventHandler PR_TimesheetRowChanging;
+            public event TTimesheetRowChangeEventHandler TTimesheetRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_TimesheetRowChangeEventHandler PR_TimesheetRowChanged;
+            public event TTimesheetRowChangeEventHandler TTimesheetRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_TimesheetRowChangeEventHandler PR_TimesheetRowDeleting;
+            public event TTimesheetRowChangeEventHandler TTimesheetRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_TimesheetRowChangeEventHandler PR_TimesheetRowDeleted;
+            public event TTimesheetRowChangeEventHandler TTimesheetRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPR_TimesheetRow(PR_TimesheetRow row) {
+            public void AddTTimesheetRow(TTimesheetRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetRow AddPR_TimesheetRow(PR_EmployeeRow parentPR_EmployeeRowByFK__PR_Timesh__Emplo__5535A963, System.DateTime Date, System.TimeSpan CLockInTime, System.TimeSpan ClockOutTime, decimal TotalHours) {
-                PR_TimesheetRow rowPR_TimesheetRow = ((PR_TimesheetRow)(this.NewRow()));
+            public TTimesheetRow AddTTimesheetRow(TEmployeeRow parentTEmployeeRowByFK__TTimeshee__Emplo__76619304, System.DateTime Date, System.TimeSpan CLockInTime, System.TimeSpan ClockOutTime, decimal TotalHours) {
+                TTimesheetRow rowTTimesheetRow = ((TTimesheetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Date,
                         CLockInTime,
                         ClockOutTime,
                         TotalHours};
-                if ((parentPR_EmployeeRowByFK__PR_Timesh__Emplo__5535A963 != null)) {
-                    columnValuesArray[0] = parentPR_EmployeeRowByFK__PR_Timesh__Emplo__5535A963[0];
+                if ((parentTEmployeeRowByFK__TTimeshee__Emplo__76619304 != null)) {
+                    columnValuesArray[0] = parentTEmployeeRowByFK__TTimeshee__Emplo__76619304[0];
                 }
-                rowPR_TimesheetRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPR_TimesheetRow);
-                return rowPR_TimesheetRow;
+                rowTTimesheetRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTTimesheetRow);
+                return rowTTimesheetRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PR_TimesheetDataTable cln = ((PR_TimesheetDataTable)(base.Clone()));
+                TTimesheetDataTable cln = ((TTimesheetDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1569,7 +1569,7 @@ namespace payroll_system {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PR_TimesheetDataTable();
+                return new TTimesheetDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1603,28 +1603,28 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetRow NewPR_TimesheetRow() {
-                return ((PR_TimesheetRow)(this.NewRow()));
+            public TTimesheetRow NewTTimesheetRow() {
+                return ((TTimesheetRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PR_TimesheetRow(builder);
+                return new TTimesheetRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PR_TimesheetRow);
+                return typeof(TTimesheetRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PR_TimesheetRowChanged != null)) {
-                    this.PR_TimesheetRowChanged(this, new PR_TimesheetRowChangeEvent(((PR_TimesheetRow)(e.Row)), e.Action));
+                if ((this.TTimesheetRowChanged != null)) {
+                    this.TTimesheetRowChanged(this, new TTimesheetRowChangeEvent(((TTimesheetRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1632,8 +1632,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PR_TimesheetRowChanging != null)) {
-                    this.PR_TimesheetRowChanging(this, new PR_TimesheetRowChangeEvent(((PR_TimesheetRow)(e.Row)), e.Action));
+                if ((this.TTimesheetRowChanging != null)) {
+                    this.TTimesheetRowChanging(this, new TTimesheetRowChangeEvent(((TTimesheetRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1641,8 +1641,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PR_TimesheetRowDeleted != null)) {
-                    this.PR_TimesheetRowDeleted(this, new PR_TimesheetRowChangeEvent(((PR_TimesheetRow)(e.Row)), e.Action));
+                if ((this.TTimesheetRowDeleted != null)) {
+                    this.TTimesheetRowDeleted(this, new TTimesheetRowChangeEvent(((TTimesheetRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1650,14 +1650,14 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PR_TimesheetRowDeleting != null)) {
-                    this.PR_TimesheetRowDeleting(this, new PR_TimesheetRowChangeEvent(((PR_TimesheetRow)(e.Row)), e.Action));
+                if ((this.TTimesheetRowDeleting != null)) {
+                    this.TTimesheetRowDeleting(this, new TTimesheetRowChangeEvent(((TTimesheetRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePR_TimesheetRow(PR_TimesheetRow row) {
+            public void RemoveTTimesheetRow(TTimesheetRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1666,7 +1666,7 @@ namespace payroll_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PayrollDBDataSet ds = new PayrollDBDataSet();
+                PayrollDataSet ds = new PayrollDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1684,7 +1684,7 @@ namespace payroll_system {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PR_TimesheetDataTable";
+                attribute2.FixedValue = "TTimesheetDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1730,7 +1730,7 @@ namespace payroll_system {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class PR_User_LoginDataTable : global::System.Data.TypedTableBase<PR_User_LoginRow> {
+        public partial class TUserLoginDataTable : global::System.Data.TypedTableBase<TUserLoginRow> {
             
             private global::System.Data.DataColumn columnUserId;
             
@@ -1742,8 +1742,8 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginDataTable() {
-                this.TableName = "PR_User_Login";
+            public TUserLoginDataTable() {
+                this.TableName = "TUserLogin";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1751,7 +1751,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_User_LoginDataTable(global::System.Data.DataTable table) {
+            internal TUserLoginDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -1768,7 +1768,7 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected PR_User_LoginDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected TUserLoginDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -1816,58 +1816,58 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRow this[int index] {
+            public TUserLoginRow this[int index] {
                 get {
-                    return ((PR_User_LoginRow)(this.Rows[index]));
+                    return ((TUserLoginRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_User_LoginRowChangeEventHandler PR_User_LoginRowChanging;
+            public event TUserLoginRowChangeEventHandler TUserLoginRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_User_LoginRowChangeEventHandler PR_User_LoginRowChanged;
+            public event TUserLoginRowChangeEventHandler TUserLoginRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_User_LoginRowChangeEventHandler PR_User_LoginRowDeleting;
+            public event TUserLoginRowChangeEventHandler TUserLoginRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event PR_User_LoginRowChangeEventHandler PR_User_LoginRowDeleted;
+            public event TUserLoginRowChangeEventHandler TUserLoginRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddPR_User_LoginRow(PR_User_LoginRow row) {
+            public void AddTUserLoginRow(TUserLoginRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRow AddPR_User_LoginRow(PR_EmployeeRow parentPR_EmployeeRowByFK__PR_User_L__Emplo__5AEE82B9, string UserName, string Password) {
-                PR_User_LoginRow rowPR_User_LoginRow = ((PR_User_LoginRow)(this.NewRow()));
+            public TUserLoginRow AddTUserLoginRow(TEmployeeRow parentTEmployeeRowByFK__TUserLogi__Emplo__7C1A6C5A, string UserName, string Password) {
+                TUserLoginRow rowTUserLoginRow = ((TUserLoginRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
                         UserName,
                         Password};
-                if ((parentPR_EmployeeRowByFK__PR_User_L__Emplo__5AEE82B9 != null)) {
-                    columnValuesArray[1] = parentPR_EmployeeRowByFK__PR_User_L__Emplo__5AEE82B9[0];
+                if ((parentTEmployeeRowByFK__TUserLogi__Emplo__7C1A6C5A != null)) {
+                    columnValuesArray[1] = parentTEmployeeRowByFK__TUserLogi__Emplo__7C1A6C5A[0];
                 }
-                rowPR_User_LoginRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowPR_User_LoginRow);
-                return rowPR_User_LoginRow;
+                rowTUserLoginRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowTUserLoginRow);
+                return rowTUserLoginRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRow FindByUserId(int UserId) {
-                return ((PR_User_LoginRow)(this.Rows.Find(new object[] {
+            public TUserLoginRow FindByUserId(int UserId) {
+                return ((TUserLoginRow)(this.Rows.Find(new object[] {
                             UserId})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                PR_User_LoginDataTable cln = ((PR_User_LoginDataTable)(base.Clone()));
+                TUserLoginDataTable cln = ((TUserLoginDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -1875,7 +1875,7 @@ namespace payroll_system {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new PR_User_LoginDataTable();
+                return new TUserLoginDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1914,28 +1914,28 @@ namespace payroll_system {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRow NewPR_User_LoginRow() {
-                return ((PR_User_LoginRow)(this.NewRow()));
+            public TUserLoginRow NewTUserLoginRow() {
+                return ((TUserLoginRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new PR_User_LoginRow(builder);
+                return new TUserLoginRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(PR_User_LoginRow);
+                return typeof(TUserLoginRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.PR_User_LoginRowChanged != null)) {
-                    this.PR_User_LoginRowChanged(this, new PR_User_LoginRowChangeEvent(((PR_User_LoginRow)(e.Row)), e.Action));
+                if ((this.TUserLoginRowChanged != null)) {
+                    this.TUserLoginRowChanged(this, new TUserLoginRowChangeEvent(((TUserLoginRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1943,8 +1943,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.PR_User_LoginRowChanging != null)) {
-                    this.PR_User_LoginRowChanging(this, new PR_User_LoginRowChangeEvent(((PR_User_LoginRow)(e.Row)), e.Action));
+                if ((this.TUserLoginRowChanging != null)) {
+                    this.TUserLoginRowChanging(this, new TUserLoginRowChangeEvent(((TUserLoginRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1952,8 +1952,8 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.PR_User_LoginRowDeleted != null)) {
-                    this.PR_User_LoginRowDeleted(this, new PR_User_LoginRowChangeEvent(((PR_User_LoginRow)(e.Row)), e.Action));
+                if ((this.TUserLoginRowDeleted != null)) {
+                    this.TUserLoginRowDeleted(this, new TUserLoginRowChangeEvent(((TUserLoginRow)(e.Row)), e.Action));
                 }
             }
             
@@ -1961,14 +1961,14 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.PR_User_LoginRowDeleting != null)) {
-                    this.PR_User_LoginRowDeleting(this, new PR_User_LoginRowChangeEvent(((PR_User_LoginRow)(e.Row)), e.Action));
+                if ((this.TUserLoginRowDeleting != null)) {
+                    this.TUserLoginRowDeleting(this, new TUserLoginRowChangeEvent(((TUserLoginRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovePR_User_LoginRow(PR_User_LoginRow row) {
+            public void RemoveTUserLoginRow(TUserLoginRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -1977,7 +1977,7 @@ namespace payroll_system {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PayrollDBDataSet ds = new PayrollDBDataSet();
+                PayrollDataSet ds = new PayrollDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1995,7 +1995,7 @@ namespace payroll_system {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "PR_User_LoginDataTable";
+                attribute2.FixedValue = "TUserLoginDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -2039,25 +2039,25 @@ namespace payroll_system {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PR_EmployeeRow : global::System.Data.DataRow {
+        public partial class TEmployeeRow : global::System.Data.DataRow {
             
-            private PR_EmployeeDataTable tablePR_Employee;
+            private TEmployeeDataTable tableTEmployee;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_EmployeeRow(global::System.Data.DataRowBuilder rb) : 
+            internal TEmployeeRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePR_Employee = ((PR_EmployeeDataTable)(this.Table));
+                this.tableTEmployee = ((TEmployeeDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int EmployeeId {
                 get {
-                    return ((int)(this[this.tablePR_Employee.EmployeeIdColumn]));
+                    return ((int)(this[this.tableTEmployee.EmployeeIdColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.EmployeeIdColumn] = value;
+                    this[this.tableTEmployee.EmployeeIdColumn] = value;
                 }
             }
             
@@ -2065,10 +2065,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string FirstName {
                 get {
-                    return ((string)(this[this.tablePR_Employee.FirstNameColumn]));
+                    return ((string)(this[this.tableTEmployee.FirstNameColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.FirstNameColumn] = value;
+                    this[this.tableTEmployee.FirstNameColumn] = value;
                 }
             }
             
@@ -2076,10 +2076,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string LastName {
                 get {
-                    return ((string)(this[this.tablePR_Employee.LastNameColumn]));
+                    return ((string)(this[this.tableTEmployee.LastNameColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.LastNameColumn] = value;
+                    this[this.tableTEmployee.LastNameColumn] = value;
                 }
             }
             
@@ -2087,10 +2087,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DOB {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePR_Employee.DOBColumn]));
+                    return ((global::System.DateTime)(this[this.tableTEmployee.DOBColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.DOBColumn] = value;
+                    this[this.tableTEmployee.DOBColumn] = value;
                 }
             }
             
@@ -2098,10 +2098,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DateHired {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePR_Employee.DateHiredColumn]));
+                    return ((global::System.DateTime)(this[this.tableTEmployee.DateHiredColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.DateHiredColumn] = value;
+                    this[this.tableTEmployee.DateHiredColumn] = value;
                 }
             }
             
@@ -2109,10 +2109,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Position {
                 get {
-                    return ((string)(this[this.tablePR_Employee.PositionColumn]));
+                    return ((string)(this[this.tableTEmployee.PositionColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.PositionColumn] = value;
+                    this[this.tableTEmployee.PositionColumn] = value;
                 }
             }
             
@@ -2120,54 +2120,54 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal HourlyRate {
                 get {
-                    return ((decimal)(this[this.tablePR_Employee.HourlyRateColumn]));
+                    return ((decimal)(this[this.tableTEmployee.HourlyRateColumn]));
                 }
                 set {
-                    this[this.tablePR_Employee.HourlyRateColumn] = value;
+                    this[this.tableTEmployee.HourlyRateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRow[] GetPR_PayslipRows() {
-                if ((this.Table.ChildRelations["FK__PR_Paysli__Emplo__5812160E"] == null)) {
-                    return new PR_PayslipRow[0];
+            public TPayslipRow[] GetTPayslipRows() {
+                if ((this.Table.ChildRelations["FK__TPayslip__Employ__793DFFAF"] == null)) {
+                    return new TPayslipRow[0];
                 }
                 else {
-                    return ((PR_PayslipRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PR_Paysli__Emplo__5812160E"])));
+                    return ((TPayslipRow[])(base.GetChildRows(this.Table.ChildRelations["FK__TPayslip__Employ__793DFFAF"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleRow[] GetPR_ScheduleRows() {
-                if ((this.Table.ChildRelations["FK__PR_Schedu__Emplo__534D60F1"] == null)) {
-                    return new PR_ScheduleRow[0];
+            public TScheduleRow[] GetTScheduleRows() {
+                if ((this.Table.ChildRelations["FK__TSchedule__Emplo__74794A92"] == null)) {
+                    return new TScheduleRow[0];
                 }
                 else {
-                    return ((PR_ScheduleRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PR_Schedu__Emplo__534D60F1"])));
+                    return ((TScheduleRow[])(base.GetChildRows(this.Table.ChildRelations["FK__TSchedule__Emplo__74794A92"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetRow[] GetPR_TimesheetRows() {
-                if ((this.Table.ChildRelations["FK__PR_Timesh__Emplo__5535A963"] == null)) {
-                    return new PR_TimesheetRow[0];
+            public TTimesheetRow[] GetTTimesheetRows() {
+                if ((this.Table.ChildRelations["FK__TTimeshee__Emplo__76619304"] == null)) {
+                    return new TTimesheetRow[0];
                 }
                 else {
-                    return ((PR_TimesheetRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PR_Timesh__Emplo__5535A963"])));
+                    return ((TTimesheetRow[])(base.GetChildRows(this.Table.ChildRelations["FK__TTimeshee__Emplo__76619304"])));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRow[] GetPR_User_LoginRows() {
-                if ((this.Table.ChildRelations["FK__PR_User_L__Emplo__5AEE82B9"] == null)) {
-                    return new PR_User_LoginRow[0];
+            public TUserLoginRow[] GetTUserLoginRows() {
+                if ((this.Table.ChildRelations["FK__TUserLogi__Emplo__7C1A6C5A"] == null)) {
+                    return new TUserLoginRow[0];
                 }
                 else {
-                    return ((PR_User_LoginRow[])(base.GetChildRows(this.Table.ChildRelations["FK__PR_User_L__Emplo__5AEE82B9"])));
+                    return ((TUserLoginRow[])(base.GetChildRows(this.Table.ChildRelations["FK__TUserLogi__Emplo__7C1A6C5A"])));
                 }
             }
         }
@@ -2175,25 +2175,25 @@ namespace payroll_system {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PR_PayslipRow : global::System.Data.DataRow {
+        public partial class TPayslipRow : global::System.Data.DataRow {
             
-            private PR_PayslipDataTable tablePR_Payslip;
+            private TPayslipDataTable tableTPayslip;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_PayslipRow(global::System.Data.DataRowBuilder rb) : 
+            internal TPayslipRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePR_Payslip = ((PR_PayslipDataTable)(this.Table));
+                this.tableTPayslip = ((TPayslipDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int PaySlipId {
                 get {
-                    return ((int)(this[this.tablePR_Payslip.PaySlipIdColumn]));
+                    return ((int)(this[this.tableTPayslip.PaySlipIdColumn]));
                 }
                 set {
-                    this[this.tablePR_Payslip.PaySlipIdColumn] = value;
+                    this[this.tableTPayslip.PaySlipIdColumn] = value;
                 }
             }
             
@@ -2202,14 +2202,14 @@ namespace payroll_system {
             public int EmployeeId {
                 get {
                     try {
-                        return ((int)(this[this.tablePR_Payslip.EmployeeIdColumn]));
+                        return ((int)(this[this.tableTPayslip.EmployeeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'PR_Payslip\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'TPayslip\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePR_Payslip.EmployeeIdColumn] = value;
+                    this[this.tableTPayslip.EmployeeIdColumn] = value;
                 }
             }
             
@@ -2217,10 +2217,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime DateFrom {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePR_Payslip.DateFromColumn]));
+                    return ((global::System.DateTime)(this[this.tableTPayslip.DateFromColumn]));
                 }
                 set {
-                    this[this.tablePR_Payslip.DateFromColumn] = value;
+                    this[this.tableTPayslip.DateFromColumn] = value;
                 }
             }
             
@@ -2228,10 +2228,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime EndDate {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePR_Payslip.EndDateColumn]));
+                    return ((global::System.DateTime)(this[this.tableTPayslip.EndDateColumn]));
                 }
                 set {
-                    this[this.tablePR_Payslip.EndDateColumn] = value;
+                    this[this.tableTPayslip.EndDateColumn] = value;
                 }
             }
             
@@ -2239,10 +2239,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal TotalHours {
                 get {
-                    return ((decimal)(this[this.tablePR_Payslip.TotalHoursColumn]));
+                    return ((decimal)(this[this.tableTPayslip.TotalHoursColumn]));
                 }
                 set {
-                    this[this.tablePR_Payslip.TotalHoursColumn] = value;
+                    this[this.tableTPayslip.TotalHoursColumn] = value;
                 }
             }
             
@@ -2250,49 +2250,49 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal TotalMoney {
                 get {
-                    return ((decimal)(this[this.tablePR_Payslip.TotalMoneyColumn]));
+                    return ((decimal)(this[this.tableTPayslip.TotalMoneyColumn]));
                 }
                 set {
-                    this[this.tablePR_Payslip.TotalMoneyColumn] = value;
+                    this[this.tableTPayslip.TotalMoneyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow PR_EmployeeRow {
+            public TEmployeeRow TEmployeeRow {
                 get {
-                    return ((PR_EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__PR_Paysli__Emplo__5812160E"])));
+                    return ((TEmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__TPayslip__Employ__793DFFAF"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PR_Paysli__Emplo__5812160E"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__TPayslip__Employ__793DFFAF"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEmployeeIdNull() {
-                return this.IsNull(this.tablePR_Payslip.EmployeeIdColumn);
+                return this.IsNull(this.tableTPayslip.EmployeeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmployeeIdNull() {
-                this[this.tablePR_Payslip.EmployeeIdColumn] = global::System.Convert.DBNull;
+                this[this.tableTPayslip.EmployeeIdColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PR_ScheduleRow : global::System.Data.DataRow {
+        public partial class TScheduleRow : global::System.Data.DataRow {
             
-            private PR_ScheduleDataTable tablePR_Schedule;
+            private TScheduleDataTable tableTSchedule;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_ScheduleRow(global::System.Data.DataRowBuilder rb) : 
+            internal TScheduleRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePR_Schedule = ((PR_ScheduleDataTable)(this.Table));
+                this.tableTSchedule = ((TScheduleDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2300,14 +2300,14 @@ namespace payroll_system {
             public int EmployeeId {
                 get {
                     try {
-                        return ((int)(this[this.tablePR_Schedule.EmployeeIdColumn]));
+                        return ((int)(this[this.tableTSchedule.EmployeeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'PR_Schedule\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'TSchedule\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePR_Schedule.EmployeeIdColumn] = value;
+                    this[this.tableTSchedule.EmployeeIdColumn] = value;
                 }
             }
             
@@ -2315,10 +2315,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePR_Schedule.DateColumn]));
+                    return ((global::System.DateTime)(this[this.tableTSchedule.DateColumn]));
                 }
                 set {
-                    this[this.tablePR_Schedule.DateColumn] = value;
+                    this[this.tableTSchedule.DateColumn] = value;
                 }
             }
             
@@ -2326,49 +2326,49 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Shift {
                 get {
-                    return ((string)(this[this.tablePR_Schedule.ShiftColumn]));
+                    return ((string)(this[this.tableTSchedule.ShiftColumn]));
                 }
                 set {
-                    this[this.tablePR_Schedule.ShiftColumn] = value;
+                    this[this.tableTSchedule.ShiftColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow PR_EmployeeRow {
+            public TEmployeeRow TEmployeeRow {
                 get {
-                    return ((PR_EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__PR_Schedu__Emplo__534D60F1"])));
+                    return ((TEmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__TSchedule__Emplo__74794A92"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PR_Schedu__Emplo__534D60F1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__TSchedule__Emplo__74794A92"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEmployeeIdNull() {
-                return this.IsNull(this.tablePR_Schedule.EmployeeIdColumn);
+                return this.IsNull(this.tableTSchedule.EmployeeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmployeeIdNull() {
-                this[this.tablePR_Schedule.EmployeeIdColumn] = global::System.Convert.DBNull;
+                this[this.tableTSchedule.EmployeeIdColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PR_TimesheetRow : global::System.Data.DataRow {
+        public partial class TTimesheetRow : global::System.Data.DataRow {
             
-            private PR_TimesheetDataTable tablePR_Timesheet;
+            private TTimesheetDataTable tableTTimesheet;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_TimesheetRow(global::System.Data.DataRowBuilder rb) : 
+            internal TTimesheetRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePR_Timesheet = ((PR_TimesheetDataTable)(this.Table));
+                this.tableTTimesheet = ((TTimesheetDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2376,14 +2376,14 @@ namespace payroll_system {
             public int EmployeeId {
                 get {
                     try {
-                        return ((int)(this[this.tablePR_Timesheet.EmployeeIdColumn]));
+                        return ((int)(this[this.tableTTimesheet.EmployeeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'PR_Timesheet\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'TTimesheet\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePR_Timesheet.EmployeeIdColumn] = value;
+                    this[this.tableTTimesheet.EmployeeIdColumn] = value;
                 }
             }
             
@@ -2391,10 +2391,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.DateTime Date {
                 get {
-                    return ((global::System.DateTime)(this[this.tablePR_Timesheet.DateColumn]));
+                    return ((global::System.DateTime)(this[this.tableTTimesheet.DateColumn]));
                 }
                 set {
-                    this[this.tablePR_Timesheet.DateColumn] = value;
+                    this[this.tableTTimesheet.DateColumn] = value;
                 }
             }
             
@@ -2402,10 +2402,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.TimeSpan CLockInTime {
                 get {
-                    return ((global::System.TimeSpan)(this[this.tablePR_Timesheet.CLockInTimeColumn]));
+                    return ((global::System.TimeSpan)(this[this.tableTTimesheet.CLockInTimeColumn]));
                 }
                 set {
-                    this[this.tablePR_Timesheet.CLockInTimeColumn] = value;
+                    this[this.tableTTimesheet.CLockInTimeColumn] = value;
                 }
             }
             
@@ -2413,10 +2413,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public System.TimeSpan ClockOutTime {
                 get {
-                    return ((global::System.TimeSpan)(this[this.tablePR_Timesheet.ClockOutTimeColumn]));
+                    return ((global::System.TimeSpan)(this[this.tableTTimesheet.ClockOutTimeColumn]));
                 }
                 set {
-                    this[this.tablePR_Timesheet.ClockOutTimeColumn] = value;
+                    this[this.tableTTimesheet.ClockOutTimeColumn] = value;
                 }
             }
             
@@ -2424,59 +2424,59 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public decimal TotalHours {
                 get {
-                    return ((decimal)(this[this.tablePR_Timesheet.TotalHoursColumn]));
+                    return ((decimal)(this[this.tableTTimesheet.TotalHoursColumn]));
                 }
                 set {
-                    this[this.tablePR_Timesheet.TotalHoursColumn] = value;
+                    this[this.tableTTimesheet.TotalHoursColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow PR_EmployeeRow {
+            public TEmployeeRow TEmployeeRow {
                 get {
-                    return ((PR_EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__PR_Timesh__Emplo__5535A963"])));
+                    return ((TEmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__TTimeshee__Emplo__76619304"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PR_Timesh__Emplo__5535A963"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__TTimeshee__Emplo__76619304"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEmployeeIdNull() {
-                return this.IsNull(this.tablePR_Timesheet.EmployeeIdColumn);
+                return this.IsNull(this.tableTTimesheet.EmployeeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmployeeIdNull() {
-                this[this.tablePR_Timesheet.EmployeeIdColumn] = global::System.Convert.DBNull;
+                this[this.tableTTimesheet.EmployeeIdColumn] = global::System.Convert.DBNull;
             }
         }
         
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class PR_User_LoginRow : global::System.Data.DataRow {
+        public partial class TUserLoginRow : global::System.Data.DataRow {
             
-            private PR_User_LoginDataTable tablePR_User_Login;
+            private TUserLoginDataTable tableTUserLogin;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal PR_User_LoginRow(global::System.Data.DataRowBuilder rb) : 
+            internal TUserLoginRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tablePR_User_Login = ((PR_User_LoginDataTable)(this.Table));
+                this.tableTUserLogin = ((TUserLoginDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int UserId {
                 get {
-                    return ((int)(this[this.tablePR_User_Login.UserIdColumn]));
+                    return ((int)(this[this.tableTUserLogin.UserIdColumn]));
                 }
                 set {
-                    this[this.tablePR_User_Login.UserIdColumn] = value;
+                    this[this.tableTUserLogin.UserIdColumn] = value;
                 }
             }
             
@@ -2485,14 +2485,14 @@ namespace payroll_system {
             public int EmployeeId {
                 get {
                     try {
-                        return ((int)(this[this.tablePR_User_Login.EmployeeIdColumn]));
+                        return ((int)(this[this.tableTUserLogin.EmployeeIdColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'PR_User_Login\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'EmployeeId\' in table \'TUserLogin\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tablePR_User_Login.EmployeeIdColumn] = value;
+                    this[this.tableTUserLogin.EmployeeIdColumn] = value;
                 }
             }
             
@@ -2500,10 +2500,10 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string UserName {
                 get {
-                    return ((string)(this[this.tablePR_User_Login.UserNameColumn]));
+                    return ((string)(this[this.tableTUserLogin.UserNameColumn]));
                 }
                 set {
-                    this[this.tablePR_User_Login.UserNameColumn] = value;
+                    this[this.tableTUserLogin.UserNameColumn] = value;
                 }
             }
             
@@ -2511,34 +2511,34 @@ namespace payroll_system {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Password {
                 get {
-                    return ((string)(this[this.tablePR_User_Login.PasswordColumn]));
+                    return ((string)(this[this.tableTUserLogin.PasswordColumn]));
                 }
                 set {
-                    this[this.tablePR_User_Login.PasswordColumn] = value;
+                    this[this.tableTUserLogin.PasswordColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow PR_EmployeeRow {
+            public TEmployeeRow TEmployeeRow {
                 get {
-                    return ((PR_EmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__PR_User_L__Emplo__5AEE82B9"])));
+                    return ((TEmployeeRow)(this.GetParentRow(this.Table.ParentRelations["FK__TUserLogi__Emplo__7C1A6C5A"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PR_User_L__Emplo__5AEE82B9"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__TUserLogi__Emplo__7C1A6C5A"]);
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsEmployeeIdNull() {
-                return this.IsNull(this.tablePR_User_Login.EmployeeIdColumn);
+                return this.IsNull(this.tableTUserLogin.EmployeeIdColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetEmployeeIdNull() {
-                this[this.tablePR_User_Login.EmployeeIdColumn] = global::System.Convert.DBNull;
+                this[this.tableTUserLogin.EmployeeIdColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2546,22 +2546,22 @@ namespace payroll_system {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PR_EmployeeRowChangeEvent : global::System.EventArgs {
+        public class TEmployeeRowChangeEvent : global::System.EventArgs {
             
-            private PR_EmployeeRow eventRow;
+            private TEmployeeRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRowChangeEvent(PR_EmployeeRow row, global::System.Data.DataRowAction action) {
+            public TEmployeeRowChangeEvent(TEmployeeRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_EmployeeRow Row {
+            public TEmployeeRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2580,22 +2580,22 @@ namespace payroll_system {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PR_PayslipRowChangeEvent : global::System.EventArgs {
+        public class TPayslipRowChangeEvent : global::System.EventArgs {
             
-            private PR_PayslipRow eventRow;
+            private TPayslipRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRowChangeEvent(PR_PayslipRow row, global::System.Data.DataRowAction action) {
+            public TPayslipRowChangeEvent(TPayslipRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_PayslipRow Row {
+            public TPayslipRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2614,22 +2614,22 @@ namespace payroll_system {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PR_ScheduleRowChangeEvent : global::System.EventArgs {
+        public class TScheduleRowChangeEvent : global::System.EventArgs {
             
-            private PR_ScheduleRow eventRow;
+            private TScheduleRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleRowChangeEvent(PR_ScheduleRow row, global::System.Data.DataRowAction action) {
+            public TScheduleRowChangeEvent(TScheduleRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_ScheduleRow Row {
+            public TScheduleRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2648,22 +2648,22 @@ namespace payroll_system {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PR_TimesheetRowChangeEvent : global::System.EventArgs {
+        public class TTimesheetRowChangeEvent : global::System.EventArgs {
             
-            private PR_TimesheetRow eventRow;
+            private TTimesheetRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetRowChangeEvent(PR_TimesheetRow row, global::System.Data.DataRowAction action) {
+            public TTimesheetRowChangeEvent(TTimesheetRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_TimesheetRow Row {
+            public TTimesheetRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2682,22 +2682,22 @@ namespace payroll_system {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class PR_User_LoginRowChangeEvent : global::System.EventArgs {
+        public class TUserLoginRowChangeEvent : global::System.EventArgs {
             
-            private PR_User_LoginRow eventRow;
+            private TUserLoginRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRowChangeEvent(PR_User_LoginRow row, global::System.Data.DataRowAction action) {
+            public TUserLoginRowChangeEvent(TUserLoginRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public PR_User_LoginRow Row {
+            public TUserLoginRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -2713,7 +2713,7 @@ namespace payroll_system {
         }
     }
 }
-namespace payroll_system.PayrollDBDataSetTableAdapters {
+namespace payroll_system.PayrollDataSetTableAdapters {
     
     
     /// <summary>
@@ -2725,7 +2725,7 @@ namespace payroll_system.PayrollDBDataSetTableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PR_EmployeeTableAdapter : global::System.ComponentModel.Component {
+    public partial class TEmployeeTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -2739,7 +2739,7 @@ namespace payroll_system.PayrollDBDataSetTableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PR_EmployeeTableAdapter() {
+        public TEmployeeTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -2836,7 +2836,7 @@ namespace payroll_system.PayrollDBDataSetTableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PR_Employee";
+            tableMapping.DataSetTable = "TEmployee";
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
             tableMapping.ColumnMappings.Add("FirstName", "FirstName");
             tableMapping.ColumnMappings.Add("LastName", "LastName");
@@ -2847,7 +2847,7 @@ namespace payroll_system.PayrollDBDataSetTableAdapters {
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PR_Employee] WHERE (([EmployeeId] = @Original_EmployeeId) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([DOB] = @Original_DOB) AND ([DateHired] = @Original_DateHired) AND ([Position] = @Original_Position) AND ([HourlyRate] = @Original_HourlyRate))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TEmployee] WHERE (([EmployeeId] = @Original_EmployeeId) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([DOB] = @Original_DOB) AND ([DateHired] = @Original_DateHired) AND ([Position] = @Original_Position) AND ([HourlyRate] = @Original_HourlyRate))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
@@ -2858,8 +2858,8 @@ namespace payroll_system.PayrollDBDataSetTableAdapters {
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HourlyRate", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyRate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PR_Employee] ([FirstName], [LastName], [DOB], [DateHired], [Position], [HourlyRate]) VALUES (@FirstName, @LastName, @DOB, @DateHired, @Position, @HourlyRate);
-SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FROM PR_Employee WHERE (EmployeeId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TEmployee] ([FirstName], [LastName], [DOB], [DateHired], [Position], [HourlyRate]) VALUES (@FirstName, @LastName, @DOB, @DateHired, @Position, @HourlyRate);
+SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FROM TEmployee WHERE (EmployeeId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2869,8 +2869,8 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HourlyRate", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HourlyRate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PR_Employee] SET [FirstName] = @FirstName, [LastName] = @LastName, [DOB] = @DOB, [DateHired] = @DateHired, [Position] = @Position, [HourlyRate] = @HourlyRate WHERE (([EmployeeId] = @Original_EmployeeId) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([DOB] = @Original_DOB) AND ([DateHired] = @Original_DateHired) AND ([Position] = @Original_Position) AND ([HourlyRate] = @Original_HourlyRate));
-SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FROM PR_Employee WHERE (EmployeeId = @EmployeeId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TEmployee] SET [FirstName] = @FirstName, [LastName] = @LastName, [DOB] = @DOB, [DateHired] = @DateHired, [Position] = @Position, [HourlyRate] = @HourlyRate WHERE (([EmployeeId] = @Original_EmployeeId) AND ([FirstName] = @Original_FirstName) AND ([LastName] = @Original_LastName) AND ([DOB] = @Original_DOB) AND ([DateHired] = @Original_DateHired) AND ([Position] = @Original_Position) AND ([HourlyRate] = @Original_HourlyRate));
+SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FROM TEmployee WHERE (EmployeeId = @EmployeeId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -2902,7 +2902,7 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FROM" +
-                " dbo.PR_Employee";
+                " dbo.TEmployee";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -2910,7 +2910,7 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PayrollDBDataSet.PR_EmployeeDataTable dataTable) {
+        public virtual int Fill(PayrollDataSet.TEmployeeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2923,9 +2923,9 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PayrollDBDataSet.PR_EmployeeDataTable GetData() {
+        public virtual PayrollDataSet.TEmployeeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PayrollDBDataSet.PR_EmployeeDataTable dataTable = new PayrollDBDataSet.PR_EmployeeDataTable();
+            PayrollDataSet.TEmployeeDataTable dataTable = new PayrollDataSet.TEmployeeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2933,15 +2933,15 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet.PR_EmployeeDataTable dataTable) {
+        public virtual int Update(PayrollDataSet.TEmployeeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "PR_Employee");
+        public virtual int Update(PayrollDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "TEmployee");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3127,7 +3127,7 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PR_PayslipTableAdapter : global::System.ComponentModel.Component {
+    public partial class TPayslipTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3141,7 +3141,7 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PR_PayslipTableAdapter() {
+        public TPayslipTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3238,7 +3238,7 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PR_Payslip";
+            tableMapping.DataSetTable = "TPayslip";
             tableMapping.ColumnMappings.Add("PaySlipId", "PaySlipId");
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
             tableMapping.ColumnMappings.Add("DateFrom", "DateFrom");
@@ -3248,7 +3248,7 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[PR_Payslip] WHERE (([PaySlipId] = @Original_PaySlipId) AND ((@IsNull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeId)) AND ([DateFrom] = @Original_DateFrom) AND ([EndDate] = @Original_EndDate) AND ([TotalHours] = @Original_TotalHours) AND ([TotalMoney] = @Original_TotalMoney))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[TPayslip] WHERE (([PaySlipId] = @Original_PaySlipId) AND ((@IsNull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeId)) AND ([DateFrom] = @Original_DateFrom) AND ([EndDate] = @Original_EndDate) AND ([TotalHours] = @Original_TotalHours) AND ([TotalMoney] = @Original_TotalMoney))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PaySlipId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PaySlipId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -3259,8 +3259,8 @@ SELECT EmployeeId, FirstName, LastName, DOB, DateHired, Position, HourlyRate FRO
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_TotalMoney", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalMoney", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[PR_Payslip] ([EmployeeId], [DateFrom], [EndDate], [TotalHours], [TotalMoney]) VALUES (@EmployeeId, @DateFrom, @EndDate, @TotalHours, @TotalMoney);
-SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_Payslip WHERE (PaySlipId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[TPayslip] ([EmployeeId], [DateFrom], [EndDate], [TotalHours], [TotalMoney]) VALUES (@EmployeeId, @DateFrom, @EndDate, @TotalHours, @TotalMoney);
+SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM TPayslip WHERE (PaySlipId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFrom", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3269,8 +3269,8 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@TotalMoney", global::System.Data.SqlDbType.Money, 0, global::System.Data.ParameterDirection.Input, 0, 0, "TotalMoney", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PR_Payslip] SET [EmployeeId] = @EmployeeId, [DateFrom] = @DateFrom, [EndDate] = @EndDate, [TotalHours] = @TotalHours, [TotalMoney] = @TotalMoney WHERE (([PaySlipId] = @Original_PaySlipId) AND ((@IsNull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeId)) AND ([DateFrom] = @Original_DateFrom) AND ([EndDate] = @Original_EndDate) AND ([TotalHours] = @Original_TotalHours) AND ([TotalMoney] = @Original_TotalMoney));
-SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_Payslip WHERE (PaySlipId = @PaySlipId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TPayslip] SET [EmployeeId] = @EmployeeId, [DateFrom] = @DateFrom, [EndDate] = @EndDate, [TotalHours] = @TotalHours, [TotalMoney] = @TotalMoney WHERE (([PaySlipId] = @Original_PaySlipId) AND ((@IsNull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeId)) AND ([DateFrom] = @Original_DateFrom) AND ([EndDate] = @Original_EndDate) AND ([TotalHours] = @Original_TotalHours) AND ([TotalMoney] = @Original_TotalMoney));
+SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM TPayslip WHERE (PaySlipId = @PaySlipId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@DateFrom", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "DateFrom", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3301,7 +3301,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM dbo." +
-                "PR_Payslip";
+                "TPayslip";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3309,7 +3309,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PayrollDBDataSet.PR_PayslipDataTable dataTable) {
+        public virtual int Fill(PayrollDataSet.TPayslipDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3322,9 +3322,9 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PayrollDBDataSet.PR_PayslipDataTable GetData() {
+        public virtual PayrollDataSet.TPayslipDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PayrollDBDataSet.PR_PayslipDataTable dataTable = new PayrollDBDataSet.PR_PayslipDataTable();
+            PayrollDataSet.TPayslipDataTable dataTable = new PayrollDataSet.TPayslipDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3332,15 +3332,15 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet.PR_PayslipDataTable dataTable) {
+        public virtual int Update(PayrollDataSet.TPayslipDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "PR_Payslip");
+        public virtual int Update(PayrollDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "TPayslip");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3486,7 +3486,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PR_ScheduleTableAdapter : global::System.ComponentModel.Component {
+    public partial class TScheduleTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3500,7 +3500,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PR_ScheduleTableAdapter() {
+        public TScheduleTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3597,15 +3597,15 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PR_Schedule";
+            tableMapping.DataSetTable = "TSchedule";
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("Shift", "Shift");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PR_Schedule] ([EmployeeId], [Date], [Shift]) VALUES (@Employee" +
-                "Id, @Date, @Shift)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TSchedule] ([EmployeeId], [Date], [Shift]) VALUES (@EmployeeId" +
+                ", @Date, @Shift)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3625,7 +3625,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EmployeeId, Date, Shift FROM dbo.PR_Schedule";
+            this._commandCollection[0].CommandText = "SELECT EmployeeId, Date, Shift FROM dbo.TSchedule";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3633,7 +3633,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PayrollDBDataSet.PR_ScheduleDataTable dataTable) {
+        public virtual int Fill(PayrollDataSet.TScheduleDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3646,9 +3646,9 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PayrollDBDataSet.PR_ScheduleDataTable GetData() {
+        public virtual PayrollDataSet.TScheduleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PayrollDBDataSet.PR_ScheduleDataTable dataTable = new PayrollDBDataSet.PR_ScheduleDataTable();
+            PayrollDataSet.TScheduleDataTable dataTable = new PayrollDataSet.TScheduleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3656,15 +3656,15 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet.PR_ScheduleDataTable dataTable) {
+        public virtual int Update(PayrollDataSet.TScheduleDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "PR_Schedule");
+        public virtual int Update(PayrollDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "TSchedule");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3726,7 +3726,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PR_TimesheetTableAdapter : global::System.ComponentModel.Component {
+    public partial class TTimesheetTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3740,7 +3740,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PR_TimesheetTableAdapter() {
+        public TTimesheetTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -3837,7 +3837,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PR_Timesheet";
+            tableMapping.DataSetTable = "TTimesheet";
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
             tableMapping.ColumnMappings.Add("Date", "Date");
             tableMapping.ColumnMappings.Add("CLockInTime", "CLockInTime");
@@ -3846,9 +3846,9 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PR_Timesheet] ([EmployeeId], [Date], [CLockInTime], [ClockOutT" +
-                "ime], [TotalHours]) VALUES (@EmployeeId, @Date, @CLockInTime, @ClockOutTime, @To" +
-                "talHours)";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TTimesheet] ([EmployeeId], [Date], [CLockInTime], [ClockOutTim" +
+                "e], [TotalHours]) VALUES (@EmployeeId, @Date, @CLockInTime, @ClockOutTime, @Tota" +
+                "lHours)";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -3870,8 +3870,8 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM dbo.PR_Timesh" +
-                "eet";
+            this._commandCollection[0].CommandText = "SELECT EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM dbo.TTimeshee" +
+                "t";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -3879,7 +3879,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PayrollDBDataSet.PR_TimesheetDataTable dataTable) {
+        public virtual int Fill(PayrollDataSet.TTimesheetDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3892,9 +3892,9 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PayrollDBDataSet.PR_TimesheetDataTable GetData() {
+        public virtual PayrollDataSet.TTimesheetDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PayrollDBDataSet.PR_TimesheetDataTable dataTable = new PayrollDBDataSet.PR_TimesheetDataTable();
+            PayrollDataSet.TTimesheetDataTable dataTable = new PayrollDataSet.TTimesheetDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3902,15 +3902,15 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet.PR_TimesheetDataTable dataTable) {
+        public virtual int Update(PayrollDataSet.TTimesheetDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "PR_Timesheet");
+        public virtual int Update(PayrollDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "TTimesheet");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3969,7 +3969,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class PR_User_LoginTableAdapter : global::System.ComponentModel.Component {
+    public partial class TUserLoginTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -3983,7 +3983,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public PR_User_LoginTableAdapter() {
+        public TUserLoginTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -4080,7 +4080,7 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "PR_User_Login";
+            tableMapping.DataSetTable = "TUserLogin";
             tableMapping.ColumnMappings.Add("UserId", "UserId");
             tableMapping.ColumnMappings.Add("EmployeeId", "EmployeeId");
             tableMapping.ColumnMappings.Add("UserName", "UserName");
@@ -4088,10 +4088,10 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[PR_User_Login] WHERE (([UserId] = @Original_UserId) AND ((@IsN" +
-                "ull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_Employ" +
-                "eeId)) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Passwor" +
-                "d))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[TUserLogin] WHERE (([UserId] = @Original_UserId) AND ((@IsNull" +
+                "_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeI" +
+                "d)) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Password))" +
+                "";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_UserId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserId", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@IsNull_EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Original, true, null, "", "", ""));
@@ -4100,17 +4100,17 @@ SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM PR_
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[PR_User_Login] ([EmployeeId], [UserName], [Password]) VALUES (" +
-                "@EmployeeId, @UserName, @Password);\r\nSELECT UserId, EmployeeId, UserName, Passwo" +
-                "rd FROM PR_User_Login WHERE (UserId = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[TUserLogin] ([EmployeeId], [UserName], [Password]) VALUES (@Em" +
+                "ployeeId, @UserName, @Password);\r\nSELECT UserId, EmployeeId, UserName, Password " +
+                "FROM TUserLogin WHERE (UserId = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Password", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Password", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[PR_User_Login] SET [EmployeeId] = @EmployeeId, [UserName] = @UserName, [Password] = @Password WHERE (([UserId] = @Original_UserId) AND ((@IsNull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeId)) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Password));
-SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId = @UserId)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[TUserLogin] SET [EmployeeId] = @EmployeeId, [UserName] = @UserName, [Password] = @Password WHERE (([UserId] = @Original_UserId) AND ((@IsNull_EmployeeId = 1 AND [EmployeeId] IS NULL) OR ([EmployeeId] = @Original_EmployeeId)) AND ([UserName] = @Original_UserName) AND ([Password] = @Original_Password));
+SELECT UserId, EmployeeId, UserName, Password FROM TUserLogin WHERE (UserId = @UserId)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@EmployeeId", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "EmployeeId", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@UserName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "UserName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
@@ -4136,7 +4136,7 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT UserId, EmployeeId, UserName, Password FROM dbo.PR_User_Login";
+            this._commandCollection[0].CommandText = "SELECT UserId, EmployeeId, UserName, Password FROM dbo.TUserLogin";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -4144,7 +4144,7 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PayrollDBDataSet.PR_User_LoginDataTable dataTable) {
+        public virtual int Fill(PayrollDataSet.TUserLoginDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4157,9 +4157,9 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PayrollDBDataSet.PR_User_LoginDataTable GetData() {
+        public virtual PayrollDataSet.TUserLoginDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PayrollDBDataSet.PR_User_LoginDataTable dataTable = new PayrollDBDataSet.PR_User_LoginDataTable();
+            PayrollDataSet.TUserLoginDataTable dataTable = new PayrollDataSet.TUserLoginDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4167,15 +4167,15 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet.PR_User_LoginDataTable dataTable) {
+        public virtual int Update(PayrollDataSet.TUserLoginDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PayrollDBDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "PR_User_Login");
+        public virtual int Update(PayrollDataSet dataSet) {
+            return this.Adapter.Update(dataSet, "TUserLogin");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4356,15 +4356,15 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         
         private UpdateOrderOption _updateOrder;
         
-        private PR_EmployeeTableAdapter _pR_EmployeeTableAdapter;
+        private TEmployeeTableAdapter _tEmployeeTableAdapter;
         
-        private PR_PayslipTableAdapter _pR_PayslipTableAdapter;
+        private TPayslipTableAdapter _tPayslipTableAdapter;
         
-        private PR_ScheduleTableAdapter _pR_ScheduleTableAdapter;
+        private TScheduleTableAdapter _tScheduleTableAdapter;
         
-        private PR_TimesheetTableAdapter _pR_TimesheetTableAdapter;
+        private TTimesheetTableAdapter _tTimesheetTableAdapter;
         
-        private PR_User_LoginTableAdapter _pR_User_LoginTableAdapter;
+        private TUserLoginTableAdapter _tUserLoginTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -4386,12 +4386,12 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PR_EmployeeTableAdapter PR_EmployeeTableAdapter {
+        public TEmployeeTableAdapter TEmployeeTableAdapter {
             get {
-                return this._pR_EmployeeTableAdapter;
+                return this._tEmployeeTableAdapter;
             }
             set {
-                this._pR_EmployeeTableAdapter = value;
+                this._tEmployeeTableAdapter = value;
             }
         }
         
@@ -4400,12 +4400,12 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PR_PayslipTableAdapter PR_PayslipTableAdapter {
+        public TPayslipTableAdapter TPayslipTableAdapter {
             get {
-                return this._pR_PayslipTableAdapter;
+                return this._tPayslipTableAdapter;
             }
             set {
-                this._pR_PayslipTableAdapter = value;
+                this._tPayslipTableAdapter = value;
             }
         }
         
@@ -4414,12 +4414,12 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PR_ScheduleTableAdapter PR_ScheduleTableAdapter {
+        public TScheduleTableAdapter TScheduleTableAdapter {
             get {
-                return this._pR_ScheduleTableAdapter;
+                return this._tScheduleTableAdapter;
             }
             set {
-                this._pR_ScheduleTableAdapter = value;
+                this._tScheduleTableAdapter = value;
             }
         }
         
@@ -4428,12 +4428,12 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PR_TimesheetTableAdapter PR_TimesheetTableAdapter {
+        public TTimesheetTableAdapter TTimesheetTableAdapter {
             get {
-                return this._pR_TimesheetTableAdapter;
+                return this._tTimesheetTableAdapter;
             }
             set {
-                this._pR_TimesheetTableAdapter = value;
+                this._tTimesheetTableAdapter = value;
             }
         }
         
@@ -4442,12 +4442,12 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public PR_User_LoginTableAdapter PR_User_LoginTableAdapter {
+        public TUserLoginTableAdapter TUserLoginTableAdapter {
             get {
-                return this._pR_User_LoginTableAdapter;
+                return this._tUserLoginTableAdapter;
             }
             set {
-                this._pR_User_LoginTableAdapter = value;
+                this._tUserLoginTableAdapter = value;
             }
         }
         
@@ -4470,25 +4470,25 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._pR_EmployeeTableAdapter != null) 
-                            && (this._pR_EmployeeTableAdapter.Connection != null))) {
-                    return this._pR_EmployeeTableAdapter.Connection;
+                if (((this._tEmployeeTableAdapter != null) 
+                            && (this._tEmployeeTableAdapter.Connection != null))) {
+                    return this._tEmployeeTableAdapter.Connection;
                 }
-                if (((this._pR_PayslipTableAdapter != null) 
-                            && (this._pR_PayslipTableAdapter.Connection != null))) {
-                    return this._pR_PayslipTableAdapter.Connection;
+                if (((this._tPayslipTableAdapter != null) 
+                            && (this._tPayslipTableAdapter.Connection != null))) {
+                    return this._tPayslipTableAdapter.Connection;
                 }
-                if (((this._pR_ScheduleTableAdapter != null) 
-                            && (this._pR_ScheduleTableAdapter.Connection != null))) {
-                    return this._pR_ScheduleTableAdapter.Connection;
+                if (((this._tScheduleTableAdapter != null) 
+                            && (this._tScheduleTableAdapter.Connection != null))) {
+                    return this._tScheduleTableAdapter.Connection;
                 }
-                if (((this._pR_TimesheetTableAdapter != null) 
-                            && (this._pR_TimesheetTableAdapter.Connection != null))) {
-                    return this._pR_TimesheetTableAdapter.Connection;
+                if (((this._tTimesheetTableAdapter != null) 
+                            && (this._tTimesheetTableAdapter.Connection != null))) {
+                    return this._tTimesheetTableAdapter.Connection;
                 }
-                if (((this._pR_User_LoginTableAdapter != null) 
-                            && (this._pR_User_LoginTableAdapter.Connection != null))) {
-                    return this._pR_User_LoginTableAdapter.Connection;
+                if (((this._tUserLoginTableAdapter != null) 
+                            && (this._tUserLoginTableAdapter.Connection != null))) {
+                    return this._tUserLoginTableAdapter.Connection;
                 }
                 return null;
             }
@@ -4503,19 +4503,19 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._pR_EmployeeTableAdapter != null)) {
+                if ((this._tEmployeeTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pR_PayslipTableAdapter != null)) {
+                if ((this._tPayslipTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pR_ScheduleTableAdapter != null)) {
+                if ((this._tScheduleTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pR_TimesheetTableAdapter != null)) {
+                if ((this._tTimesheetTableAdapter != null)) {
                     count = (count + 1);
                 }
-                if ((this._pR_User_LoginTableAdapter != null)) {
+                if ((this._tUserLoginTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -4527,50 +4527,50 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(PayrollDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(PayrollDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pR_EmployeeTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PR_Employee.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tEmployeeTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TEmployee.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pR_EmployeeTableAdapter.Update(updatedRows));
+                    result = (result + this._tEmployeeTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pR_PayslipTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PR_Payslip.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tPayslipTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TPayslip.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pR_PayslipTableAdapter.Update(updatedRows));
+                    result = (result + this._tPayslipTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pR_ScheduleTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PR_Schedule.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tScheduleTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TSchedule.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pR_ScheduleTableAdapter.Update(updatedRows));
+                    result = (result + this._tScheduleTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pR_TimesheetTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PR_Timesheet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tTimesheetTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TTimesheet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pR_TimesheetTableAdapter.Update(updatedRows));
+                    result = (result + this._tTimesheetTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
-            if ((this._pR_User_LoginTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.PR_User_Login.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._tUserLoginTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.TUserLogin.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._pR_User_LoginTableAdapter.Update(updatedRows));
+                    result = (result + this._tUserLoginTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -4582,45 +4582,45 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(PayrollDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(PayrollDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._pR_EmployeeTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PR_Employee.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tEmployeeTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TEmployee.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pR_EmployeeTableAdapter.Update(addedRows));
+                    result = (result + this._tEmployeeTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pR_PayslipTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PR_Payslip.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tPayslipTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TPayslip.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pR_PayslipTableAdapter.Update(addedRows));
+                    result = (result + this._tPayslipTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pR_ScheduleTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PR_Schedule.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tScheduleTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TSchedule.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pR_ScheduleTableAdapter.Update(addedRows));
+                    result = (result + this._tScheduleTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pR_TimesheetTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PR_Timesheet.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tTimesheetTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TTimesheet.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pR_TimesheetTableAdapter.Update(addedRows));
+                    result = (result + this._tTimesheetTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
-            if ((this._pR_User_LoginTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.PR_User_Login.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._tUserLoginTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.TUserLogin.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._pR_User_LoginTableAdapter.Update(addedRows));
+                    result = (result + this._tUserLoginTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -4632,45 +4632,45 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(PayrollDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(PayrollDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._pR_User_LoginTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PR_User_Login.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tUserLoginTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TUserLogin.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pR_User_LoginTableAdapter.Update(deletedRows));
+                    result = (result + this._tUserLoginTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pR_TimesheetTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PR_Timesheet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tTimesheetTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TTimesheet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pR_TimesheetTableAdapter.Update(deletedRows));
+                    result = (result + this._tTimesheetTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pR_ScheduleTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PR_Schedule.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tScheduleTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TSchedule.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pR_ScheduleTableAdapter.Update(deletedRows));
+                    result = (result + this._tScheduleTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pR_PayslipTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PR_Payslip.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tPayslipTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TPayslip.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pR_PayslipTableAdapter.Update(deletedRows));
+                    result = (result + this._tPayslipTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
-            if ((this._pR_EmployeeTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.PR_Employee.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._tEmployeeTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.TEmployee.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._pR_EmployeeTableAdapter.Update(deletedRows));
+                    result = (result + this._tEmployeeTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -4706,35 +4706,35 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(PayrollDBDataSet dataSet) {
+        public virtual int UpdateAll(PayrollDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._pR_EmployeeTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pR_EmployeeTableAdapter.Connection) == false))) {
+            if (((this._tEmployeeTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tEmployeeTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pR_PayslipTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pR_PayslipTableAdapter.Connection) == false))) {
+            if (((this._tPayslipTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tPayslipTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pR_ScheduleTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pR_ScheduleTableAdapter.Connection) == false))) {
+            if (((this._tScheduleTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tScheduleTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pR_TimesheetTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pR_TimesheetTableAdapter.Connection) == false))) {
+            if (((this._tTimesheetTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tTimesheetTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
-            if (((this._pR_User_LoginTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._pR_User_LoginTableAdapter.Connection) == false))) {
+            if (((this._tUserLoginTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._tUserLoginTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -4770,49 +4770,49 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._pR_EmployeeTableAdapter != null)) {
-                    revertConnections.Add(this._pR_EmployeeTableAdapter, this._pR_EmployeeTableAdapter.Connection);
-                    this._pR_EmployeeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pR_EmployeeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pR_EmployeeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pR_EmployeeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pR_EmployeeTableAdapter.Adapter);
+                if ((this._tEmployeeTableAdapter != null)) {
+                    revertConnections.Add(this._tEmployeeTableAdapter, this._tEmployeeTableAdapter.Connection);
+                    this._tEmployeeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tEmployeeTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tEmployeeTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tEmployeeTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tEmployeeTableAdapter.Adapter);
                     }
                 }
-                if ((this._pR_PayslipTableAdapter != null)) {
-                    revertConnections.Add(this._pR_PayslipTableAdapter, this._pR_PayslipTableAdapter.Connection);
-                    this._pR_PayslipTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pR_PayslipTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pR_PayslipTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pR_PayslipTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pR_PayslipTableAdapter.Adapter);
+                if ((this._tPayslipTableAdapter != null)) {
+                    revertConnections.Add(this._tPayslipTableAdapter, this._tPayslipTableAdapter.Connection);
+                    this._tPayslipTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tPayslipTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tPayslipTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tPayslipTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tPayslipTableAdapter.Adapter);
                     }
                 }
-                if ((this._pR_ScheduleTableAdapter != null)) {
-                    revertConnections.Add(this._pR_ScheduleTableAdapter, this._pR_ScheduleTableAdapter.Connection);
-                    this._pR_ScheduleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pR_ScheduleTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pR_ScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pR_ScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pR_ScheduleTableAdapter.Adapter);
+                if ((this._tScheduleTableAdapter != null)) {
+                    revertConnections.Add(this._tScheduleTableAdapter, this._tScheduleTableAdapter.Connection);
+                    this._tScheduleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tScheduleTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tScheduleTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tScheduleTableAdapter.Adapter);
                     }
                 }
-                if ((this._pR_TimesheetTableAdapter != null)) {
-                    revertConnections.Add(this._pR_TimesheetTableAdapter, this._pR_TimesheetTableAdapter.Connection);
-                    this._pR_TimesheetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pR_TimesheetTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pR_TimesheetTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pR_TimesheetTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pR_TimesheetTableAdapter.Adapter);
+                if ((this._tTimesheetTableAdapter != null)) {
+                    revertConnections.Add(this._tTimesheetTableAdapter, this._tTimesheetTableAdapter.Connection);
+                    this._tTimesheetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tTimesheetTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tTimesheetTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tTimesheetTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tTimesheetTableAdapter.Adapter);
                     }
                 }
-                if ((this._pR_User_LoginTableAdapter != null)) {
-                    revertConnections.Add(this._pR_User_LoginTableAdapter, this._pR_User_LoginTableAdapter.Connection);
-                    this._pR_User_LoginTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._pR_User_LoginTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._pR_User_LoginTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._pR_User_LoginTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._pR_User_LoginTableAdapter.Adapter);
+                if ((this._tUserLoginTableAdapter != null)) {
+                    revertConnections.Add(this._tUserLoginTableAdapter, this._tUserLoginTableAdapter.Connection);
+                    this._tUserLoginTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._tUserLoginTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._tUserLoginTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._tUserLoginTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._tUserLoginTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -4873,25 +4873,25 @@ SELECT UserId, EmployeeId, UserName, Password FROM PR_User_Login WHERE (UserId =
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._pR_EmployeeTableAdapter != null)) {
-                    this._pR_EmployeeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pR_EmployeeTableAdapter]));
-                    this._pR_EmployeeTableAdapter.Transaction = null;
+                if ((this._tEmployeeTableAdapter != null)) {
+                    this._tEmployeeTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tEmployeeTableAdapter]));
+                    this._tEmployeeTableAdapter.Transaction = null;
                 }
-                if ((this._pR_PayslipTableAdapter != null)) {
-                    this._pR_PayslipTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pR_PayslipTableAdapter]));
-                    this._pR_PayslipTableAdapter.Transaction = null;
+                if ((this._tPayslipTableAdapter != null)) {
+                    this._tPayslipTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tPayslipTableAdapter]));
+                    this._tPayslipTableAdapter.Transaction = null;
                 }
-                if ((this._pR_ScheduleTableAdapter != null)) {
-                    this._pR_ScheduleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pR_ScheduleTableAdapter]));
-                    this._pR_ScheduleTableAdapter.Transaction = null;
+                if ((this._tScheduleTableAdapter != null)) {
+                    this._tScheduleTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tScheduleTableAdapter]));
+                    this._tScheduleTableAdapter.Transaction = null;
                 }
-                if ((this._pR_TimesheetTableAdapter != null)) {
-                    this._pR_TimesheetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pR_TimesheetTableAdapter]));
-                    this._pR_TimesheetTableAdapter.Transaction = null;
+                if ((this._tTimesheetTableAdapter != null)) {
+                    this._tTimesheetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tTimesheetTableAdapter]));
+                    this._tTimesheetTableAdapter.Transaction = null;
                 }
-                if ((this._pR_User_LoginTableAdapter != null)) {
-                    this._pR_User_LoginTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._pR_User_LoginTableAdapter]));
-                    this._pR_User_LoginTableAdapter.Transaction = null;
+                if ((this._tUserLoginTableAdapter != null)) {
+                    this._tUserLoginTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._tUserLoginTableAdapter]));
+                    this._tUserLoginTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

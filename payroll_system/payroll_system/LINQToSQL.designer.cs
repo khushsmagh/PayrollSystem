@@ -23,97 +23,97 @@ namespace payroll_system
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="retailmgmt")]
-	public partial class LINQToSQLDataContext : System.Data.Linq.DataContext
+	public partial class LinqToSQLDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertPR_Employee(PR_Employee instance);
-    partial void UpdatePR_Employee(PR_Employee instance);
-    partial void DeletePR_Employee(PR_Employee instance);
-    partial void InsertPR_Payslip(PR_Payslip instance);
-    partial void UpdatePR_Payslip(PR_Payslip instance);
-    partial void DeletePR_Payslip(PR_Payslip instance);
-    partial void InsertPR_User_Login(PR_User_Login instance);
-    partial void UpdatePR_User_Login(PR_User_Login instance);
-    partial void DeletePR_User_Login(PR_User_Login instance);
+    partial void InsertTEmployee(TEmployee instance);
+    partial void UpdateTEmployee(TEmployee instance);
+    partial void DeleteTEmployee(TEmployee instance);
+    partial void InsertTUserLogin(TUserLogin instance);
+    partial void UpdateTUserLogin(TUserLogin instance);
+    partial void DeleteTUserLogin(TUserLogin instance);
+    partial void InsertTPayslip(TPayslip instance);
+    partial void UpdateTPayslip(TPayslip instance);
+    partial void DeleteTPayslip(TPayslip instance);
     #endregion
 		
-		public LINQToSQLDataContext() : 
+		public LinqToSQLDataContext() : 
 				base(global::payroll_system.Properties.Settings.Default.retailmgmtConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LINQToSQLDataContext(string connection) : 
+		public LinqToSQLDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LINQToSQLDataContext(System.Data.IDbConnection connection) : 
+		public LinqToSQLDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LINQToSQLDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public LinqToSQLDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public LINQToSQLDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public LinqToSQLDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<PR_Employee> PR_Employees
+		public System.Data.Linq.Table<TEmployee> TEmployees
 		{
 			get
 			{
-				return this.GetTable<PR_Employee>();
+				return this.GetTable<TEmployee>();
 			}
 		}
 		
-		public System.Data.Linq.Table<PR_Payslip> PR_Payslips
+		public System.Data.Linq.Table<TSchedule> TSchedules
 		{
 			get
 			{
-				return this.GetTable<PR_Payslip>();
+				return this.GetTable<TSchedule>();
 			}
 		}
 		
-		public System.Data.Linq.Table<PR_Schedule> PR_Schedules
+		public System.Data.Linq.Table<TTimesheet> TTimesheets
 		{
 			get
 			{
-				return this.GetTable<PR_Schedule>();
+				return this.GetTable<TTimesheet>();
 			}
 		}
 		
-		public System.Data.Linq.Table<PR_Timesheet> PR_Timesheets
+		public System.Data.Linq.Table<TUserLogin> TUserLogins
 		{
 			get
 			{
-				return this.GetTable<PR_Timesheet>();
+				return this.GetTable<TUserLogin>();
 			}
 		}
 		
-		public System.Data.Linq.Table<PR_User_Login> PR_User_Logins
+		public System.Data.Linq.Table<TPayslip> TPayslips
 		{
 			get
 			{
-				return this.GetTable<PR_User_Login>();
+				return this.GetTable<TPayslip>();
 			}
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PR_Employee")]
-	public partial class PR_Employee : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TEmployee")]
+	public partial class TEmployee : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -132,9 +132,9 @@ namespace payroll_system
 		
 		private decimal _HourlyRate;
 		
-		private EntitySet<PR_Payslip> _PR_Payslips;
+		private EntitySet<TUserLogin> _TUserLogins;
 		
-		private EntitySet<PR_User_Login> _PR_User_Logins;
+		private EntitySet<TPayslip> _TPayslips;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -156,10 +156,10 @@ namespace payroll_system
     partial void OnHourlyRateChanged();
     #endregion
 		
-		public PR_Employee()
+		public TEmployee()
 		{
-			this._PR_Payslips = new EntitySet<PR_Payslip>(new Action<PR_Payslip>(this.attach_PR_Payslips), new Action<PR_Payslip>(this.detach_PR_Payslips));
-			this._PR_User_Logins = new EntitySet<PR_User_Login>(new Action<PR_User_Login>(this.attach_PR_User_Logins), new Action<PR_User_Login>(this.detach_PR_User_Logins));
+			this._TUserLogins = new EntitySet<TUserLogin>(new Action<TUserLogin>(this.attach_TUserLogins), new Action<TUserLogin>(this.detach_TUserLogins));
+			this._TPayslips = new EntitySet<TPayslip>(new Action<TPayslip>(this.attach_TPayslips), new Action<TPayslip>(this.detach_TPayslips));
 			OnCreated();
 		}
 		
@@ -303,29 +303,29 @@ namespace payroll_system
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PR_Employee_PR_Payslip", Storage="_PR_Payslips", ThisKey="EmployeeId", OtherKey="EmployeeId")]
-		public EntitySet<PR_Payslip> PR_Payslips
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TUserLogin", Storage="_TUserLogins", ThisKey="EmployeeId", OtherKey="EmployeeId")]
+		public EntitySet<TUserLogin> TUserLogins
 		{
 			get
 			{
-				return this._PR_Payslips;
+				return this._TUserLogins;
 			}
 			set
 			{
-				this._PR_Payslips.Assign(value);
+				this._TUserLogins.Assign(value);
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PR_Employee_PR_User_Login", Storage="_PR_User_Logins", ThisKey="EmployeeId", OtherKey="EmployeeId")]
-		public EntitySet<PR_User_Login> PR_User_Logins
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TPayslip", Storage="_TPayslips", ThisKey="EmployeeId", OtherKey="EmployeeId")]
+		public EntitySet<TPayslip> TPayslips
 		{
 			get
 			{
-				return this._PR_User_Logins;
+				return this._TPayslips;
 			}
 			set
 			{
-				this._PR_User_Logins.Assign(value);
+				this._TPayslips.Assign(value);
 			}
 		}
 		
@@ -349,33 +349,370 @@ namespace payroll_system
 			}
 		}
 		
-		private void attach_PR_Payslips(PR_Payslip entity)
+		private void attach_TUserLogins(TUserLogin entity)
 		{
 			this.SendPropertyChanging();
-			entity.PR_Employee = this;
+			entity.TEmployee = this;
 		}
 		
-		private void detach_PR_Payslips(PR_Payslip entity)
+		private void detach_TUserLogins(TUserLogin entity)
 		{
 			this.SendPropertyChanging();
-			entity.PR_Employee = null;
+			entity.TEmployee = null;
 		}
 		
-		private void attach_PR_User_Logins(PR_User_Login entity)
+		private void attach_TPayslips(TPayslip entity)
 		{
 			this.SendPropertyChanging();
-			entity.PR_Employee = this;
+			entity.TEmployee = this;
 		}
 		
-		private void detach_PR_User_Logins(PR_User_Login entity)
+		private void detach_TPayslips(TPayslip entity)
 		{
 			this.SendPropertyChanging();
-			entity.PR_Employee = null;
+			entity.TEmployee = null;
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PR_Payslip")]
-	public partial class PR_Payslip : INotifyPropertyChanging, INotifyPropertyChanged
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSchedule")]
+	public partial class TSchedule
+	{
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private System.DateTime _Date;
+		
+		private string _Shift;
+		
+		public TSchedule()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					this._EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shift", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Shift
+		{
+			get
+			{
+				return this._Shift;
+			}
+			set
+			{
+				if ((this._Shift != value))
+				{
+					this._Shift = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TTimesheet")]
+	public partial class TTimesheet
+	{
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private System.DateTime _Date;
+		
+		private System.TimeSpan _CLockInTime;
+		
+		private System.TimeSpan _ClockOutTime;
+		
+		private decimal _TotalHours;
+		
+		public TTimesheet()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					this._EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CLockInTime", DbType="Time NOT NULL")]
+		public System.TimeSpan CLockInTime
+		{
+			get
+			{
+				return this._CLockInTime;
+			}
+			set
+			{
+				if ((this._CLockInTime != value))
+				{
+					this._CLockInTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClockOutTime", DbType="Time NOT NULL")]
+		public System.TimeSpan ClockOutTime
+		{
+			get
+			{
+				return this._ClockOutTime;
+			}
+			set
+			{
+				if ((this._ClockOutTime != value))
+				{
+					this._ClockOutTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalHours", DbType="Decimal(4,0) NOT NULL")]
+		public decimal TotalHours
+		{
+			get
+			{
+				return this._TotalHours;
+			}
+			set
+			{
+				if ((this._TotalHours != value))
+				{
+					this._TotalHours = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TUserLogin")]
+	public partial class TUserLogin : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _UserId;
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private string _UserName;
+		
+		private string _Password;
+		
+		private EntityRef<TEmployee> _TEmployee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnUserIdChanging(int value);
+    partial void OnUserIdChanged();
+    partial void OnEmployeeIdChanging(System.Nullable<int> value);
+    partial void OnEmployeeIdChanged();
+    partial void OnUserNameChanging(string value);
+    partial void OnUserNameChanged();
+    partial void OnPasswordChanging(string value);
+    partial void OnPasswordChanged();
+    #endregion
+		
+		public TUserLogin()
+		{
+			this._TEmployee = default(EntityRef<TEmployee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int UserId
+		{
+			get
+			{
+				return this._UserId;
+			}
+			set
+			{
+				if ((this._UserId != value))
+				{
+					this.OnUserIdChanging(value);
+					this.SendPropertyChanging();
+					this._UserId = value;
+					this.SendPropertyChanged("UserId");
+					this.OnUserIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					if (this._TEmployee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIdChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeId = value;
+					this.SendPropertyChanged("EmployeeId");
+					this.OnEmployeeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string UserName
+		{
+			get
+			{
+				return this._UserName;
+			}
+			set
+			{
+				if ((this._UserName != value))
+				{
+					this.OnUserNameChanging(value);
+					this.SendPropertyChanging();
+					this._UserName = value;
+					this.SendPropertyChanged("UserName");
+					this.OnUserNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
+		public string Password
+		{
+			get
+			{
+				return this._Password;
+			}
+			set
+			{
+				if ((this._Password != value))
+				{
+					this.OnPasswordChanging(value);
+					this.SendPropertyChanging();
+					this._Password = value;
+					this.SendPropertyChanged("Password");
+					this.OnPasswordChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TUserLogin", Storage="_TEmployee", ThisKey="EmployeeId", OtherKey="EmployeeId", IsForeignKey=true)]
+		public TEmployee TEmployee
+		{
+			get
+			{
+				return this._TEmployee.Entity;
+			}
+			set
+			{
+				TEmployee previousValue = this._TEmployee.Entity;
+				if (((previousValue != value) 
+							|| (this._TEmployee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TEmployee.Entity = null;
+						previousValue.TUserLogins.Remove(this);
+					}
+					this._TEmployee.Entity = value;
+					if ((value != null))
+					{
+						value.TUserLogins.Add(this);
+						this._EmployeeId = value.EmployeeId;
+					}
+					else
+					{
+						this._EmployeeId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TEmployee");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TPayslip")]
+	public partial class TPayslip : INotifyPropertyChanging, INotifyPropertyChanged
 	{
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
@@ -392,7 +729,7 @@ namespace payroll_system
 		
 		private decimal _TotalMoney;
 		
-		private EntityRef<PR_Employee> _PR_Employee;
+		private EntityRef<TEmployee> _TEmployee;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -412,9 +749,9 @@ namespace payroll_system
     partial void OnTotalMoneyChanged();
     #endregion
 		
-		public PR_Payslip()
+		public TPayslip()
 		{
-			this._PR_Employee = default(EntityRef<PR_Employee>);
+			this._TEmployee = default(EntityRef<TEmployee>);
 			OnCreated();
 		}
 		
@@ -449,7 +786,7 @@ namespace payroll_system
 			{
 				if ((this._EmployeeId != value))
 				{
-					if (this._PR_Employee.HasLoadedOrAssignedValue)
+					if (this._TEmployee.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -542,373 +879,36 @@ namespace payroll_system
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PR_Employee_PR_Payslip", Storage="_PR_Employee", ThisKey="EmployeeId", OtherKey="EmployeeId", IsForeignKey=true)]
-		public PR_Employee PR_Employee
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TPayslip", Storage="_TEmployee", ThisKey="EmployeeId", OtherKey="EmployeeId", IsForeignKey=true)]
+		public TEmployee TEmployee
 		{
 			get
 			{
-				return this._PR_Employee.Entity;
+				return this._TEmployee.Entity;
 			}
 			set
 			{
-				PR_Employee previousValue = this._PR_Employee.Entity;
+				TEmployee previousValue = this._TEmployee.Entity;
 				if (((previousValue != value) 
-							|| (this._PR_Employee.HasLoadedOrAssignedValue == false)))
+							|| (this._TEmployee.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._PR_Employee.Entity = null;
-						previousValue.PR_Payslips.Remove(this);
+						this._TEmployee.Entity = null;
+						previousValue.TPayslips.Remove(this);
 					}
-					this._PR_Employee.Entity = value;
+					this._TEmployee.Entity = value;
 					if ((value != null))
 					{
-						value.PR_Payslips.Add(this);
+						value.TPayslips.Add(this);
 						this._EmployeeId = value.EmployeeId;
 					}
 					else
 					{
 						this._EmployeeId = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("PR_Employee");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PR_Schedule")]
-	public partial class PR_Schedule
-	{
-		
-		private System.Nullable<int> _EmployeeId;
-		
-		private System.DateTime _Date;
-		
-		private string _Shift;
-		
-		public PR_Schedule()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
-		public System.Nullable<int> EmployeeId
-		{
-			get
-			{
-				return this._EmployeeId;
-			}
-			set
-			{
-				if ((this._EmployeeId != value))
-				{
-					this._EmployeeId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shift", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Shift
-		{
-			get
-			{
-				return this._Shift;
-			}
-			set
-			{
-				if ((this._Shift != value))
-				{
-					this._Shift = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PR_Timesheet")]
-	public partial class PR_Timesheet
-	{
-		
-		private System.Nullable<int> _EmployeeId;
-		
-		private System.DateTime _Date;
-		
-		private System.TimeSpan _CLockInTime;
-		
-		private System.TimeSpan _ClockOutTime;
-		
-		private decimal _TotalHours;
-		
-		public PR_Timesheet()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
-		public System.Nullable<int> EmployeeId
-		{
-			get
-			{
-				return this._EmployeeId;
-			}
-			set
-			{
-				if ((this._EmployeeId != value))
-				{
-					this._EmployeeId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CLockInTime", DbType="Time NOT NULL")]
-		public System.TimeSpan CLockInTime
-		{
-			get
-			{
-				return this._CLockInTime;
-			}
-			set
-			{
-				if ((this._CLockInTime != value))
-				{
-					this._CLockInTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClockOutTime", DbType="Time NOT NULL")]
-		public System.TimeSpan ClockOutTime
-		{
-			get
-			{
-				return this._ClockOutTime;
-			}
-			set
-			{
-				if ((this._ClockOutTime != value))
-				{
-					this._ClockOutTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalHours", DbType="Decimal(4,0) NOT NULL")]
-		public decimal TotalHours
-		{
-			get
-			{
-				return this._TotalHours;
-			}
-			set
-			{
-				if ((this._TotalHours != value))
-				{
-					this._TotalHours = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.PR_User_Login")]
-	public partial class PR_User_Login : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _UserId;
-		
-		private System.Nullable<int> _EmployeeId;
-		
-		private string _UserName;
-		
-		private string _Password;
-		
-		private EntityRef<PR_Employee> _PR_Employee;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnUserIdChanging(int value);
-    partial void OnUserIdChanged();
-    partial void OnEmployeeIdChanging(System.Nullable<int> value);
-    partial void OnEmployeeIdChanged();
-    partial void OnUserNameChanging(string value);
-    partial void OnUserNameChanged();
-    partial void OnPasswordChanging(string value);
-    partial void OnPasswordChanged();
-    #endregion
-		
-		public PR_User_Login()
-		{
-			this._PR_Employee = default(EntityRef<PR_Employee>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int UserId
-		{
-			get
-			{
-				return this._UserId;
-			}
-			set
-			{
-				if ((this._UserId != value))
-				{
-					this.OnUserIdChanging(value);
-					this.SendPropertyChanging();
-					this._UserId = value;
-					this.SendPropertyChanged("UserId");
-					this.OnUserIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
-		public System.Nullable<int> EmployeeId
-		{
-			get
-			{
-				return this._EmployeeId;
-			}
-			set
-			{
-				if ((this._EmployeeId != value))
-				{
-					if (this._PR_Employee.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnEmployeeIdChanging(value);
-					this.SendPropertyChanging();
-					this._EmployeeId = value;
-					this.SendPropertyChanged("EmployeeId");
-					this.OnEmployeeIdChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_UserName", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string UserName
-		{
-			get
-			{
-				return this._UserName;
-			}
-			set
-			{
-				if ((this._UserName != value))
-				{
-					this.OnUserNameChanging(value);
-					this.SendPropertyChanging();
-					this._UserName = value;
-					this.SendPropertyChanged("UserName");
-					this.OnUserNameChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Password", DbType="NVarChar(100) NOT NULL", CanBeNull=false)]
-		public string Password
-		{
-			get
-			{
-				return this._Password;
-			}
-			set
-			{
-				if ((this._Password != value))
-				{
-					this.OnPasswordChanging(value);
-					this.SendPropertyChanging();
-					this._Password = value;
-					this.SendPropertyChanged("Password");
-					this.OnPasswordChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="PR_Employee_PR_User_Login", Storage="_PR_Employee", ThisKey="EmployeeId", OtherKey="EmployeeId", IsForeignKey=true)]
-		public PR_Employee PR_Employee
-		{
-			get
-			{
-				return this._PR_Employee.Entity;
-			}
-			set
-			{
-				PR_Employee previousValue = this._PR_Employee.Entity;
-				if (((previousValue != value) 
-							|| (this._PR_Employee.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._PR_Employee.Entity = null;
-						previousValue.PR_User_Logins.Remove(this);
-					}
-					this._PR_Employee.Entity = value;
-					if ((value != null))
-					{
-						value.PR_User_Logins.Add(this);
-						this._EmployeeId = value.EmployeeId;
-					}
-					else
-					{
-						this._EmployeeId = default(Nullable<int>);
-					}
-					this.SendPropertyChanged("PR_Employee");
+					this.SendPropertyChanged("TEmployee");
 				}
 			}
 		}
