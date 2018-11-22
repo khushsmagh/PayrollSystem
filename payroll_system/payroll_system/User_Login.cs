@@ -9,14 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
-
+using System.Threading;
 
 namespace payroll_system
 {
     public partial class User_Login : Form
     {
-        public static String str = "Server=199.103.60.77;Database=ssaini516;UID=ssaini516;Password=6384344933383240";
-        SqlConnection con = new SqlConnection(str);
         public User_Login()
         {
             InitializeComponent();
@@ -25,22 +23,7 @@ namespace payroll_system
 
         private void User_Login_Load(object sender, EventArgs e)
         {
-            try
-
-            {
-                con.Open();
-
-            }
-
-            catch (Exception es)
-
-            {
-
-                MessageBox.Show(es.Message);
-
-
-
-            }
+           
 
         }
 
@@ -100,26 +83,45 @@ namespace payroll_system
 
         private void loginButton_Click(object sender, EventArgs e)
         {
+            PayrollQuery pq = new PayrollQuery();
             string userName = usernameTextBox.Text;
-            MessageBox.Show(userName);
-            int password = int.Parse(passwordTextBox.Text);
-            var query = "select CustomerId from Customer where CustomerName  = " + "'"+ userName + "'";
-            SqlCommand cmd = new SqlCommand(query, con);
-            SqlDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                if(password == int.Parse(reader[0].ToString()))
-                {
-                    MessageBox.Show("succefully logged in");
-                }
-                else
-                {
-                    MessageBox.Show("password is wrong");
-                }
-            }
-            reader.Close();
-            con.Close();
 
+            List<TUserLogin> userCredential = pq.GetUserLoginsPermission(userName);
+            string userPasswordFromDatabase = userCredential[0].Password;
+
+            string inputPassword = passwordTextBox.Text;
+
+            if(usernameTextBox.Text == "" & passwordTextBox.Text == "")
+            {
+                MessageBox.Show("fields are required");
+            }
+            else if(userPasswordFromDatabase == inputPassword)
+            {
+                MessageBox.Show("loggin successfully");
+                Thread thread = new Thread(new ThreadStart(RunPayrollApp));
+                thread.Start();
+            }
+            else
+            {
+                MessageBox.Show("information is not correct");
+                usernameTextBox.Text = string.Empty;
+                passwordTextBox.Text = string.Empty;
+            }
+           
         }
+        private void RunPayrollApp()
+        {
+            try
+            {
+                Application.Exit();
+                Application.Run(new Payroll());
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+
     }
 }
