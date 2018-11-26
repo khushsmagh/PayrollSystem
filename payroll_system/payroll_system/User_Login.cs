@@ -15,6 +15,19 @@ namespace payroll_system
 {
     public partial class User_Login : Form
     {
+        private int _EmpId;
+        public int EmpId
+        {
+            get
+            {
+                return _EmpId;
+            }
+            set
+            {
+                _EmpId = value;
+            }
+        }
+
         public User_Login()
         {
             InitializeComponent();
@@ -98,6 +111,7 @@ namespace payroll_system
             else if (userPasswordFromDatabase == inputPassword)
             {
                 MessageBox.Show("loggin successfully");
+                EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
                 Thread thread = new Thread(new ThreadStart(RunPayrollApp));
                 thread.Start();
             }
@@ -114,7 +128,7 @@ namespace payroll_system
             try
             {
                 Application.Exit();
-                Application.Run(new Payroll());
+                Application.Run(new Payroll(this._EmpId));
             }
             catch (Exception ex)
             {
