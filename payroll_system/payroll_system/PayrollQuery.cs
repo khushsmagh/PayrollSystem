@@ -16,11 +16,20 @@ namespace payroll_system
             return query;
         }
 
+        public static IEnumerable<TSchedule> GetScheduleInfo(int id)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+            var query = db.ExecuteQuery<TSchedule>(@"SELECT * FROM TEmployee WHERE EmployeeId = {0}", id);
+            return query;
+
+        }
+
         public List<TUserLogin> GetUserLoginsPermission(string nameOfuser)
         {
             LinqToSQLDataContext db = new LinqToSQLDataContext();
             var query = db.ExecuteQuery<TUserLogin>(@"SELECT * FROM TUserLogin where UserName = '" + nameOfuser + "'");
             return query.ToList();
         }
+
     }
 }

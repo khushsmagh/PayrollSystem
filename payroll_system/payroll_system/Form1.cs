@@ -49,11 +49,14 @@ namespace payroll_system
             position.Text = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].Position;
             date_hired.Text = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].DateHired.ToString();
             hourly_rate.Text = "$ " + Math.Round(hr, 2).ToString();
+
+
+            Schedule.PopulateSchedule(ScheduleDataGrid, _UserId);
+
         }
 
-        private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
-        {
+        
 
-        }
+        
     }
 }

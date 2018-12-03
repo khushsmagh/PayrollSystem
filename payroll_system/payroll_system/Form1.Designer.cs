@@ -47,9 +47,23 @@
             this.payslip = new System.Windows.Forms.TabPage();
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.ScheduleDataGrid = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.TSDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSShift = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
+            this.schedule.SuspendLayout();
+            this.timesheet.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -220,6 +234,7 @@
             // schedule
             // 
             this.schedule.AutoScroll = true;
+            this.schedule.Controls.Add(this.ScheduleDataGrid);
             this.schedule.Location = new System.Drawing.Point(4, 32);
             this.schedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.schedule.Name = "schedule";
@@ -232,6 +247,7 @@
             // timesheet
             // 
             this.timesheet.AutoScroll = true;
+            this.timesheet.Controls.Add(this.dataGridView1);
             this.timesheet.Location = new System.Drawing.Point(4, 32);
             this.timesheet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timesheet.Name = "timesheet";
@@ -274,6 +290,77 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // ScheduleDataGrid
+            // 
+            this.ScheduleDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScheduleDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.Day,
+            this.Shift});
+            this.ScheduleDataGrid.Location = new System.Drawing.Point(40, 37);
+            this.ScheduleDataGrid.Name = "ScheduleDataGrid";
+            this.ScheduleDataGrid.RowTemplate.Height = 24;
+            this.ScheduleDataGrid.Size = new System.Drawing.Size(627, 205);
+            this.ScheduleDataGrid.TabIndex = 0;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Day
+            // 
+            this.Day.HeaderText = "Day";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            // 
+            // Shift
+            // 
+            this.Shift.HeaderText = "Shift";
+            this.Shift.Name = "Shift";
+            this.Shift.ReadOnly = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TSDate,
+            this.TSDay,
+            this.TSShift,
+            this.ClockIn,
+            this.ClockOut});
+            this.dataGridView1.Location = new System.Drawing.Point(74, 88);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(543, 263);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // TSDate
+            // 
+            this.TSDate.HeaderText = "Date";
+            this.TSDate.Name = "TSDate";
+            // 
+            // TSDay
+            // 
+            this.TSDay.HeaderText = "Day";
+            this.TSDay.Name = "TSDay";
+            // 
+            // TSShift
+            // 
+            this.TSShift.HeaderText = "Shift";
+            this.TSShift.Name = "TSShift";
+            // 
+            // ClockIn
+            // 
+            this.ClockIn.HeaderText = "ClockIn";
+            this.ClockIn.Name = "ClockIn";
+            // 
+            // ClockOut
+            // 
+            this.ClockOut.HeaderText = "ClockOut";
+            this.ClockOut.Name = "ClockOut";
+            // 
             // Payroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -290,7 +377,11 @@
             this.tabControl1.ResumeLayout(false);
             this.personal_Info.ResumeLayout(false);
             this.personal_Info.PerformLayout();
+            this.schedule.ResumeLayout(false);
+            this.timesheet.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -316,6 +407,16 @@
         private System.Windows.Forms.Label first_name;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView ScheduleDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TSDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TSDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TSShift;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClockIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClockOut;
     }
 }
 
