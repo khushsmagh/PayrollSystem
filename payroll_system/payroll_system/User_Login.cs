@@ -112,8 +112,8 @@ namespace payroll_system
             {
                 MessageBox.Show("loggin successfully");
                 EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
-                Thread thread = new Thread(new ThreadStart(RunPayrollApp));
-                thread.Start();
+                Payroll payroll = new Payroll(this._EmpId);
+                payroll.Show();
             }
             else
             {
@@ -123,19 +123,6 @@ namespace payroll_system
             }
 
         }
-        private void RunPayrollApp()
-        {
-            try
-            {
-                Application.Exit();
-                Application.Run(new Payroll(this._EmpId));
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
-        }
-
 
     }
 }
