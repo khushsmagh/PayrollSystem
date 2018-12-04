@@ -35,23 +35,18 @@ namespace payroll_system
 
         private void Payroll_Load(object sender, EventArgs e)
         {
-            string fn = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].FirstName;
-            string ln = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].LastName;
-            string dobM = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].DOB.Month.ToString();
-            string dobD = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].DOB.Day.ToString();
-            string dobY = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].DOB.Year.ToString();
-            decimal hr = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].HourlyRate;
-
-            employee_name.Text = fn + " " + ln;
-            first_name.Text = fn;
-            last_name.Text = ln;
-            dob.Text = dobM + "/" + dobD + "/" + dobY;
-            position.Text = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].Position;
-            date_hired.Text = PayrollQuery.GetEmployeeInfo(_UserId).ToList()[0].DateHired.ToString();
-            hourly_rate.Text = "$ " + Math.Round(hr, 2).ToString();
+            Personal_Info pi = new Personal_Info(_UserId);
+            employee_name.Text = pi.FirstName + pi.LastName;
+            first_name.Text = pi.FirstName;
+            last_name.Text = pi.LastName;
+            dob.Text = pi.DateOfBirth;
+            position.Text = pi.Position;
+            date_hired.Text = pi.DateHired;
+            hourly_rate.Text = "$ " + Math.Round(pi.PayRate, 2).ToString();
 
 
             Schedule.PopulateSchedule(ScheduleDataGrid, _UserId);
+            Timesheet.PopulateTimesheet(TimesheetDataGrid, _UserId);
 
         }
 

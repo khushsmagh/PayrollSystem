@@ -30,40 +30,39 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.personal_Info = new System.Windows.Forms.TabPage();
-            this.hourly_rate = new System.Windows.Forms.Label();
-            this.date_hired = new System.Windows.Forms.Label();
-            this.position = new System.Windows.Forms.Label();
-            this.dob = new System.Windows.Forms.Label();
-            this.last_name = new System.Windows.Forms.Label();
-            this.first_name = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.schedule = new System.Windows.Forms.TabPage();
-            this.timesheet = new System.Windows.Forms.TabPage();
-            this.payslip = new System.Windows.Forms.TabPage();
-            this.employee_name = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.ScheduleDataGrid = new System.Windows.Forms.DataGridView();
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.timesheet = new System.Windows.Forms.TabPage();
+            this.TimesheetDataGrid = new System.Windows.Forms.DataGridView();
+            this.payslip = new System.Windows.Forms.TabPage();
+            this.employee_name = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.hourly_rate = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.date_hired = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.position = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dob = new System.Windows.Forms.Label();
+            this.last_name = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.first_name = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.TSDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TSDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TSShift = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             this.schedule.SuspendLayout();
-            this.timesheet.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGrid)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.timesheet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesheetDataGrid)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -111,126 +110,6 @@
             this.personal_Info.TabIndex = 0;
             this.personal_Info.Text = "Personal Info";
             // 
-            // hourly_rate
-            // 
-            this.hourly_rate.AutoSize = true;
-            this.hourly_rate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.hourly_rate.Location = new System.Drawing.Point(165, 244);
-            this.hourly_rate.Name = "hourly_rate";
-            this.hourly_rate.Size = new System.Drawing.Size(60, 19);
-            this.hourly_rate.TabIndex = 12;
-            this.hourly_rate.Text = "$ 0.00 ";
-            // 
-            // date_hired
-            // 
-            this.date_hired.AutoSize = true;
-            this.date_hired.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.date_hired.Location = new System.Drawing.Point(165, 206);
-            this.date_hired.Name = "date_hired";
-            this.date_hired.Size = new System.Drawing.Size(113, 19);
-            this.date_hired.TabIndex = 11;
-            this.date_hired.Text = "MM/DD/YYYY";
-            // 
-            // position
-            // 
-            this.position.AutoSize = true;
-            this.position.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.position.Location = new System.Drawing.Point(165, 166);
-            this.position.Name = "position";
-            this.position.Size = new System.Drawing.Size(67, 19);
-            this.position.TabIndex = 10;
-            this.position.Text = "Position";
-            // 
-            // dob
-            // 
-            this.dob.AutoSize = true;
-            this.dob.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dob.Location = new System.Drawing.Point(165, 127);
-            this.dob.Name = "dob";
-            this.dob.Size = new System.Drawing.Size(113, 19);
-            this.dob.TabIndex = 9;
-            this.dob.Text = "MM/DD/YYYY";
-            // 
-            // last_name
-            // 
-            this.last_name.AutoSize = true;
-            this.last_name.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.last_name.Location = new System.Drawing.Point(165, 89);
-            this.last_name.Name = "last_name";
-            this.last_name.Size = new System.Drawing.Size(86, 19);
-            this.last_name.TabIndex = 8;
-            this.last_name.Text = "Last Name";
-            // 
-            // first_name
-            // 
-            this.first_name.AutoSize = true;
-            this.first_name.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.first_name.Location = new System.Drawing.Point(165, 49);
-            this.first_name.Name = "first_name";
-            this.first_name.Size = new System.Drawing.Size(88, 19);
-            this.first_name.TabIndex = 7;
-            this.first_name.Text = "First Name";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 242);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(108, 19);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Hourly Rate:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(48, 203);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(98, 19);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Date Hired:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(67, 164);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Position:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 126);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(118, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Date Of Birth:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(51, 86);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(98, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Last Name:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(48, 47);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "First Name:";
-            // 
             // schedule
             // 
             this.schedule.AutoScroll = true;
@@ -244,10 +123,41 @@
             this.schedule.Text = "Schedule";
             this.schedule.UseVisualStyleBackColor = true;
             // 
+            // ScheduleDataGrid
+            // 
+            this.ScheduleDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScheduleDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.Day,
+            this.Shift});
+            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 28);
+            this.ScheduleDataGrid.Name = "ScheduleDataGrid";
+            this.ScheduleDataGrid.RowTemplate.Height = 24;
+            this.ScheduleDataGrid.Size = new System.Drawing.Size(781, 391);
+            this.ScheduleDataGrid.TabIndex = 0;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Day
+            // 
+            this.Day.HeaderText = "Day";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            // 
+            // Shift
+            // 
+            this.Shift.HeaderText = "Shift";
+            this.Shift.Name = "Shift";
+            this.Shift.ReadOnly = true;
+            // 
             // timesheet
             // 
             this.timesheet.AutoScroll = true;
-            this.timesheet.Controls.Add(this.dataGridView1);
+            this.timesheet.Controls.Add(this.TimesheetDataGrid);
             this.timesheet.Location = new System.Drawing.Point(4, 32);
             this.timesheet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timesheet.Name = "timesheet";
@@ -255,6 +165,20 @@
             this.timesheet.TabIndex = 2;
             this.timesheet.Text = "Timesheet";
             this.timesheet.UseVisualStyleBackColor = true;
+            // 
+            // TimesheetDataGrid
+            // 
+            this.TimesheetDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TimesheetDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TSDate,
+            this.TSDay,
+            this.ClockIn,
+            this.ClockOut});
+            this.TimesheetDataGrid.Location = new System.Drawing.Point(18, 21);
+            this.TimesheetDataGrid.Name = "TimesheetDataGrid";
+            this.TimesheetDataGrid.RowTemplate.Height = 24;
+            this.TimesheetDataGrid.Size = new System.Drawing.Size(793, 382);
+            this.TimesheetDataGrid.TabIndex = 0;
             // 
             // payslip
             // 
@@ -290,51 +214,125 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // ScheduleDataGrid
+            // hourly_rate
             // 
-            this.ScheduleDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ScheduleDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Date,
-            this.Day,
-            this.Shift});
-            this.ScheduleDataGrid.Location = new System.Drawing.Point(40, 37);
-            this.ScheduleDataGrid.Name = "ScheduleDataGrid";
-            this.ScheduleDataGrid.RowTemplate.Height = 24;
-            this.ScheduleDataGrid.Size = new System.Drawing.Size(627, 205);
-            this.ScheduleDataGrid.TabIndex = 0;
+            this.hourly_rate.AutoSize = true;
+            this.hourly_rate.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.hourly_rate.Location = new System.Drawing.Point(165, 244);
+            this.hourly_rate.Name = "hourly_rate";
+            this.hourly_rate.Size = new System.Drawing.Size(60, 19);
+            this.hourly_rate.TabIndex = 12;
+            this.hourly_rate.Text = "$ 0.00 ";
             // 
-            // Date
+            // label6
             // 
-            this.Date.HeaderText = "Date";
-            this.Date.Name = "Date";
-            this.Date.ReadOnly = true;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(41, 242);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(108, 19);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "Hourly Rate:";
             // 
-            // Day
+            // date_hired
             // 
-            this.Day.HeaderText = "Day";
-            this.Day.Name = "Day";
-            this.Day.ReadOnly = true;
+            this.date_hired.AutoSize = true;
+            this.date_hired.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.date_hired.Location = new System.Drawing.Point(165, 206);
+            this.date_hired.Name = "date_hired";
+            this.date_hired.Size = new System.Drawing.Size(113, 19);
+            this.date_hired.TabIndex = 11;
+            this.date_hired.Text = "MM/DD/YYYY";
             // 
-            // Shift
+            // label5
             // 
-            this.Shift.HeaderText = "Shift";
-            this.Shift.Name = "Shift";
-            this.Shift.ReadOnly = true;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(48, 203);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(98, 19);
+            this.label5.TabIndex = 5;
+            this.label5.Text = "Date Hired:";
             // 
-            // dataGridView1
+            // position
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.TSDate,
-            this.TSDay,
-            this.TSShift,
-            this.ClockIn,
-            this.ClockOut});
-            this.dataGridView1.Location = new System.Drawing.Point(74, 88);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(543, 263);
-            this.dataGridView1.TabIndex = 0;
+            this.position.AutoSize = true;
+            this.position.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.position.Location = new System.Drawing.Point(165, 166);
+            this.position.Name = "position";
+            this.position.Size = new System.Drawing.Size(67, 19);
+            this.position.TabIndex = 10;
+            this.position.Text = "Position";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(67, 164);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 19);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Position:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(31, 126);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(118, 19);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Date Of Birth:";
+            // 
+            // dob
+            // 
+            this.dob.AutoSize = true;
+            this.dob.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dob.Location = new System.Drawing.Point(165, 127);
+            this.dob.Name = "dob";
+            this.dob.Size = new System.Drawing.Size(113, 19);
+            this.dob.TabIndex = 9;
+            this.dob.Text = "MM/DD/YYYY";
+            // 
+            // last_name
+            // 
+            this.last_name.AutoSize = true;
+            this.last_name.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.last_name.Location = new System.Drawing.Point(165, 89);
+            this.last_name.Name = "last_name";
+            this.last_name.Size = new System.Drawing.Size(86, 19);
+            this.last_name.TabIndex = 8;
+            this.last_name.Text = "Last Name";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(51, 86);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(98, 19);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Last Name:";
+            // 
+            // first_name
+            // 
+            this.first_name.AutoSize = true;
+            this.first_name.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.first_name.Location = new System.Drawing.Point(165, 49);
+            this.first_name.Name = "first_name";
+            this.first_name.Size = new System.Drawing.Size(88, 19);
+            this.first_name.TabIndex = 7;
+            this.first_name.Text = "First Name";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(48, 47);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(100, 19);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "First Name:";
             // 
             // TSDate
             // 
@@ -345,11 +343,6 @@
             // 
             this.TSDay.HeaderText = "Day";
             this.TSDay.Name = "TSDay";
-            // 
-            // TSShift
-            // 
-            this.TSShift.HeaderText = "Shift";
-            this.TSShift.Name = "TSShift";
             // 
             // ClockIn
             // 
@@ -378,10 +371,10 @@
             this.personal_Info.ResumeLayout(false);
             this.personal_Info.PerformLayout();
             this.schedule.ResumeLayout(false);
-            this.timesheet.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGrid)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.timesheet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TimesheetDataGrid)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,10 +388,11 @@
         private System.Windows.Forms.TabPage payslip;
         private System.Windows.Forms.Label employee_name;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView ScheduleDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
+        private System.Windows.Forms.DataGridView TimesheetDataGrid;
         private System.Windows.Forms.Label hourly_rate;
         private System.Windows.Forms.Label date_hired;
         private System.Windows.Forms.Label position;
@@ -407,14 +401,12 @@
         private System.Windows.Forms.Label first_name;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView ScheduleDataGrid;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn TSDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn TSDay;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TSShift;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClockIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClockOut;
     }
