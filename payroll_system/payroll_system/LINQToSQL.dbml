@@ -9,28 +9,10 @@
       <Column Name="DateHired" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
       <Column Name="Position" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="HourlyRate" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
-      <Association Name="TEmployee_TSchedule" Member="TSchedules" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TSchedule" />
-      <Association Name="TEmployee_TTimesheet" Member="TTimesheets" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TTimesheet" />
       <Association Name="TEmployee_TUserLogin" Member="TUserLogins" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TUserLogin" />
       <Association Name="TEmployee_TPayslip" Member="TPayslips" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TPayslip" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TSchedule" Member="TSchedules">
-    <Type Name="TSchedule">
-      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="Shift" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
-      <Association Name="TEmployee_TSchedule" Member="TEmployee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TEmployee" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TTimesheet" Member="TTimesheets">
-    <Type Name="TTimesheet">
-      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
-      <Column Name="CLockInTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="ClockOutTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
-      <Column Name="TotalHours" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
-      <Association Name="TEmployee_TTimesheet" Member="TEmployee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TEmployee" IsForeignKey="true" />
+      <Association Name="TEmployee_TSchedule" Member="TSchedules" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TSchedule" />
+      <Association Name="TEmployee_TTimesheet" Member="TTimesheets" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TTimesheet" />
     </Type>
   </Table>
   <Table Name="dbo.TUserLogin" Member="TUserLogins">
@@ -51,6 +33,26 @@
       <Column Name="TotalHours" Type="System.Decimal" DbType="Decimal(4,0) NOT NULL" CanBeNull="false" />
       <Column Name="TotalMoney" Type="System.Decimal" DbType="Money NOT NULL" CanBeNull="false" />
       <Association Name="TEmployee_TPayslip" Member="TEmployee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TSchedule" Member="TSchedules">
+    <Type Name="TSchedule">
+      <Column Name="ScheduleId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="Shift" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TEmployee_TSchedule" Member="TEmployee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TEmployee" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TTimesheet" Member="TTimesheets">
+    <Type Name="TTimesheet">
+      <Column Name="TimesheetId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="EmployeeId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Date" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="CLockInTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="ClockOutTime" Type="System.TimeSpan" DbType="Time NOT NULL" CanBeNull="false" />
+      <Column Name="TotalHours" Type="System.Decimal" DbType="Decimal(4,2) NOT NULL" CanBeNull="false" />
+      <Association Name="TEmployee_TTimesheet" Member="TEmployee" ThisKey="EmployeeId" OtherKey="EmployeeId" Type="TEmployee" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

@@ -79,22 +79,6 @@ namespace payroll_system
 			}
 		}
 		
-		public System.Data.Linq.Table<TSchedule> TSchedules
-		{
-			get
-			{
-				return this.GetTable<TSchedule>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TTimesheet> TTimesheets
-		{
-			get
-			{
-				return this.GetTable<TTimesheet>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TUserLogin> TUserLogins
 		{
 			get
@@ -108,6 +92,22 @@ namespace payroll_system
 			get
 			{
 				return this.GetTable<TPayslip>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TSchedule> TSchedules
+		{
+			get
+			{
+				return this.GetTable<TSchedule>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TTimesheet> TTimesheets
+		{
+			get
+			{
+				return this.GetTable<TTimesheet>();
 			}
 		}
 	}
@@ -371,168 +371,6 @@ namespace payroll_system
 		{
 			this.SendPropertyChanging();
 			entity.TEmployee = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSchedule")]
-	public partial class TSchedule
-	{
-		
-		private System.Nullable<int> _EmployeeId;
-		
-		private System.DateTime _Date;
-		
-		private string _Shift;
-		
-		public TSchedule()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
-		public System.Nullable<int> EmployeeId
-		{
-			get
-			{
-				return this._EmployeeId;
-			}
-			set
-			{
-				if ((this._EmployeeId != value))
-				{
-					this._EmployeeId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shift", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Shift
-		{
-			get
-			{
-				return this._Shift;
-			}
-			set
-			{
-				if ((this._Shift != value))
-				{
-					this._Shift = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TTimesheet")]
-	public partial class TTimesheet
-	{
-		
-		private System.Nullable<int> _EmployeeId;
-		
-		private System.DateTime _Date;
-		
-		private System.TimeSpan _CLockInTime;
-		
-		private System.TimeSpan _ClockOutTime;
-		
-		private decimal _TotalHours;
-		
-		public TTimesheet()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
-		public System.Nullable<int> EmployeeId
-		{
-			get
-			{
-				return this._EmployeeId;
-			}
-			set
-			{
-				if ((this._EmployeeId != value))
-				{
-					this._EmployeeId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CLockInTime", DbType="Time NOT NULL")]
-		public System.TimeSpan CLockInTime
-		{
-			get
-			{
-				return this._CLockInTime;
-			}
-			set
-			{
-				if ((this._CLockInTime != value))
-				{
-					this._CLockInTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClockOutTime", DbType="Time NOT NULL")]
-		public System.TimeSpan ClockOutTime
-		{
-			get
-			{
-				return this._ClockOutTime;
-			}
-			set
-			{
-				if ((this._ClockOutTime != value))
-				{
-					this._ClockOutTime = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalHours", DbType="Decimal(4,0) NOT NULL")]
-		public decimal TotalHours
-		{
-			get
-			{
-				return this._TotalHours;
-			}
-			set
-			{
-				if ((this._TotalHours != value))
-				{
-					this._TotalHours = value;
-				}
-			}
 		}
 	}
 	
@@ -930,6 +768,204 @@ namespace payroll_system
 			if ((this.PropertyChanged != null))
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSchedule")]
+	public partial class TSchedule
+	{
+		
+		private int _ScheduleId;
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private System.DateTime _Date;
+		
+		private string _Shift;
+		
+		public TSchedule()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScheduleId", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int ScheduleId
+		{
+			get
+			{
+				return this._ScheduleId;
+			}
+			set
+			{
+				if ((this._ScheduleId != value))
+				{
+					this._ScheduleId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					this._EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shift", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Shift
+		{
+			get
+			{
+				return this._Shift;
+			}
+			set
+			{
+				if ((this._Shift != value))
+				{
+					this._Shift = value;
+				}
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TTimesheet")]
+	public partial class TTimesheet
+	{
+		
+		private int _TimesheetId;
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private System.DateTime _Date;
+		
+		private System.TimeSpan _CLockInTime;
+		
+		private System.TimeSpan _ClockOutTime;
+		
+		private decimal _TotalHours;
+		
+		public TTimesheet()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimesheetId", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		public int TimesheetId
+		{
+			get
+			{
+				return this._TimesheetId;
+			}
+			set
+			{
+				if ((this._TimesheetId != value))
+				{
+					this._TimesheetId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					this._EmployeeId = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this._Date = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_CLockInTime", DbType="Time NOT NULL")]
+		public System.TimeSpan CLockInTime
+		{
+			get
+			{
+				return this._CLockInTime;
+			}
+			set
+			{
+				if ((this._CLockInTime != value))
+				{
+					this._CLockInTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ClockOutTime", DbType="Time NOT NULL")]
+		public System.TimeSpan ClockOutTime
+		{
+			get
+			{
+				return this._ClockOutTime;
+			}
+			set
+			{
+				if ((this._ClockOutTime != value))
+				{
+					this._ClockOutTime = value;
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TotalHours", DbType="Decimal(4,2) NOT NULL")]
+		public decimal TotalHours
+		{
+			get
+			{
+				return this._TotalHours;
+			}
+			set
+			{
+				if ((this._TotalHours != value))
+				{
+					this._TotalHours = value;
+				}
 			}
 		}
 	}
