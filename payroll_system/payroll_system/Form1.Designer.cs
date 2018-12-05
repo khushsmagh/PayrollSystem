@@ -43,17 +43,30 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.schedule = new System.Windows.Forms.TabPage();
+            this.ScheduleDataGrid = new System.Windows.Forms.DataGridView();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Day = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Shift = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.timesheet = new System.Windows.Forms.TabPage();
+            this.TimesheetDataGrid = new System.Windows.Forms.DataGridView();
+            this.TSDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payslip = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.showPayslipOnDataGridView = new System.Windows.Forms.DataGridView();
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.printPayslip = new System.Drawing.Printing.PrintDocument();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
+            this.schedule.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGrid)).BeginInit();
+            this.timesheet.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.TimesheetDataGrid)).BeginInit();
             this.payslip.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPayslipOnDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -238,6 +251,7 @@
             // schedule
             // 
             this.schedule.AutoScroll = true;
+            this.schedule.Controls.Add(this.ScheduleDataGrid);
             this.schedule.Location = new System.Drawing.Point(4, 27);
             this.schedule.Margin = new System.Windows.Forms.Padding(2);
             this.schedule.Name = "schedule";
@@ -247,9 +261,42 @@
             this.schedule.Text = "Schedule";
             this.schedule.UseVisualStyleBackColor = true;
             // 
+            // ScheduleDataGrid
+            // 
+            this.ScheduleDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ScheduleDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Date,
+            this.Day,
+            this.Shift});
+            this.ScheduleDataGrid.Location = new System.Drawing.Point(19, 23);
+            this.ScheduleDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.ScheduleDataGrid.Name = "ScheduleDataGrid";
+            this.ScheduleDataGrid.RowTemplate.Height = 24;
+            this.ScheduleDataGrid.Size = new System.Drawing.Size(586, 318);
+            this.ScheduleDataGrid.TabIndex = 0;
+            // 
+            // Date
+            // 
+            this.Date.HeaderText = "Date";
+            this.Date.Name = "Date";
+            this.Date.ReadOnly = true;
+            // 
+            // Day
+            // 
+            this.Day.HeaderText = "Day";
+            this.Day.Name = "Day";
+            this.Day.ReadOnly = true;
+            // 
+            // Shift
+            // 
+            this.Shift.HeaderText = "Shift";
+            this.Shift.Name = "Shift";
+            this.Shift.ReadOnly = true;
+            // 
             // timesheet
             // 
             this.timesheet.AutoScroll = true;
+            this.timesheet.Controls.Add(this.TimesheetDataGrid);
             this.timesheet.Location = new System.Drawing.Point(4, 27);
             this.timesheet.Margin = new System.Windows.Forms.Padding(2);
             this.timesheet.Name = "timesheet";
@@ -258,11 +305,46 @@
             this.timesheet.Text = "Timesheet";
             this.timesheet.UseVisualStyleBackColor = true;
             // 
+            // TimesheetDataGrid
+            // 
+            this.TimesheetDataGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.TimesheetDataGrid.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.TSDate,
+            this.TSDay,
+            this.ClockIn,
+            this.ClockOut});
+            this.TimesheetDataGrid.Location = new System.Drawing.Point(14, 17);
+            this.TimesheetDataGrid.Margin = new System.Windows.Forms.Padding(2);
+            this.TimesheetDataGrid.Name = "TimesheetDataGrid";
+            this.TimesheetDataGrid.RowTemplate.Height = 24;
+            this.TimesheetDataGrid.Size = new System.Drawing.Size(595, 310);
+            this.TimesheetDataGrid.TabIndex = 0;
+            // 
+            // TSDate
+            // 
+            this.TSDate.HeaderText = "Date";
+            this.TSDate.Name = "TSDate";
+            // 
+            // TSDay
+            // 
+            this.TSDay.HeaderText = "Day";
+            this.TSDay.Name = "TSDay";
+            // 
+            // ClockIn
+            // 
+            this.ClockIn.HeaderText = "ClockIn";
+            this.ClockIn.Name = "ClockIn";
+            // 
+            // ClockOut
+            // 
+            this.ClockOut.HeaderText = "ClockOut";
+            this.ClockOut.Name = "ClockOut";
+            // 
             // payslip
             // 
             this.payslip.AutoScroll = true;
             this.payslip.Controls.Add(this.button1);
-            this.payslip.Controls.Add(this.dataGridView1);
+            this.payslip.Controls.Add(this.showPayslipOnDataGridView);
             this.payslip.Location = new System.Drawing.Point(4, 27);
             this.payslip.Margin = new System.Windows.Forms.Padding(2);
             this.payslip.Name = "payslip";
@@ -273,22 +355,22 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(533, 187);
+            this.button1.Location = new System.Drawing.Point(535, 156);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Print";
+            this.button1.Text = "button1";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // showPayslipOnDataGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(623, 181);
-            this.dataGridView1.TabIndex = 0;
+            this.showPayslipOnDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.showPayslipOnDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
+            this.showPayslipOnDataGridView.Location = new System.Drawing.Point(0, 0);
+            this.showPayslipOnDataGridView.Name = "showPayslipOnDataGridView";
+            this.showPayslipOnDataGridView.Size = new System.Drawing.Size(623, 150);
+            this.showPayslipOnDataGridView.TabIndex = 0;
             // 
             // employee_name
             // 
@@ -334,8 +416,12 @@
             this.tabControl1.ResumeLayout(false);
             this.personal_Info.ResumeLayout(false);
             this.personal_Info.PerformLayout();
+            this.schedule.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ScheduleDataGrid)).EndInit();
+            this.timesheet.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.TimesheetDataGrid)).EndInit();
             this.payslip.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.showPayslipOnDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -350,10 +436,11 @@
         private System.Windows.Forms.TabPage payslip;
         private System.Windows.Forms.Label employee_name;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.DataGridView ScheduleDataGrid;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Day;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Shift;
+        private System.Windows.Forms.DataGridView TimesheetDataGrid;
         private System.Windows.Forms.Label hourly_rate;
         private System.Windows.Forms.Label date_hired;
         private System.Windows.Forms.Label position;
@@ -362,8 +449,16 @@
         private System.Windows.Forms.Label first_name;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TSDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TSDay;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClockIn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ClockOut;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView showPayslipOnDataGridView;
         private System.Drawing.Printing.PrintDocument printPayslip;
     }
 }
