@@ -100,8 +100,12 @@ namespace payroll_system
             string userName = usernameTextBox.Text;
 
             List<TUserLogin> userCredential = pq.GetUserLoginsPermission(userName);
-            string userPasswordFromDatabase = userCredential[0].Password;
 
+            int empId = (int)userCredential[0].EmployeeId;
+
+            string position = pq.GetEmployeeInfo(empId)[0].Position;
+
+            string userPasswordFromDatabase = userCredential[0].Password;
             string inputPassword = passwordTextBox.Text;
 
             if (usernameTextBox.Text == "" & passwordTextBox.Text == "")
@@ -110,10 +114,20 @@ namespace payroll_system
             }
             else if (userPasswordFromDatabase == inputPassword)
             {
-                MessageBox.Show("loggin successfully");
-                EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
-                Payroll payroll = new Payroll(this._EmpId);
-                payroll.Show();
+                if(position == "Admin")
+                {
+                    MessageBox.Show("loggin successfully");
+                    Admin_Form admin = new Admin_Form();
+                    admin.Show();
+                }
+                else
+                {
+                    MessageBox.Show("loggin successfully");
+                    EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
+                    Payroll payroll = new Payroll(this._EmpId);
+                    payroll.Show();
+                }
+                
             }
             else
             {
@@ -124,5 +138,18 @@ namespace payroll_system
 
         }
 
+        private void clockInButton_Click(object sender, EventArgs e)
+        {
+            EmpId = Int32.Parse(employeeNumberTextBox.Text);
+            PayrollQuery pq = new PayrollQuery();
+            pq.EmployeeClockIn(EmpId);
+        }
+
+        private void clockOutButton_Click(object sender, EventArgs e)
+        {
+            EmpId = Int32.Parse(employeeNumberTextBox.Text);
+            PayrollQuery pq = new PayrollQuery();
+            pq.EmployeeClockOut(EmpId);
+        }
     }
 }

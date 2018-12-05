@@ -41,7 +41,7 @@
             // loginButton
             // 
             this.loginButton.Location = new System.Drawing.Point(101, 325);
-            this.loginButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loginButton.Margin = new System.Windows.Forms.Padding(2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(110, 53);
             this.loginButton.TabIndex = 0;
@@ -52,7 +52,7 @@
             // splitter1
             // 
             this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.splitter1.Margin = new System.Windows.Forms.Padding(2);
             this.splitter1.Name = "splitter1";
             this.splitter1.Size = new System.Drawing.Size(2, 527);
             this.splitter1.TabIndex = 1;
@@ -61,29 +61,31 @@
             // clockOutButton
             // 
             this.clockOutButton.Location = new System.Drawing.Point(520, 397);
-            this.clockOutButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clockOutButton.Margin = new System.Windows.Forms.Padding(2);
             this.clockOutButton.Name = "clockOutButton";
             this.clockOutButton.Size = new System.Drawing.Size(110, 53);
             this.clockOutButton.TabIndex = 2;
             this.clockOutButton.Text = "Clock-out";
             this.clockOutButton.UseVisualStyleBackColor = true;
+            this.clockOutButton.Click += new System.EventHandler(this.clockOutButton_Click);
             // 
             // clockInButton
             // 
             this.clockInButton.Location = new System.Drawing.Point(520, 268);
-            this.clockInButton.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.clockInButton.Margin = new System.Windows.Forms.Padding(2);
             this.clockInButton.Name = "clockInButton";
             this.clockInButton.Size = new System.Drawing.Size(110, 53);
             this.clockInButton.TabIndex = 3;
             this.clockInButton.Text = "Clock-in";
             this.clockInButton.UseVisualStyleBackColor = true;
+            this.clockInButton.Click += new System.EventHandler(this.clockInButton_Click);
             // 
             // usernameTextBox
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTextBox.ForeColor = System.Drawing.Color.Silver;
             this.usernameTextBox.Location = new System.Drawing.Point(87, 110);
-            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(148, 29);
             this.usernameTextBox.TabIndex = 4;
@@ -96,7 +98,7 @@
             this.passwordTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTextBox.ForeColor = System.Drawing.Color.Silver;
             this.passwordTextBox.Location = new System.Drawing.Point(87, 224);
-            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTextBox.Name = "passwordTextBox";
             this.passwordTextBox.Size = new System.Drawing.Size(148, 29);
             this.passwordTextBox.TabIndex = 5;
@@ -120,7 +122,7 @@
             this.employeeNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeNumberTextBox.ForeColor = System.Drawing.Color.Silver;
             this.employeeNumberTextBox.Location = new System.Drawing.Point(498, 162);
-            this.employeeNumberTextBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.employeeNumberTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.employeeNumberTextBox.Name = "employeeNumberTextBox";
             this.employeeNumberTextBox.Size = new System.Drawing.Size(148, 29);
             this.employeeNumberTextBox.TabIndex = 8;
@@ -141,7 +143,7 @@
             this.Controls.Add(this.clockOutButton);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.loginButton);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "User_Login";
             this.Text = "User_Login";
             this.Load += new System.EventHandler(this.User_Login_Load);
