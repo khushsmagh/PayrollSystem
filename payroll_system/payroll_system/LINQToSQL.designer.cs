@@ -39,6 +39,12 @@ namespace payroll_system
     partial void InsertTPayslip(TPayslip instance);
     partial void UpdateTPayslip(TPayslip instance);
     partial void DeleteTPayslip(TPayslip instance);
+    partial void InsertTTimesheet(TTimesheet instance);
+    partial void UpdateTTimesheet(TTimesheet instance);
+    partial void DeleteTTimesheet(TTimesheet instance);
+    partial void InsertTSchedule(TSchedule instance);
+    partial void UpdateTSchedule(TSchedule instance);
+    partial void DeleteTSchedule(TSchedule instance);
     #endregion
 		
 		public LinqToSQLDataContext() : 
@@ -95,19 +101,19 @@ namespace payroll_system
 			}
 		}
 		
-		public System.Data.Linq.Table<TSchedule> TSchedules
-		{
-			get
-			{
-				return this.GetTable<TSchedule>();
-			}
-		}
-		
 		public System.Data.Linq.Table<TTimesheet> TTimesheets
 		{
 			get
 			{
 				return this.GetTable<TTimesheet>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TSchedule> TSchedules
+		{
+			get
+			{
+				return this.GetTable<TSchedule>();
 			}
 		}
 	}
@@ -136,6 +142,10 @@ namespace payroll_system
 		
 		private EntitySet<TPayslip> _TPayslips;
 		
+		private EntitySet<TTimesheet> _TTimesheets;
+		
+		private EntitySet<TSchedule> _TSchedules;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -160,6 +170,8 @@ namespace payroll_system
 		{
 			this._TUserLogins = new EntitySet<TUserLogin>(new Action<TUserLogin>(this.attach_TUserLogins), new Action<TUserLogin>(this.detach_TUserLogins));
 			this._TPayslips = new EntitySet<TPayslip>(new Action<TPayslip>(this.attach_TPayslips), new Action<TPayslip>(this.detach_TPayslips));
+			this._TTimesheets = new EntitySet<TTimesheet>(new Action<TTimesheet>(this.attach_TTimesheets), new Action<TTimesheet>(this.detach_TTimesheets));
+			this._TSchedules = new EntitySet<TSchedule>(new Action<TSchedule>(this.attach_TSchedules), new Action<TSchedule>(this.detach_TSchedules));
 			OnCreated();
 		}
 		
@@ -329,6 +341,32 @@ namespace payroll_system
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TTimesheet", Storage="_TTimesheets", ThisKey="EmployeeId", OtherKey="EmployeeId")]
+		public EntitySet<TTimesheet> TTimesheets
+		{
+			get
+			{
+				return this._TTimesheets;
+			}
+			set
+			{
+				this._TTimesheets.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TSchedule", Storage="_TSchedules", ThisKey="EmployeeId", OtherKey="EmployeeId")]
+		public EntitySet<TSchedule> TSchedules
+		{
+			get
+			{
+				return this._TSchedules;
+			}
+			set
+			{
+				this._TSchedules.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -368,6 +406,30 @@ namespace payroll_system
 		}
 		
 		private void detach_TPayslips(TPayslip entity)
+		{
+			this.SendPropertyChanging();
+			entity.TEmployee = null;
+		}
+		
+		private void attach_TTimesheets(TTimesheet entity)
+		{
+			this.SendPropertyChanging();
+			entity.TEmployee = this;
+		}
+		
+		private void detach_TTimesheets(TTimesheet entity)
+		{
+			this.SendPropertyChanging();
+			entity.TEmployee = null;
+		}
+		
+		private void attach_TSchedules(TSchedule entity)
+		{
+			this.SendPropertyChanging();
+			entity.TEmployee = this;
+		}
+		
+		private void detach_TSchedules(TSchedule entity)
 		{
 			this.SendPropertyChanging();
 			entity.TEmployee = null;
@@ -772,90 +834,11 @@ namespace payroll_system
 		}
 	}
 	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSchedule")]
-	public partial class TSchedule
-	{
-		
-		private int _ScheduleId;
-		
-		private System.Nullable<int> _EmployeeId;
-		
-		private System.DateTime _Date;
-		
-		private string _Shift;
-		
-		public TSchedule()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScheduleId", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
-		public int ScheduleId
-		{
-			get
-			{
-				return this._ScheduleId;
-			}
-			set
-			{
-				if ((this._ScheduleId != value))
-				{
-					this._ScheduleId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
-		public System.Nullable<int> EmployeeId
-		{
-			get
-			{
-				return this._EmployeeId;
-			}
-			set
-			{
-				if ((this._EmployeeId != value))
-				{
-					this._EmployeeId = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
-		public System.DateTime Date
-		{
-			get
-			{
-				return this._Date;
-			}
-			set
-			{
-				if ((this._Date != value))
-				{
-					this._Date = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shift", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
-		public string Shift
-		{
-			get
-			{
-				return this._Shift;
-			}
-			set
-			{
-				if ((this._Shift != value))
-				{
-					this._Shift = value;
-				}
-			}
-		}
-	}
-	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TTimesheet")]
-	public partial class TTimesheet
+	public partial class TTimesheet : INotifyPropertyChanging, INotifyPropertyChanged
 	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
 		private int _TimesheetId;
 		
@@ -869,11 +852,33 @@ namespace payroll_system
 		
 		private decimal _TotalHours;
 		
+		private EntityRef<TEmployee> _TEmployee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnTimesheetIdChanging(int value);
+    partial void OnTimesheetIdChanged();
+    partial void OnEmployeeIdChanging(System.Nullable<int> value);
+    partial void OnEmployeeIdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnCLockInTimeChanging(System.TimeSpan value);
+    partial void OnCLockInTimeChanged();
+    partial void OnClockOutTimeChanging(System.TimeSpan value);
+    partial void OnClockOutTimeChanged();
+    partial void OnTotalHoursChanging(decimal value);
+    partial void OnTotalHoursChanged();
+    #endregion
+		
 		public TTimesheet()
 		{
+			this._TEmployee = default(EntityRef<TEmployee>);
+			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimesheetId", AutoSync=AutoSync.Always, DbType="Int NOT NULL IDENTITY", IsDbGenerated=true)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_TimesheetId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int TimesheetId
 		{
 			get
@@ -884,7 +889,11 @@ namespace payroll_system
 			{
 				if ((this._TimesheetId != value))
 				{
+					this.OnTimesheetIdChanging(value);
+					this.SendPropertyChanging();
 					this._TimesheetId = value;
+					this.SendPropertyChanged("TimesheetId");
+					this.OnTimesheetIdChanged();
 				}
 			}
 		}
@@ -900,7 +909,15 @@ namespace payroll_system
 			{
 				if ((this._EmployeeId != value))
 				{
+					if (this._TEmployee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIdChanging(value);
+					this.SendPropertyChanging();
 					this._EmployeeId = value;
+					this.SendPropertyChanged("EmployeeId");
+					this.OnEmployeeIdChanged();
 				}
 			}
 		}
@@ -916,7 +933,11 @@ namespace payroll_system
 			{
 				if ((this._Date != value))
 				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
 					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
 				}
 			}
 		}
@@ -932,7 +953,11 @@ namespace payroll_system
 			{
 				if ((this._CLockInTime != value))
 				{
+					this.OnCLockInTimeChanging(value);
+					this.SendPropertyChanging();
 					this._CLockInTime = value;
+					this.SendPropertyChanged("CLockInTime");
+					this.OnCLockInTimeChanged();
 				}
 			}
 		}
@@ -948,7 +973,11 @@ namespace payroll_system
 			{
 				if ((this._ClockOutTime != value))
 				{
+					this.OnClockOutTimeChanging(value);
+					this.SendPropertyChanging();
 					this._ClockOutTime = value;
+					this.SendPropertyChanged("ClockOutTime");
+					this.OnClockOutTimeChanged();
 				}
 			}
 		}
@@ -964,8 +993,241 @@ namespace payroll_system
 			{
 				if ((this._TotalHours != value))
 				{
+					this.OnTotalHoursChanging(value);
+					this.SendPropertyChanging();
 					this._TotalHours = value;
+					this.SendPropertyChanged("TotalHours");
+					this.OnTotalHoursChanged();
 				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TTimesheet", Storage="_TEmployee", ThisKey="EmployeeId", OtherKey="EmployeeId", IsForeignKey=true)]
+		public TEmployee TEmployee
+		{
+			get
+			{
+				return this._TEmployee.Entity;
+			}
+			set
+			{
+				TEmployee previousValue = this._TEmployee.Entity;
+				if (((previousValue != value) 
+							|| (this._TEmployee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TEmployee.Entity = null;
+						previousValue.TTimesheets.Remove(this);
+					}
+					this._TEmployee.Entity = value;
+					if ((value != null))
+					{
+						value.TTimesheets.Add(this);
+						this._EmployeeId = value.EmployeeId;
+					}
+					else
+					{
+						this._EmployeeId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TEmployee");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TSchedule")]
+	public partial class TSchedule : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _ScheduleId;
+		
+		private System.Nullable<int> _EmployeeId;
+		
+		private System.DateTime _Date;
+		
+		private string _Shift;
+		
+		private EntityRef<TEmployee> _TEmployee;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnScheduleIdChanging(int value);
+    partial void OnScheduleIdChanged();
+    partial void OnEmployeeIdChanging(System.Nullable<int> value);
+    partial void OnEmployeeIdChanged();
+    partial void OnDateChanging(System.DateTime value);
+    partial void OnDateChanged();
+    partial void OnShiftChanging(string value);
+    partial void OnShiftChanged();
+    #endregion
+		
+		public TSchedule()
+		{
+			this._TEmployee = default(EntityRef<TEmployee>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ScheduleId", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int ScheduleId
+		{
+			get
+			{
+				return this._ScheduleId;
+			}
+			set
+			{
+				if ((this._ScheduleId != value))
+				{
+					this.OnScheduleIdChanging(value);
+					this.SendPropertyChanging();
+					this._ScheduleId = value;
+					this.SendPropertyChanged("ScheduleId");
+					this.OnScheduleIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_EmployeeId", DbType="Int")]
+		public System.Nullable<int> EmployeeId
+		{
+			get
+			{
+				return this._EmployeeId;
+			}
+			set
+			{
+				if ((this._EmployeeId != value))
+				{
+					if (this._TEmployee.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnEmployeeIdChanging(value);
+					this.SendPropertyChanging();
+					this._EmployeeId = value;
+					this.SendPropertyChanged("EmployeeId");
+					this.OnEmployeeIdChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Date", DbType="Date NOT NULL")]
+		public System.DateTime Date
+		{
+			get
+			{
+				return this._Date;
+			}
+			set
+			{
+				if ((this._Date != value))
+				{
+					this.OnDateChanging(value);
+					this.SendPropertyChanging();
+					this._Date = value;
+					this.SendPropertyChanged("Date");
+					this.OnDateChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Shift", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string Shift
+		{
+			get
+			{
+				return this._Shift;
+			}
+			set
+			{
+				if ((this._Shift != value))
+				{
+					this.OnShiftChanging(value);
+					this.SendPropertyChanging();
+					this._Shift = value;
+					this.SendPropertyChanged("Shift");
+					this.OnShiftChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TEmployee_TSchedule", Storage="_TEmployee", ThisKey="EmployeeId", OtherKey="EmployeeId", IsForeignKey=true)]
+		public TEmployee TEmployee
+		{
+			get
+			{
+				return this._TEmployee.Entity;
+			}
+			set
+			{
+				TEmployee previousValue = this._TEmployee.Entity;
+				if (((previousValue != value) 
+							|| (this._TEmployee.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TEmployee.Entity = null;
+						previousValue.TSchedules.Remove(this);
+					}
+					this._TEmployee.Entity = value;
+					if ((value != null))
+					{
+						value.TSchedules.Add(this);
+						this._EmployeeId = value.EmployeeId;
+					}
+					else
+					{
+						this._EmployeeId = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("TEmployee");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
