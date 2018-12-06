@@ -10,6 +10,10 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using System.Threading;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Calendar.v3;
+using Google.Apis.Calendar.v3.Data;
+using Google.Apis.Services;
 
 namespace payroll_system
 {
@@ -135,14 +139,14 @@ namespace payroll_system
                 usernameTextBox.Text = string.Empty;
                 passwordTextBox.Text = string.Empty;
             }
-
+            Method();
         }
 
         private void clockInButton_Click(object sender, EventArgs e)
         {
             EmpId = Int32.Parse(employeeNumberTextBox.Text);
             PayrollQuery pq = new PayrollQuery();
-            pq.EmployeeClockIn(EmpId);
+            var employeeGetClockedIn =  pq.EmployeeClockIn(EmpId);
         }
 
         private void clockOutButton_Click(object sender, EventArgs e)
@@ -150,6 +154,54 @@ namespace payroll_system
             EmpId = Int32.Parse(employeeNumberTextBox.Text);
             PayrollQuery pq = new PayrollQuery();
             pq.EmployeeClockOut(EmpId);
+            
+
+        }
+
+
+        private void Method()
+        {
+            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
+            (
+                new ClientSecrets
+                {
+                    ClientId = "421772432711-lr25m8uvjmrtf1l5cgo1otcmuv5oqbrh.apps.googleusercontent.com",
+                    ClientSecret = "NinSXom7UlHxjP7Emklf77RC",
+                },
+                new[] { CalendarService.Scope.Calendar },
+                "user",
+                    CancellationToken.None).Result;
+
+            // Create the service.
+            var service = new CalendarService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "AppForAddDateToCalender",
+            });
+
+
+            Event myEvent = new Event
+            {
+                Summary = "OOP",
+                Location = "Bow valley",
+                Start = new EventDateTime()
+                {
+                    DateTime = new DateTime(2019, 1, 15, 10, 0, 0),
+                    TimeZone = "America/Los_Angeles"
+                },
+
+                End = new EventDateTime()
+                {
+                    DateTime = new DateTime(2019, 1, 15, 10, 30, 0),
+                    TimeZone = "America/Los_Angeles"
+                },
+
+                Attendees = new List<EventAttendee>()
+                {
+                    new EventAttendee() { Email = "sainisandeep199627@gmail.com" }
+                }
+            };
+            Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
         }
     }
 }
