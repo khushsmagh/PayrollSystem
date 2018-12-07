@@ -1621,8 +1621,7 @@ namespace payroll_system {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnScheduleId}, true));
                 this.columnScheduleId.AutoIncrement = true;
-                this.columnScheduleId.AutoIncrementSeed = -1;
-                this.columnScheduleId.AutoIncrementStep = -1;
+                this.columnScheduleId.AutoIncrementSeed = 1;
                 this.columnScheduleId.AllowDBNull = false;
                 this.columnScheduleId.ReadOnly = true;
                 this.columnScheduleId.Unique = true;
@@ -1959,8 +1958,7 @@ namespace payroll_system {
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnTimesheetId}, true));
                 this.columnTimesheetId.AutoIncrement = true;
-                this.columnTimesheetId.AutoIncrementSeed = -1;
-                this.columnTimesheetId.AutoIncrementStep = -1;
+                this.columnTimesheetId.AutoIncrementSeed = 1;
                 this.columnTimesheetId.AllowDBNull = false;
                 this.columnTimesheetId.ReadOnly = true;
                 this.columnTimesheetId.Unique = true;
@@ -4113,11 +4111,23 @@ SELECT ScheduleId, EmployeeId, Date, Shift FROM TSchedule WHERE (ScheduleId = @S
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ScheduleId, EmployeeId, Date, Shift FROM dbo.TSchedule";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.DeleteScheduleQuery";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@schedule", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.SelectSchedule";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@employee", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4139,6 +4149,42 @@ SELECT ScheduleId, EmployeeId, Date, Shift FROM TSchedule WHERE (ScheduleId = @S
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual PayrollDataSet.TScheduleDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            PayrollDataSet.TScheduleDataTable dataTable = new PayrollDataSet.TScheduleDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBySchedule(PayrollDataSet.TScheduleDataTable dataTable, global::System.Nullable<int> employee) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((employee.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(employee.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PayrollDataSet.TScheduleDataTable GetDataBy(global::System.Nullable<int> employee) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((employee.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(employee.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             PayrollDataSet.TScheduleDataTable dataTable = new PayrollDataSet.TScheduleDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4301,6 +4347,35 @@ SELECT ScheduleId, EmployeeId, Date, Shift FROM TSchedule WHERE (ScheduleId = @S
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> EmployeeId, System.DateTime Date, string Shift, int Original_ScheduleId, global::System.Nullable<int> Original_EmployeeId, System.DateTime Original_Date, string Original_Shift) {
             return this.Update(EmployeeId, Date, Shift, Original_ScheduleId, Original_EmployeeId, Original_Date, Original_Shift, Original_ScheduleId);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteScheduleQuery(global::System.Nullable<int> schedule) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((schedule.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(schedule.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
@@ -4483,12 +4558,24 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[3];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM " +
                 "dbo.TTimesheet";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = "dbo.DeleteTimesheetQuery";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@timesheet", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "dbo.SelectTimesheet";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.StoredProcedure;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@RETURN_VALUE", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.ReturnValue, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@employee", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 10, 0, null, global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4510,6 +4597,42 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
         public virtual PayrollDataSet.TTimesheetDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
+            PayrollDataSet.TTimesheetDataTable dataTable = new PayrollDataSet.TTimesheetDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillByTimesheet(PayrollDataSet.TTimesheetDataTable dataTable, global::System.Nullable<int> employee) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((employee.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(employee.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PayrollDataSet.TTimesheetDataTable GetDataBy(global::System.Nullable<int> employee) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            if ((employee.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((int)(employee.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
             PayrollDataSet.TTimesheetDataTable dataTable = new PayrollDataSet.TTimesheetDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4660,6 +4783,35 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
         public virtual int Update(global::System.Nullable<int> EmployeeId, System.DateTime Date, System.TimeSpan CLockInTime, System.TimeSpan ClockOutTime, decimal TotalHours, int Original_TimesheetId, global::System.Nullable<int> Original_EmployeeId, System.DateTime Original_Date, System.TimeSpan Original_CLockInTime, System.TimeSpan Original_ClockOutTime, decimal Original_TotalHours) {
             return this.Update(EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours, Original_TimesheetId, Original_EmployeeId, Original_Date, Original_CLockInTime, Original_ClockOutTime, Original_TotalHours, Original_TimesheetId);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
+        public virtual int DeleteTimesheetQuery(global::System.Nullable<int> timesheet) {
+            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[1];
+            if ((timesheet.HasValue == true)) {
+                command.Parameters[1].Value = ((int)(timesheet.Value));
+            }
+            else {
+                command.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
+            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
+                        != global::System.Data.ConnectionState.Open)) {
+                command.Connection.Open();
+            }
+            int returnValue;
+            try {
+                returnValue = command.ExecuteNonQuery();
+            }
+            finally {
+                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
+                    command.Connection.Close();
+                }
+            }
+            return returnValue;
         }
     }
     
