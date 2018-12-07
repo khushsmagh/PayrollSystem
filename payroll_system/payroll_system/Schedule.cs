@@ -16,20 +16,34 @@ namespace payroll_system
         private DateTime EndDate;
         private int UserId;
 
-
-        public static void PopulateSchedule(DataGridView dg, int userId)
+        public Schedule(int userId, DateTime start, DateTime end)
         {
-            PayrollQuery payroll = new PayrollQuery();
-
-            for (int i = 0; i < payroll.GetScheduleInfo(userId).ToList().Count; i++)
-            {
-                dg.Rows.Add(payroll.GetScheduleInfo(userId)[i].Date.ToString().Substring(0, 10),
-                    payroll.GetScheduleInfo(userId)[i].Date.DayOfWeek,
-                    payroll.GetScheduleInfo(userId)[i].Shift);
-            }
+            this.UserId = userId;
+            this.StartDate = start;
+            this.EndDate = end;
         }
 
 
-
+        public void PopulateSchedule(DataGridView dg)
+        {
+            PayrollQuery pq = new PayrollQuery();
+            DateTime dateInc = StartDate;
+            dg.Rows.Clear();
+            for (int i = 0; i <= (EndDate - StartDate).Days; i++)
+            {
+                string shift;
+                try
+                {
+                    shift = pq.GetScheduleInfo(UserId, dateInc)[0].Shift;
+                }
+                catch 
+                {
+                    shift = "OFF";
+                }
+                dg.Rows.Add(dateInc.ToString().Substring(0, 10),
+                    dateInc.DayOfWeek, shift);
+                dateInc = dateInc.AddDays(1);
+            }
+        }
     }
 }
