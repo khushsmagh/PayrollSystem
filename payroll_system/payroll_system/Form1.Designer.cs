@@ -59,17 +59,17 @@
             this.TS_End = new System.Windows.Forms.DateTimePicker();
             this.TS_Start = new System.Windows.Forms.DateTimePicker();
             this.TimesheetDataGrid = new System.Windows.Forms.DataGridView();
+            this.TSDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TSSchedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ClockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payslip = new System.Windows.Forms.TabPage();
             this.button1 = new System.Windows.Forms.Button();
             this.showPayslipOnDataGridView = new System.Windows.Forms.DataGridView();
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.printPayslip = new System.Drawing.Printing.PrintDocument();
-            this.TSDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TSDay = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TSSchedule = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ClockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             this.schedule.SuspendLayout();
@@ -416,6 +416,35 @@
             this.TimesheetDataGrid.Size = new System.Drawing.Size(778, 245);
             this.TimesheetDataGrid.TabIndex = 0;
             // 
+            // TSDate
+            // 
+            this.TSDate.HeaderText = "Date";
+            this.TSDate.Name = "TSDate";
+            this.TSDate.ReadOnly = true;
+            // 
+            // TSDay
+            // 
+            this.TSDay.HeaderText = "Day";
+            this.TSDay.Name = "TSDay";
+            this.TSDay.ReadOnly = true;
+            // 
+            // TSSchedule
+            // 
+            this.TSSchedule.HeaderText = "Schedule";
+            this.TSSchedule.Name = "TSSchedule";
+            this.TSSchedule.ReadOnly = true;
+            // 
+            // ClockIn
+            // 
+            this.ClockIn.HeaderText = "ClockIn";
+            this.ClockIn.Name = "ClockIn";
+            // 
+            // ClockOut
+            // 
+            this.ClockOut.HeaderText = "ClockOut";
+            this.ClockOut.Name = "ClockOut";
+            this.ClockOut.ReadOnly = true;
+            // 
             // payslip
             // 
             this.payslip.AutoScroll = true;
@@ -476,35 +505,6 @@
             // printPayslip
             // 
             this.printPayslip.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printPayslip_PrintPage);
-            // 
-            // TSDate
-            // 
-            this.TSDate.HeaderText = "Date";
-            this.TSDate.Name = "TSDate";
-            this.TSDate.ReadOnly = true;
-            // 
-            // TSDay
-            // 
-            this.TSDay.HeaderText = "Day";
-            this.TSDay.Name = "TSDay";
-            this.TSDay.ReadOnly = true;
-            // 
-            // TSSchedule
-            // 
-            this.TSSchedule.HeaderText = "Schedule";
-            this.TSSchedule.Name = "TSSchedule";
-            this.TSSchedule.ReadOnly = true;
-            // 
-            // ClockIn
-            // 
-            this.ClockIn.HeaderText = "ClockIn";
-            this.ClockIn.Name = "ClockIn";
-            // 
-            // ClockOut
-            // 
-            this.ClockOut.HeaderText = "ClockOut";
-            this.ClockOut.Name = "ClockOut";
-            this.ClockOut.ReadOnly = true;
             // 
             // Payroll
             // 
