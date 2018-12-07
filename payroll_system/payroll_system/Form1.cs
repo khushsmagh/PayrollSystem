@@ -49,10 +49,6 @@ namespace payroll_system
             date_hired.Text = pi.DateHired;
             hourly_rate.Text = "$ " + Math.Round(pi.PayRate, 2).ToString();
 
-
-            Schedule.PopulateSchedule(ScheduleDataGrid, _UserId);
-            Timesheet.PopulateTimesheet(TimesheetDataGrid, _UserId);
-
         }
 
         private void PaySlipClick(object sender, EventArgs e)
@@ -82,8 +78,37 @@ namespace payroll_system
             e.Graphics.DrawString("TotalMoney :" + totalMoney.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 100));
         }
 
+  
+        private void Schedule_Search_Button_Click(object sender, EventArgs e)
+        {
+            DateTime start = S_Start.Value;
+            DateTime end = S_End.Value;
+            if (end > start)
+            {
+                Schedule schedule = new Schedule(_UserId, start, end);
+                schedule.PopulateSchedule(ScheduleDataGrid);
+                ScheduleDataGrid.Update();
+            }
+            else
+            {
+                MessageBox.Show("End date should be greater the start date.");
+            }
+        }
 
-
-
+        private void Timesheet_Search_Button_Click(object sender, EventArgs e)
+        {
+            DateTime start = TS_Start.Value;
+            DateTime end = TS_End.Value;
+            if (end > start)
+            {
+                Timesheet timesheet = new Timesheet(_UserId, start, end);
+                timesheet.PopulateTimesheet(TimesheetDataGrid);
+                ScheduleDataGrid.Update();
+            }
+            else
+            {
+                MessageBox.Show("End date should be greater the start date.");
+            }
+        }
     }
 }

@@ -17,18 +17,22 @@ namespace payroll_system
             return query.ToList();
         }
 
-        public List<TSchedule> GetScheduleInfo(int id)
+        public List<TSchedule> GetScheduleInfo(int id, DateTime date)
         {
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-            var query = db.ExecuteQuery<TSchedule>(@"SELECT * FROM TSchedule WHERE EmployeeId = {0}", id);
+            string sqlDate = "'" + date.ToShortDateString() + "'";
+            var query = db.ExecuteQuery<TSchedule>(@"SELECT * FROM TSchedule WHERE EmployeeId = " + id + " AND [Date] = " + sqlDate);
             return query.ToList();
-
+           
         }
 
-        public static List<TTimesheet> GetTimesheetInfo(int id)
+       
+
+        public List<TTimesheet> GetTimesheetInfo(int id, DateTime date)
         {
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-            var query = db.ExecuteQuery<TTimesheet>(@"SELECT * FROM TTimesheet WHERE EmployeeId = {0}", id);
+            string sqlDate = "'" + date.ToShortDateString() + "'";
+            var query = db.ExecuteQuery<TTimesheet>(@"SELECT * FROM TTimesheet WHERE EmployeeId = " + id + " AND [Date] = " + sqlDate);
             return query.ToList();
         }
 
@@ -54,7 +58,7 @@ namespace payroll_system
             string time = "HH:mm:ss";
             string date = "yyyy-MM-dd";
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-            var checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}",EmpId,dateTime.ToString(date)).ToList();
+            var checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = '{1}'",EmpId,dateTime.ToString(date)).ToList();
             if(checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
             {
                 var query = db.ExecuteQuery<TTimesheet>(@"INSERT INTO TTimesheet (EmployeeId, [Date], CLockInTime, ClockOutTime, TotalHours)
