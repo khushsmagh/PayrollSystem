@@ -58,14 +58,14 @@ namespace payroll_system
             string time = "HH:mm:ss";
             string date = "yyyy-MM-dd";
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-<<<<<<< HEAD
             var checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = '{1}'",EmpId,dateTime.ToString(date)).ToList();
             if(checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
-=======
-            var checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}",EmpId,dateTime.ToString(date)).ToList();
+            {
+               checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
 
-            if(checkIfEmpIsClockedIn.Count > 0)
->>>>>>> 6db9f1291686733cd08b4c1ec75e005f96412dd9
+            }
+
+            if (checkIfEmpIsClockedIn.Count > 0)
             {
                 if (checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
                 {
