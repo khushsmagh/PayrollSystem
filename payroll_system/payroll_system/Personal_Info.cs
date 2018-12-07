@@ -38,6 +38,16 @@ namespace payroll_system
             this.PayRate = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].HourlyRate;
         }
 
+        public void LoadInfo(Label employeeName, Label firstN, Label lastN, Label dob, Label pos, Label dateH, Label hr)
+        {
+            employeeName.Text = FirstName + LastName;
+            firstN.Text = FirstName;
+            lastN.Text = LastName;
+            dob.Text = DateOfBirth;
+            pos.Text = Position;
+            dateH.Text = DateHired;
+            hr.Text = "$ " + Math.Round(PayRate, 2).ToString();
+        }
     
 
     }

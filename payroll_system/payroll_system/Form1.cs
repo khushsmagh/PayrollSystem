@@ -41,14 +41,7 @@ namespace payroll_system
         private void Payroll_Load(object sender, EventArgs e)
         {
             Personal_Info pi = new Personal_Info(_UserId);
-            employee_name.Text = pi.FirstName + pi.LastName;
-            first_name.Text = pi.FirstName;
-            last_name.Text = pi.LastName;
-            dob.Text = pi.DateOfBirth;
-            position.Text = pi.Position;
-            date_hired.Text = pi.DateHired;
-            hourly_rate.Text = "$ " + Math.Round(pi.PayRate, 2).ToString();
-
+            pi.LoadInfo(employee_name, first_name, last_name, dob, position, date_hired, hourly_rate);
         }
 
         private void PaySlipClick(object sender, EventArgs e)
