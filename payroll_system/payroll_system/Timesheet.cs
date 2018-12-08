@@ -34,13 +34,25 @@ namespace payroll_system
                 try
                 {
                     clockIn = pq.GetTimesheetInfo(UserId, dateInc)[0].CLockInTime.ToString();
-                    clockOut = pq.GetTimesheetInfo(UserId, dateInc)[0].ClockOutTime.ToString();
-                    shift = pq.GetScheduleInfo(UserId, dateInc)[0].Shift;
                 }
                 catch 
                 {
                     clockIn = "---";
+                }
+                try
+                {
+                    clockOut = pq.GetTimesheetInfo(UserId, dateInc)[0].ClockOutTime.ToString();
+                }
+                catch
+                {
                     clockOut = "---";
+                }
+                try
+                {
+                    shift = pq.GetScheduleInfo(UserId, dateInc)[0].Shift;
+                }
+                catch
+                {
                     shift = "OFF";
                 }
                 dg.Rows.Add(dateInc.ToString().Substring(0, 10),
