@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Form));
             this.adminTabControl = new System.Windows.Forms.TabControl();
             this.employeeList = new System.Windows.Forms.TabPage();
             this.editButton = new System.Windows.Forms.Button();
@@ -57,7 +56,6 @@
             this.editTimesheet = new System.Windows.Forms.TabPage();
             this.deleteTimesheetButton = new System.Windows.Forms.Button();
             this.editTimesheetButton = new System.Windows.Forms.Button();
-            this.addTimesheet = new System.Windows.Forms.Button();
             this.editEmployeeTimesheetDataGridView = new System.Windows.Forms.DataGridView();
             this.timesheetIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.employeeIdDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -147,6 +145,7 @@
             this.employeeListGridView.AutoGenerateColumns = false;
             this.employeeListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeListGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
+            this.employeeListGridView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.employeeListGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.employeeListGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.employeeIdDataGridViewTextBoxColumn1,
@@ -235,11 +234,10 @@
             this.editSchedule.TabIndex = 1;
             this.editSchedule.Text = "Edit Schedule";
             this.editSchedule.UseVisualStyleBackColor = true;
-//            this.editSchedule.Click += new System.EventHandler(this.editSchedule_Click);
             // 
             // editScheduleButton
             // 
-            this.editScheduleButton.Location = new System.Drawing.Point(433, 361);
+            this.editScheduleButton.Location = new System.Drawing.Point(376, 371);
             this.editScheduleButton.Name = "editScheduleButton";
             this.editScheduleButton.Size = new System.Drawing.Size(97, 37);
             this.editScheduleButton.TabIndex = 3;
@@ -249,7 +247,7 @@
             // 
             // deleteSchedule
             // 
-            this.deleteSchedule.Location = new System.Drawing.Point(610, 361);
+            this.deleteSchedule.Location = new System.Drawing.Point(553, 371);
             this.deleteSchedule.Name = "deleteSchedule";
             this.deleteSchedule.Size = new System.Drawing.Size(97, 37);
             this.deleteSchedule.TabIndex = 2;
@@ -309,7 +307,6 @@
             // 
             this.editTimesheet.Controls.Add(this.deleteTimesheetButton);
             this.editTimesheet.Controls.Add(this.editTimesheetButton);
-            this.editTimesheet.Controls.Add(this.addTimesheet);
             this.editTimesheet.Controls.Add(this.editEmployeeTimesheetDataGridView);
             this.editTimesheet.Location = new System.Drawing.Point(4, 39);
             this.editTimesheet.Name = "editTimesheet";
@@ -320,7 +317,7 @@
             // 
             // deleteTimesheetButton
             // 
-            this.deleteTimesheetButton.Location = new System.Drawing.Point(574, 354);
+            this.deleteTimesheetButton.Location = new System.Drawing.Point(523, 357);
             this.deleteTimesheetButton.Name = "deleteTimesheetButton";
             this.deleteTimesheetButton.Size = new System.Drawing.Size(97, 37);
             this.deleteTimesheetButton.TabIndex = 4;
@@ -330,22 +327,13 @@
             // 
             // editTimesheetButton
             // 
-            this.editTimesheetButton.Location = new System.Drawing.Point(407, 354);
+            this.editTimesheetButton.Location = new System.Drawing.Point(356, 357);
             this.editTimesheetButton.Name = "editTimesheetButton";
             this.editTimesheetButton.Size = new System.Drawing.Size(97, 37);
             this.editTimesheetButton.TabIndex = 3;
             this.editTimesheetButton.Text = "Save";
             this.editTimesheetButton.UseVisualStyleBackColor = true;
             this.editTimesheetButton.Click += new System.EventHandler(this.editTimesheetButton_Click);
-            // 
-            // addTimesheet
-            // 
-            this.addTimesheet.Location = new System.Drawing.Point(229, 354);
-            this.addTimesheet.Name = "addTimesheet";
-            this.addTimesheet.Size = new System.Drawing.Size(97, 37);
-            this.addTimesheet.TabIndex = 2;
-            this.addTimesheet.Text = "Add";
-            this.addTimesheet.UseVisualStyleBackColor = true;
             // 
             // editEmployeeTimesheetDataGridView
             // 
@@ -366,7 +354,6 @@
             this.editEmployeeTimesheetDataGridView.RowTemplate.Height = 24;
             this.editEmployeeTimesheetDataGridView.Size = new System.Drawing.Size(1029, 323);
             this.editEmployeeTimesheetDataGridView.TabIndex = 0;
-         //   this.editEmployeeTimesheetDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectedEmployee);
             // 
             // timesheetIdDataGridViewTextBoxColumn
             // 
@@ -426,7 +413,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::payroll_system.Properties.Resources.formbackground1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 587);
             this.Controls.Add(this.adminTabControl);
@@ -466,7 +453,6 @@
         private System.Windows.Forms.Button deleteSchedule;
         private System.Windows.Forms.Button deleteTimesheetButton;
         private System.Windows.Forms.Button editTimesheetButton;
-        private System.Windows.Forms.Button addTimesheet;
         private System.Windows.Forms.Button editScheduleButton;
         private PayrollDataSet payrollDataSet;
         private System.Windows.Forms.BindingSource tScheduleBindingSource;

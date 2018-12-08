@@ -139,7 +139,7 @@ namespace payroll_system
                 usernameTextBox.Text = string.Empty;
                 passwordTextBox.Text = string.Empty;
             }
-            Method();
+            //Method();
         }
 
         private void clockInButton_Click(object sender, EventArgs e)

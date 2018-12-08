@@ -37,43 +37,23 @@ namespace payroll_system
 
         }
 
-        public void PopulateDataIntoForm()
-        {
-            employeeTable = new DataTable();
-            LinqToSQLDataContext employeeData = new LinqToSQLDataContext();
-            var query = employeeData.ExecuteQuery<TEmployee>(@"SELECT * FROM TEmployee").ToList();
-            employeeListGridView.DataSource = query;
-            ShowScheduleOfSelectedEmployee();
-            ShowTimesheetOfSelectedEmployee();
-        }
-
-        public void ShowScheduleOfSelectedEmployee()
-        {
-            selectedEmployeeTable = new DataTable();
-            LinqToSQLDataContext employeeData = new LinqToSQLDataContext();
-            var query = employeeData.ExecuteQuery<TSchedule>(@"SELECT * FROM TSchedule").ToList();
-            editEmployeeScheduleDataGridView.DataSource = query;
-        }
-
-        public void ShowTimesheetOfSelectedEmployee()
-        {
-            selectedEmployeeTimesheetTable = new DataTable();
-            LinqToSQLDataContext employeeData = new LinqToSQLDataContext();
-            var query = employeeData.ExecuteQuery<TTimesheet>(@"SELECT * FROM TTimesheet").ToList();
-            editEmployeeTimesheetDataGridView.DataSource = query;
-        }
-
         private void deleteTimesheetButton_Click(object sender, EventArgs e)
         {
-            int deleteEmployeeId = Convert.ToInt32(editEmployeeTimesheetDataGridView.CurrentRow.Cells[0].Value);
-            tTimesheetTableAdapter.DeleteTimesheetQuery(deleteEmployeeId);
-            tTimesheetTableAdapter.Fill(this.payrollDataSet.TTimesheet);
+            try
+            {
+                int deleteEmployeeId = Convert.ToInt32(editEmployeeTimesheetDataGridView.CurrentRow.Cells[0].Value);
+                tTimesheetTableAdapter.DeleteTimesheetQuery(deleteEmployeeId);
+                tTimesheetTableAdapter.Fill(this.payrollDataSet.TTimesheet);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Something went wrong");
+            }
         }
 
         private void editButton_Click(object sender, EventArgs e)
         {
             int employee = Convert.ToInt32(employeeListGridView.CurrentRow.Cells[0].Value);
-            MessageBox.Show(employee.ToString());
             try
             {
                 if (scheduleRadioButton.Checked)
@@ -86,7 +66,6 @@ namespace payroll_system
                     adminTabControl.SelectedIndex = 2;
                     this.tTimesheetTableAdapter.FillByTimesheet(this.payrollDataSet.TTimesheet, employee);
                 }
-                MessageBox.Show("hoja");
             }
             catch (Exception ex)
             {
