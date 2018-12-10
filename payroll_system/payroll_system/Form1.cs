@@ -5,8 +5,13 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Google.Apis.Auth.OAuth2;
+using Google.Apis.Calendar.v3;
+using Google.Apis.Calendar.v3.Data;
+using Google.Apis.Services;
 
 namespace payroll_system
 {
@@ -29,13 +34,13 @@ namespace payroll_system
                 _UserId = value;
             }
         }
-      
+
 
         public Payroll(int UserId)
         {
             this._UserId = UserId;
             InitializeComponent();
-           
+
         }
 
         private void Payroll_Load(object sender, EventArgs e)
@@ -71,7 +76,7 @@ namespace payroll_system
             e.Graphics.DrawString("TotalMoney :" + totalMoney.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 100));
         }
 
-  
+
         private void Schedule_Search_Button_Click(object sender, EventArgs e)
         {
             DateTime start = S_Start.Value;
@@ -104,6 +109,7 @@ namespace payroll_system
             }
         }
 
+<<<<<<< HEAD
         private void GeneratePayslip_Button_Click(object sender, EventArgs e)
         {
             if ((PS_EndDate.Value - PS_StartDate.Value).Days > 0)
@@ -115,6 +121,72 @@ namespace payroll_system
             {
                 MessageBox.Show("Dates should 1 or more days apart");
             }
+=======
+        private void GetScheduleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void addToGoogleButton_Click(object sender, EventArgs e)
+        {
+            var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
+            string[] getShiftDate = getDate.Split('-');
+            var getYeayOfDate = Convert.ToInt32(getShiftDate[0]);
+            var getMonthOfDate = Convert.ToInt32(getShiftDate[1]);
+            var getDayOfDate = Convert.ToInt32(getShiftDate[2]);
+            var getShiftTime = ScheduleDataGrid.CurrentRow.Cells[2].Value.ToString();
+            MessageBox.Show(getShiftTime);
+            string[] shift = getShiftTime.Split('-');
+            MessageBox.Show("SHift start" + shift[0] + "  Shift End" + shift[1]);
+            var shiftStart = TimeSpan.ParseExact(shift[0], "hhmm", null);
+            var shiftEnd = TimeSpan.ParseExact(shift[1], "hhmm", null);
+            var shiftStartHours = shiftStart.Hours;
+            var shiftStartMinutes = shiftStart.Minutes;
+            var shiftEndHours = shiftEnd.Hours;
+            var shiftEndMinutes = shiftEnd.Minutes;
+            MessageBox.Show("HOurs1" + shiftStartHours + " Minutes1" + shiftStartMinutes + " : Hours2" + shiftEndHours + " : Minites2" + shiftEndMinutes);
+            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
+            (
+                new ClientSecrets
+                {
+                    ClientId = "421772432711-lr25m8uvjmrtf1l5cgo1otcmuv5oqbrh.apps.googleusercontent.com",
+                    ClientSecret = "NinSXom7UlHxjP7Emklf77RC",
+                },
+                new[] { CalendarService.Scope.Calendar },
+                "user",
+                    CancellationToken.None).Result;
+
+            // Create the service.
+            var service = new CalendarService(new BaseClientService.Initializer()
+            {
+                HttpClientInitializer = credential,
+                ApplicationName = "AppForAddDateToCalender",
+            });
+
+
+            Event myEvent = new Event
+            {
+                Summary = "Testing Adding Schedule",
+                Location = "Bow valley",
+                Start = new EventDateTime()
+                {
+                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
+                    TimeZone = "America/Los_Angeles"
+                },
+
+                End = new EventDateTime()
+                {
+                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
+                    TimeZone = "America/Los_Angeles"
+                },
+
+                Attendees = new List<EventAttendee>()
+                {
+                    new EventAttendee() { Email = "sainisandeep199627@gmail.com" }
+                }
+            };
+            Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
+>>>>>>> 3c2246b53a82dc763bf925fc9eb42e81db85773e
         }
     }
 }

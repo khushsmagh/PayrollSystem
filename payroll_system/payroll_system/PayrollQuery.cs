@@ -9,7 +9,19 @@ namespace payroll_system
 {
     class PayrollQuery
     {
+        public List<TEmployee> GetEmployeeDetails(string firstname)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+            var query = db.ExecuteQuery<TEmployee>(@"SELECT * FROM TEmployee WHERE FirstName = {0}", firstname);
+            return query.ToList();
+        }
 
+        public List<TSchedule> GetEmployeeScheduled(string schedule)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+            var query = db.ExecuteQuery<TSchedule>(@"SELECT * FROM TSchedule WHERE [Date] = {0}", schedule);
+            return query.ToList();
+        }
         public List<TEmployee> GetEmployeeInfo(int id)
         {
             LinqToSQLDataContext db = new LinqToSQLDataContext();

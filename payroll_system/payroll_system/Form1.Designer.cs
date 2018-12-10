@@ -70,11 +70,15 @@
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.printPayslip = new System.Drawing.Printing.PrintDocument();
+<<<<<<< HEAD
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.PS_EndDate = new System.Windows.Forms.DateTimePicker();
             this.PS_StartDate = new System.Windows.Forms.DateTimePicker();
             this.GeneratePayslip_Button = new System.Windows.Forms.Button();
+=======
+            this.addToGoogleButton = new System.Windows.Forms.Button();
+>>>>>>> 3c2246b53a82dc763bf925fc9eb42e81db85773e
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             this.schedule.SuspendLayout();
@@ -255,6 +259,7 @@
             // schedule
             // 
             this.schedule.AutoScroll = true;
+            this.schedule.Controls.Add(this.addToGoogleButton);
             this.schedule.Controls.Add(this.S_Search_Button);
             this.schedule.Controls.Add(this.S_ToLabel);
             this.schedule.Controls.Add(this.S_FromLabel);
@@ -320,12 +325,13 @@
             this.Date,
             this.Day,
             this.Shift});
-            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 178);
+            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 163);
             this.ScheduleDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ScheduleDataGrid.Name = "ScheduleDataGrid";
             this.ScheduleDataGrid.RowTemplate.Height = 24;
             this.ScheduleDataGrid.Size = new System.Drawing.Size(781, 241);
             this.ScheduleDataGrid.TabIndex = 0;
+            this.ScheduleDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GetScheduleClick);
             // 
             // Date
             // 
@@ -516,6 +522,7 @@
             // 
             this.printPayslip.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printPayslip_PrintPage);
             // 
+<<<<<<< HEAD
             // label7
             // 
             this.label7.AutoSize = true;
@@ -558,6 +565,17 @@
             this.GeneratePayslip_Button.Text = "Generate PaySlip";
             this.GeneratePayslip_Button.UseVisualStyleBackColor = true;
             this.GeneratePayslip_Button.Click += new System.EventHandler(this.GeneratePayslip_Button_Click);
+=======
+            // addToGoogleButton
+            // 
+            this.addToGoogleButton.Location = new System.Drawing.Point(603, 409);
+            this.addToGoogleButton.Name = "addToGoogleButton";
+            this.addToGoogleButton.Size = new System.Drawing.Size(189, 30);
+            this.addToGoogleButton.TabIndex = 7;
+            this.addToGoogleButton.Text = "Add To Google";
+            this.addToGoogleButton.UseVisualStyleBackColor = true;
+            this.addToGoogleButton.Click += new System.EventHandler(this.addToGoogleButton_Click);
+>>>>>>> 3c2246b53a82dc763bf925fc9eb42e81db85773e
             // 
             // Payroll
             // 
@@ -633,11 +651,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TSSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClockIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClockOut;
+<<<<<<< HEAD
         private System.Windows.Forms.Button GeneratePayslip_Button;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker PS_EndDate;
         private System.Windows.Forms.DateTimePicker PS_StartDate;
+=======
+        private System.Windows.Forms.Button addToGoogleButton;
+>>>>>>> 3c2246b53a82dc763bf925fc9eb42e81db85773e
     }
 }
 

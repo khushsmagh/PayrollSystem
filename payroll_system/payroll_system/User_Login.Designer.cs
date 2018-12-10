@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(User_Login));
             this.loginButton = new System.Windows.Forms.Button();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.clockOutButton = new System.Windows.Forms.Button();
@@ -43,7 +42,7 @@
             // 
             this.loginButton.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.loginButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.loginButton.Location = new System.Drawing.Point(135, 400);
+            this.loginButton.Location = new System.Drawing.Point(131, 357);
             this.loginButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loginButton.Name = "loginButton";
             this.loginButton.Size = new System.Drawing.Size(147, 65);
@@ -65,7 +64,7 @@
             // 
             this.clockOutButton.BackColor = System.Drawing.Color.Crimson;
             this.clockOutButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clockOutButton.Location = new System.Drawing.Point(693, 489);
+            this.clockOutButton.Location = new System.Drawing.Point(693, 415);
             this.clockOutButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clockOutButton.Name = "clockOutButton";
             this.clockOutButton.Size = new System.Drawing.Size(147, 65);
@@ -78,7 +77,7 @@
             // 
             this.clockInButton.BackColor = System.Drawing.Color.GreenYellow;
             this.clockInButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.clockInButton.Location = new System.Drawing.Point(693, 330);
+            this.clockInButton.Location = new System.Drawing.Point(693, 297);
             this.clockInButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.clockInButton.Name = "clockInButton";
             this.clockInButton.Size = new System.Drawing.Size(147, 65);
@@ -91,7 +90,7 @@
             // 
             this.usernameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.usernameTextBox.Location = new System.Drawing.Point(116, 135);
+            this.usernameTextBox.Location = new System.Drawing.Point(116, 190);
             this.usernameTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.usernameTextBox.Name = "usernameTextBox";
             this.usernameTextBox.Size = new System.Drawing.Size(196, 34);
@@ -117,7 +116,7 @@
             // 
             this.employeeNumber.AutoSize = true;
             this.employeeNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employeeNumber.Location = new System.Drawing.Point(659, 126);
+            this.employeeNumber.Location = new System.Drawing.Point(659, 147);
             this.employeeNumber.Name = "employeeNumber";
             this.employeeNumber.Size = new System.Drawing.Size(215, 29);
             this.employeeNumber.TabIndex = 7;
@@ -127,7 +126,7 @@
             // 
             this.employeeNumberTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.employeeNumberTextBox.ForeColor = System.Drawing.Color.Silver;
-            this.employeeNumberTextBox.Location = new System.Drawing.Point(664, 199);
+            this.employeeNumberTextBox.Location = new System.Drawing.Point(664, 220);
             this.employeeNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.employeeNumberTextBox.Name = "employeeNumberTextBox";
             this.employeeNumberTextBox.Size = new System.Drawing.Size(196, 34);
@@ -140,7 +139,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1063, 649);
             this.Controls.Add(this.employeeNumberTextBox);

@@ -110,5 +110,22 @@ namespace payroll_system
             tScheduleTableAdapter.DeleteScheduleQuery(deleteScheduleId);
             tScheduleTableAdapter.Fill(this.payrollDataSet.TSchedule);
         }
+
+        private void searchEmployeeDetailsButton_Click(object sender, EventArgs e)
+        {
+            string firstName = getEmployeeTextBox.Text;
+            employeeTable = new DataTable();
+            PayrollQuery pq = new PayrollQuery();
+            searchDataGridView.DataSource = pq.GetEmployeeDetails(firstName);
+        }
+
+        private void searchScheduleForThatDateButton_Click(object sender, EventArgs e)
+        {
+            string schedule = scheduleDate.Value.ToString().Substring(0, 10);
+            MessageBox.Show(schedule);
+            //DataTable employeeTableforschedule = new DataTable();
+            PayrollQuery pq = new PayrollQuery();
+            searchDataGridView.DataSource = pq.GetEmployeeScheduled(schedule);
+        }
     }
 }
