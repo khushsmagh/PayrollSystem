@@ -70,6 +70,7 @@
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.printPayslip = new System.Drawing.Printing.PrintDocument();
+            this.addToGoogleButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             this.schedule.SuspendLayout();
@@ -250,6 +251,7 @@
             // schedule
             // 
             this.schedule.AutoScroll = true;
+            this.schedule.Controls.Add(this.addToGoogleButton);
             this.schedule.Controls.Add(this.S_Search_Button);
             this.schedule.Controls.Add(this.S_ToLabel);
             this.schedule.Controls.Add(this.S_FromLabel);
@@ -315,12 +317,13 @@
             this.Date,
             this.Day,
             this.Shift});
-            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 178);
+            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 163);
             this.ScheduleDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ScheduleDataGrid.Name = "ScheduleDataGrid";
             this.ScheduleDataGrid.RowTemplate.Height = 24;
             this.ScheduleDataGrid.Size = new System.Drawing.Size(781, 241);
             this.ScheduleDataGrid.TabIndex = 0;
+            this.ScheduleDataGrid.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.GetScheduleClick);
             // 
             // Date
             // 
@@ -506,6 +509,16 @@
             // 
             this.printPayslip.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printPayslip_PrintPage);
             // 
+            // addToGoogleButton
+            // 
+            this.addToGoogleButton.Location = new System.Drawing.Point(603, 409);
+            this.addToGoogleButton.Name = "addToGoogleButton";
+            this.addToGoogleButton.Size = new System.Drawing.Size(189, 30);
+            this.addToGoogleButton.TabIndex = 7;
+            this.addToGoogleButton.Text = "Add To Google";
+            this.addToGoogleButton.UseVisualStyleBackColor = true;
+            this.addToGoogleButton.Click += new System.EventHandler(this.addToGoogleButton_Click);
+            // 
             // Payroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -579,6 +592,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TSSchedule;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClockIn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ClockOut;
+        private System.Windows.Forms.Button addToGoogleButton;
     }
 }
 

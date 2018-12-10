@@ -68,6 +68,15 @@
             this.tScheduleTableAdapter = new payroll_system.PayrollDataSetTableAdapters.TScheduleTableAdapter();
             this.tEmployeeTableAdapter = new payroll_system.PayrollDataSetTableAdapters.TEmployeeTableAdapter();
             this.tTimesheetTableAdapter = new payroll_system.PayrollDataSetTableAdapters.TTimesheetTableAdapter();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.searchDataGridView = new System.Windows.Forms.DataGridView();
+            this.payrollDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.getEmployeeTextBox = new System.Windows.Forms.TextBox();
+            this.searchEmployeeDetailsButton = new System.Windows.Forms.Button();
+            this.scheduleDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.searchScheduleForThatDateButton = new System.Windows.Forms.Button();
             this.adminTabControl.SuspendLayout();
             this.employeeList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeListGridView)).BeginInit();
@@ -80,6 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.editEmployeeTimesheetDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTimesheetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTableBinding)).BeginInit();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollDataSetBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // adminTabControl
@@ -87,6 +99,7 @@
             this.adminTabControl.Controls.Add(this.employeeList);
             this.adminTabControl.Controls.Add(this.editSchedule);
             this.adminTabControl.Controls.Add(this.editTimesheet);
+            this.adminTabControl.Controls.Add(this.tabPage1);
             this.adminTabControl.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.adminTabControl.Location = new System.Drawing.Point(0, 60);
             this.adminTabControl.Name = "adminTabControl";
@@ -409,6 +422,89 @@
             // 
             this.tTimesheetTableAdapter.ClearBeforeFill = true;
             // 
+            // tabPage1
+            // 
+            this.tabPage1.Controls.Add(this.searchScheduleForThatDateButton);
+            this.tabPage1.Controls.Add(this.label2);
+            this.tabPage1.Controls.Add(this.scheduleDate);
+            this.tabPage1.Controls.Add(this.searchEmployeeDetailsButton);
+            this.tabPage1.Controls.Add(this.getEmployeeTextBox);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.searchDataGridView);
+            this.tabPage1.Location = new System.Drawing.Point(4, 39);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(1029, 414);
+            this.tabPage1.TabIndex = 3;
+            this.tabPage1.Text = "Advanced Search";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // searchDataGridView
+            // 
+            this.searchDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.searchDataGridView.Location = new System.Drawing.Point(8, 172);
+            this.searchDataGridView.Name = "searchDataGridView";
+            this.searchDataGridView.RowTemplate.Height = 24;
+            this.searchDataGridView.Size = new System.Drawing.Size(999, 236);
+            this.searchDataGridView.TabIndex = 0;
+            // 
+            // payrollDataSetBindingSource
+            // 
+            this.payrollDataSetBindingSource.DataSource = this.payrollDataSet;
+            this.payrollDataSetBindingSource.Position = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(8, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(197, 30);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Get Employee Details";
+            // 
+            // getEmployeeTextBox
+            // 
+            this.getEmployeeTextBox.Location = new System.Drawing.Point(268, 21);
+            this.getEmployeeTextBox.Name = "getEmployeeTextBox";
+            this.getEmployeeTextBox.Size = new System.Drawing.Size(179, 38);
+            this.getEmployeeTextBox.TabIndex = 2;
+            // 
+            // searchEmployeeDetailsButton
+            // 
+            this.searchEmployeeDetailsButton.Location = new System.Drawing.Point(549, 21);
+            this.searchEmployeeDetailsButton.Name = "searchEmployeeDetailsButton";
+            this.searchEmployeeDetailsButton.Size = new System.Drawing.Size(103, 38);
+            this.searchEmployeeDetailsButton.TabIndex = 3;
+            this.searchEmployeeDetailsButton.Text = "Search";
+            this.searchEmployeeDetailsButton.UseVisualStyleBackColor = true;
+            this.searchEmployeeDetailsButton.Click += new System.EventHandler(this.searchEmployeeDetailsButton_Click);
+            // 
+            // scheduleDate
+            // 
+            this.scheduleDate.Location = new System.Drawing.Point(268, 96);
+            this.scheduleDate.Name = "scheduleDate";
+            this.scheduleDate.Size = new System.Drawing.Size(200, 38);
+            this.scheduleDate.TabIndex = 4;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(8, 96);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(132, 30);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Get Schedule ";
+            // 
+            // searchScheduleForThatDateButton
+            // 
+            this.searchScheduleForThatDateButton.Location = new System.Drawing.Point(549, 96);
+            this.searchScheduleForThatDateButton.Name = "searchScheduleForThatDateButton";
+            this.searchScheduleForThatDateButton.Size = new System.Drawing.Size(103, 38);
+            this.searchScheduleForThatDateButton.TabIndex = 6;
+            this.searchScheduleForThatDateButton.Text = "Search";
+            this.searchScheduleForThatDateButton.UseVisualStyleBackColor = true;
+            this.searchScheduleForThatDateButton.Click += new System.EventHandler(this.searchScheduleForThatDateButton_Click);
+            // 
             // Admin_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -433,6 +529,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.editEmployeeTimesheetDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tTimesheetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTableBinding)).EndInit();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.payrollDataSetBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -478,5 +578,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cLockInTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn clockOutTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalHoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.DataGridView searchDataGridView;
+        private System.Windows.Forms.BindingSource payrollDataSetBindingSource;
+        private System.Windows.Forms.Button searchEmployeeDetailsButton;
+        private System.Windows.Forms.TextBox getEmployeeTextBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button searchScheduleForThatDateButton;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DateTimePicker scheduleDate;
     }
 }
