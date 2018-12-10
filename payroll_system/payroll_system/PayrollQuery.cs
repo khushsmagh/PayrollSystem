@@ -36,6 +36,20 @@ namespace payroll_system
             return query.ToList();
         }
 
+        public void AddToPayslip(int id, DateTime start, DateTime end, decimal totalHours, decimal totalMoney)
+        {
+            LinqToSQLDataContext db = new LinqToSQLDataContext();
+            try
+            {
+                db.ExecuteQuery<TPayslip>(@"INSERT INTO TPayslip (EmployeeId, DateFrom, EndDate, TotalHours, ToTalMoney) 
+                                        Values (" + id + ", '" + start.ToShortDateString() + "', '" + end.ToShortDateString() + "', " + totalHours + ", " + totalMoney + ")");
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
         
 
         public List<TUserLogin> GetUserLoginsPermission(string nameOfuser)

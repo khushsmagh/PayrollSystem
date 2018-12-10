@@ -104,6 +104,7 @@
       <DependentUpon>PayrollDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="PayrollQuery.cs" />
+    <Compile Include="Payslip.cs" />
     <Compile Include="Personal_Info.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

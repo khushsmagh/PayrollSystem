@@ -103,5 +103,18 @@ namespace payroll_system
                 MessageBox.Show("End date should be greater the start date.");
             }
         }
+
+        private void GeneratePayslip_Button_Click(object sender, EventArgs e)
+        {
+            if ((PS_EndDate.Value - PS_StartDate.Value).Days > 0)
+            {
+                Payslip payslip = new Payslip(this.UserId, PS_StartDate.Value, PS_EndDate.Value);
+                payslip.AddPayslipToDB();
+            }
+            else
+            {
+                MessageBox.Show("Dates should 1 or more days apart");
+            }
+        }
     }
 }
