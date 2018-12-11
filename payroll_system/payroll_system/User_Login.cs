@@ -40,8 +40,6 @@ namespace payroll_system
 
         private void User_Login_Load(object sender, EventArgs e)
         {
-
-
         }
 
         private void usernameTextBox_Enter(object sender, EventArgs e)
@@ -145,8 +143,13 @@ namespace payroll_system
         private void clockInButton_Click(object sender, EventArgs e)
         {
             EmpId = Int32.Parse(employeeNumberTextBox.Text);
+            DateTime dateTime = DateTime.Now;
+            string time = "HH:mm:ss";
+            string date = "yyyy-MM-dd";
+            TimeSpan timeSpan = TimeSpan.Parse(dateTime.ToString(time));
+
             PayrollQuery pq = new PayrollQuery();
-            var employeeGetClockedIn =  pq.EmployeeClockIn(EmpId);
+            var employeeGetClockedIn = pq.EmployeeClockIn(EmpId);
         }
 
         private void clockOutButton_Click(object sender, EventArgs e)

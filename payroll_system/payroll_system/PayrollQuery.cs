@@ -35,10 +35,10 @@ namespace payroll_system
             string sqlDate = "'" + date.ToShortDateString() + "'";
             var query = db.ExecuteQuery<TSchedule>(@"SELECT * FROM TSchedule WHERE EmployeeId = " + id + " AND [Date] = " + sqlDate);
             return query.ToList();
-           
+
         }
 
-       
+
 
         public List<TTimesheet> GetTimesheetInfo(int id, DateTime date)
         {
@@ -48,7 +48,7 @@ namespace payroll_system
             return query.ToList();
         }
 
-        
+
 
         public List<TUserLogin> GetUserLoginsPermission(string nameOfuser)
         {
@@ -70,35 +70,37 @@ namespace payroll_system
             string time = "HH:mm:ss";
             string date = "yyyy-MM-dd";
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-            var checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = '{1}'",EmpId,dateTime.ToString(date)).ToList();
-            if(checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
-            {
-               checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
+            //var insert = db.ExecuteQuery<TTimesheet>("EXEC InsertQueryTest 7 , {0} , '10:00:00' , '17:00:00' ,  7", dateTime);
+            //MessageBox.Show("insert successfully");
+            //var checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = '{1}'", EmpId, dateTime.ToString(date)).ToList();
+            //if (checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
+            //{
+            //    checkIfEmpIsClockedIn = db.ExecuteQuery<TTimesheet>(@"SELECT CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
 
-            }
+            //}
 
-            if (checkIfEmpIsClockedIn.Count > 0)
-            {
-                if (checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
-                {
-                    var query = db.ExecuteQuery<TTimesheet>(@"INSERT INTO TTimesheet (EmployeeId, [Date], CLockInTime, ClockOutTime, TotalHours)
-                                                              VALUES ({0},{1},{2},{3},{4})", EmpId, dateTime, dateTime.ToString(time), string.Empty, 0);
+            ////if (checkIfEmpIsClockedIn.Count > 0)
+            //{
+                //if (checkIfEmpIsClockedIn[0].CLockInTime == TimeSpan.Zero)
+                //{
+                    var query = db.ExecuteQuery<TTimesheet>(@"INSERT INTO [dbo].[TTimesheet] ([EmployeeId], [Date], [CLockInTime], [ClockOutTime], [TotalHours]) VALUES ({0}, {1}, {2}, {3}, {4});
+                                                                SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM TTimesheet WHERE (TimesheetId = SCOPE_IDENTITY())", EmpId, dateTime, dateTime.ToString(time), string.Empty, 0);
                     MessageBox.Show("Successfully clocked in");
                     return query.ToList();
-                }
-                else
-                {
-                    MessageBox.Show("you are already logged in");
-                }
-            }
-            else
-            {
-                var query = db.ExecuteQuery<TTimesheet>(@"INSERT INTO TTimesheet (EmployeeId, [Date], CLockInTime, ClockOutTime, TotalHours)
-                                                        VALUES ({0},{1},{2},{3},{4})", EmpId, dateTime, dateTime.ToString(time), string.Empty, 0);
-                MessageBox.Show("Successfully clocked in");
-                return query.ToList();
-            }
-            return null;
+                //}
+                //else
+                //{
+                    //MessageBox.Show("you are already logged in");
+                //}
+            //}
+            //else
+            //{
+            //    var query = db.ExecuteQuery<TTimesheet>(@"INSERT INTO TTimesheet (EmployeeId, [Date], CLockInTime, ClockOutTime, TotalHours)
+            //                                            VALUES ({0},{1},{2},{3},{4})", EmpId, dateTime, dateTime.ToString(time), string.Empty, 0);
+            //    MessageBox.Show("Successfully clocked in");
+            //    return query.ToList();
+            //}
+            //return null;
         }
 
         public void EmployeeClockOut(int EmpId)
@@ -107,40 +109,42 @@ namespace payroll_system
             string time = "HH:mm:ss";
             string date = "yyyy-MM-dd";
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-            var checkIfEmpIsClockedOut = db.ExecuteQuery<TTimesheet>(@"SELECT ClockOutTime,CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
 
-            if(checkIfEmpIsClockedOut.Count > 0)
-            {
-                if (checkIfEmpIsClockedOut[0].CLockInTime == TimeSpan.Zero)
-                {
-                    MessageBox.Show("You have to first clock in");
-                }
-                else
-                {
-                    if (checkIfEmpIsClockedOut[0].ClockOutTime == TimeSpan.Zero)
-                    {
-                        var query = db.ExecuteQuery<TTimesheet>(@"UPDATE TTimesheet SET ClockOutTime = {0} WHERE EmployeeId = {1} AND [Date] = {2}", dateTime.ToString(time), EmpId, dateTime.ToString(date));
-                        var getClockOutTime = db.ExecuteQuery<TTimesheet>(@"SELECT ClockOutTime, CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
-                        TimeSpan clockInTime = getClockOutTime[0].CLockInTime;
-                        TimeSpan clockOutTime = getClockOutTime[0].ClockOutTime;
-                        TimeSpan timeDiff = clockOutTime - clockInTime;
-                        MessageBox.Show(timeDiff.ToString());
-                        decimal totalHours = Convert.ToDecimal(timeDiff.TotalHours);
-                        var insertTime = db.ExecuteQuery<TTimesheet>(@"UPDATE TTimesheet SET TotalHours = {0} WHERE EmployeeId = {1} AND [Date] = {2}", totalHours, EmpId, dateTime.ToString(date));
-                        MessageBox.Show("Successfully clocked out");
-                    }
-                    else
-                    {
-                        MessageBox.Show("you are already clocked out");
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("You have to first clock in");
-            }
-           
-            
+            //    var checkIfEmpIsClockedOut = db.ExecuteQuery<TTimesheet>(@"SELECT ClockOutTime,CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
+
+            //    if(checkIfEmpIsClockedOut.Count > 0)
+            //    {
+            //        if (checkIfEmpIsClockedOut[0].CLockInTime == TimeSpan.Zero)
+            //        {
+            //            MessageBox.Show("You have to first clock in");
+            //        }
+            //        else
+            //        {
+            //            if (checkIfEmpIsClockedOut[0].ClockOutTime == TimeSpan.Zero)
+            //            {
+            //                var query = db.ExecuteQuery<TTimesheet>(@"UPDATE TTimesheet SET ClockOutTime = {0} WHERE EmployeeId = {1} AND [Date] = {2}", dateTime.ToString(time), EmpId, dateTime.ToString(date));
+            //                var getClockOutTime = db.ExecuteQuery<TTimesheet>(@"SELECT ClockOutTime, CLockInTime FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
+            //                TimeSpan clockInTime = getClockOutTime[0].CLockInTime;
+            //                TimeSpan clockOutTime = getClockOutTime[0].ClockOutTime;
+            //                TimeSpan timeDiff = clockOutTime - clockInTime;
+            //                MessageBox.Show(timeDiff.ToString());
+            //                decimal totalHours = Convert.ToDecimal(timeDiff.TotalHours);
+            //                var insertTime = db.ExecuteQuery<TTimesheet>(@"UPDATE TTimesheet SET TotalHours = {0} WHERE EmployeeId = {1} AND [Date] = {2}", totalHours, EmpId, dateTime.ToString(date));
+            //                MessageBox.Show("Successfully clocked out");
+            //            }
+            //            else
+            //            {
+            //                MessageBox.Show("you are already clocked out");
+            //            }
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("You have to first clock in");
+            //    }
+
+
+            //}
         }
     }
 }

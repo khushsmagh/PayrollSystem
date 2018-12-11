@@ -131,48 +131,51 @@ namespace payroll_system
             var shiftStartMinutes = shiftStart.Minutes;
             var shiftEndHours = shiftEnd.Hours;
             var shiftEndMinutes = shiftEnd.Minutes;
+            MessageBox.Show(getDayOfDate.ToString() + "   test aa baiu");
+            MessageBox.Show(getMonthOfDate.ToString() + "   test aa baiu");
+            MessageBox.Show(getYeayOfDate.ToString() + "   test aa baiu");
             MessageBox.Show("HOurs1" + shiftStartHours + " Minutes1" + shiftStartMinutes + " : Hours2" + shiftEndHours + " : Minites2" + shiftEndMinutes);
-            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
-            (
-                new ClientSecrets
-                {
-                    ClientId = "421772432711-lr25m8uvjmrtf1l5cgo1otcmuv5oqbrh.apps.googleusercontent.com",
-                    ClientSecret = "NinSXom7UlHxjP7Emklf77RC",
-                },
-                new[] { CalendarService.Scope.Calendar },
-                "user",
-                    CancellationToken.None).Result;
+            //UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
+            //(
+            //    new ClientSecrets
+            //    {
+            //        ClientId = "421772432711-lr25m8uvjmrtf1l5cgo1otcmuv5oqbrh.apps.googleusercontent.com",
+            //        ClientSecret = "NinSXom7UlHxjP7Emklf77RC",
+            //    },
+            //    new[] { CalendarService.Scope.Calendar },
+            //    "user",
+            //        CancellationToken.None).Result;
 
-            // Create the service.
-            var service = new CalendarService(new BaseClientService.Initializer()
-            {
-                HttpClientInitializer = credential,
-                ApplicationName = "AppForAddDateToCalender",
-            });
+            //// Create the service.
+            //var service = new CalendarService(new BaseClientService.Initializer()
+            //{
+            //    HttpClientInitializer = credential,
+            //    ApplicationName = "AppForAddDateToCalender",
+            //});
 
 
-            Event myEvent = new Event
-            {
-                Summary = "Testing Adding Schedule",
-                Location = "Bow valley",
-                Start = new EventDateTime()
-                {
-                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
-                    TimeZone = "America/Los_Angeles"
-                },
+            //Event myEvent = new Event
+            //{
+            //    Summary = "Testing Adding Schedule",
+            //    Location = "Bow valley",
+            //    Start = new EventDateTime()
+            //    {
+            //        DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
+            //        TimeZone = "America/Los_Angeles"
+            //    },
 
-                End = new EventDateTime()
-                {
-                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
-                    TimeZone = "America/Los_Angeles"
-                },
+            //    End = new EventDateTime()
+            //    {
+            //        DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
+            //        TimeZone = "America/Los_Angeles"
+            //    },
 
-                Attendees = new List<EventAttendee>()
-                {
-                    new EventAttendee() { Email = "sainisandeep199627@gmail.com" }
-                }
-            };
-            Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
+            //    Attendees = new List<EventAttendee>()
+            //    {
+            //        new EventAttendee() { Email = "sainisandeep199627@gmail.com" }
+            //    }
+            //};
+            //Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
         }
     }
 }

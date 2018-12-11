@@ -98,6 +98,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>LinqToSQL.dbml</DependentUpon>
     </Compile>
+    <Compile Include="PayrollDataSet.cs">
+      <DependentUpon>PayrollDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="PayrollDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -181,6 +184,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\texture-1668079_1280.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons-847257_640.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

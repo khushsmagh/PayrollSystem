@@ -16,6 +16,7 @@ namespace payroll_system
         public DataTable employeeTable;
         public DataTable selectedEmployeeTable;
         public DataTable selectedEmployeeTimesheetTable;
+        public DateTimePicker dtp;
         public Admin_Form()
         {
             InitializeComponent();
@@ -126,6 +127,33 @@ namespace payroll_system
             //DataTable employeeTableforschedule = new DataTable();
             PayrollQuery pq = new PayrollQuery();
             searchDataGridView.DataSource = pq.GetEmployeeScheduled(schedule);
+        }
+
+        private void scheduleDataGridViewClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 2)
+            {
+                dtp = new DateTimePicker();
+                editEmployeeScheduleDataGridView.Controls.Add(dtp);
+                dtp.Format = DateTimePickerFormat.Short;
+                Rectangle Rectangle = editEmployeeScheduleDataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
+                dtp.Size = new Size(Rectangle.Width, Rectangle.Height);
+                dtp.Location = new Point(Rectangle.X, Rectangle.Y);
+
+                dtp.CloseUp += new EventHandler(dtp_CloseUp);
+                dtp.TextChanged += new EventHandler(dtp_OnTextChange);
+                dtp.Visible = true;
+            }
+        }
+
+        private void dtp_OnTextChange(object sender, EventArgs e)
+        {
+
+            editEmployeeScheduleDataGridView.CurrentCell.Value = dtp.Text.ToString();
+        }
+        void dtp_CloseUp(object sender, EventArgs e)
+        {
+            dtp.Visible = false;
         }
     }
 }

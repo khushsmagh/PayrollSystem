@@ -265,7 +265,7 @@ SELECT ScheduleId, EmployeeId, Date, Shift FROM TSchedule WHERE (ScheduleId = @S
               <Mapping SourceColumn="Shift" DataSetColumn="Shift" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteScheduleQuery" Modifier="Public" Name="DeleteScheduleQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteScheduleQuery">
+              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteScheduleQuery" Modifier="Public" Name="DeleteScheduleQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteScheduleQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.DeleteScheduleQuery</CommandText>
@@ -276,7 +276,7 @@ SELECT ScheduleId, EmployeeId, Date, Shift FROM TSchedule WHERE (ScheduleId = @S
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="retailmgmt.dbo.SelectSchedule" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillBySchedule" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBySchedule" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBySchedule">
+              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="retailmgmt.dbo.SelectSchedule" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillBySchedule" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBySchedule" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBySchedule">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SelectSchedule</CommandText>
@@ -357,7 +357,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
               <Mapping SourceColumn="TotalHours" DataSetColumn="TotalHours" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteTimesheetQuery" Modifier="Public" Name="DeleteTimesheetQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="DeleteTimesheetQuery">
+              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="DeleteTimesheetQuery" Modifier="Public" Name="DeleteTimesheetQuery" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="DeleteTimesheetQuery">
                 <DeleteCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.DeleteTimesheetQuery</CommandText>
@@ -368,7 +368,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
                   </DbCommand>
                 </DeleteCommand>
               </DbSource>
-              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="retailmgmt.dbo.SelectTimesheet" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByTimesheet" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillByTimesheet" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillByTimesheet">
+              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="retailmgmt.dbo.SelectTimesheet" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByTimesheet" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillByTimesheet" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillByTimesheet">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>dbo.SelectTimesheet</CommandText>
@@ -378,6 +378,21 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="retailmgmtConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" GenerateShortCommands="true" GeneratorSourceName="InsertQueryTest" Modifier="Public" Name="InsertQueryTest" QueryType="NoData" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="InsertQueryTest">
+                <InsertCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>dbo.InsertQueryTest</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="ReturnValue" ParameterName="@RETURN_VALUE" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@EmployeeId" Precision="10" ProviderType="Int" Scale="0" Size="4" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="date" DbType="Date" Direction="Input" ParameterName="@Date" Precision="10" ProviderType="Date" Scale="0" Size="3" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="time" DbType="Time" Direction="Input" ParameterName="@CLockInTime" Precision="16" ProviderType="Time" Scale="7" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="time" DbType="Time" Direction="Input" ParameterName="@ClockOutTime" Precision="16" ProviderType="Time" Scale="7" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DataTypeServer="numeric" DbType="Decimal" Direction="Input" ParameterName="@TotalHours" Precision="4" ProviderType="Decimal" Scale="2" Size="5" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
               </DbSource>
             </Sources>
           </TableAdapter>
@@ -389,7 +404,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
   <xs:element name="PayrollDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="PayrollDataSet" msprop:Generator_UserDSName="PayrollDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="TEmployee" msprop:Generator_TableClassName="TEmployeeDataTable" msprop:Generator_TableVarName="tableTEmployee" msprop:Generator_RowChangedName="TEmployeeRowChanged" msprop:Generator_TablePropName="TEmployee" msprop:Generator_RowDeletingName="TEmployeeRowDeleting" msprop:Generator_RowChangingName="TEmployeeRowChanging" msprop:Generator_RowEvHandlerName="TEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="TEmployeeRowDeleted" msprop:Generator_RowClassName="TEmployeeRow" msprop:Generator_UserTableName="TEmployee" msprop:Generator_RowEvArgName="TEmployeeRowChangeEvent">
+        <xs:element name="TEmployee" msprop:Generator_TableClassName="TEmployeeDataTable" msprop:Generator_TableVarName="tableTEmployee" msprop:Generator_TablePropName="TEmployee" msprop:Generator_RowDeletingName="TEmployeeRowDeleting" msprop:Generator_RowChangingName="TEmployeeRowChanging" msprop:Generator_RowEvHandlerName="TEmployeeRowChangeEventHandler" msprop:Generator_RowDeletedName="TEmployeeRowDeleted" msprop:Generator_UserTableName="TEmployee" msprop:Generator_RowChangedName="TEmployeeRowChanged" msprop:Generator_RowEvArgName="TEmployeeRowChangeEvent" msprop:Generator_RowClassName="TEmployeeRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="EmployeeId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnEmployeeId" msprop:Generator_ColumnPropNameInRow="EmployeeId" msprop:Generator_ColumnPropNameInTable="EmployeeIdColumn" msprop:Generator_UserColumnName="EmployeeId" type="xs:int" />
@@ -420,7 +435,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TPayslip" msprop:Generator_TableClassName="TPayslipDataTable" msprop:Generator_TableVarName="tableTPayslip" msprop:Generator_RowChangedName="TPayslipRowChanged" msprop:Generator_TablePropName="TPayslip" msprop:Generator_RowDeletingName="TPayslipRowDeleting" msprop:Generator_RowChangingName="TPayslipRowChanging" msprop:Generator_RowEvHandlerName="TPayslipRowChangeEventHandler" msprop:Generator_RowDeletedName="TPayslipRowDeleted" msprop:Generator_RowClassName="TPayslipRow" msprop:Generator_UserTableName="TPayslip" msprop:Generator_RowEvArgName="TPayslipRowChangeEvent">
+        <xs:element name="TPayslip" msprop:Generator_TableClassName="TPayslipDataTable" msprop:Generator_TableVarName="tableTPayslip" msprop:Generator_TablePropName="TPayslip" msprop:Generator_RowDeletingName="TPayslipRowDeleting" msprop:Generator_RowChangingName="TPayslipRowChanging" msprop:Generator_RowEvHandlerName="TPayslipRowChangeEventHandler" msprop:Generator_RowDeletedName="TPayslipRowDeleted" msprop:Generator_UserTableName="TPayslip" msprop:Generator_RowChangedName="TPayslipRowChanged" msprop:Generator_RowEvArgName="TPayslipRowChangeEvent" msprop:Generator_RowClassName="TPayslipRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="PaySlipId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnPaySlipId" msprop:Generator_ColumnPropNameInRow="PaySlipId" msprop:Generator_ColumnPropNameInTable="PaySlipIdColumn" msprop:Generator_UserColumnName="PaySlipId" type="xs:int" />
@@ -432,7 +447,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TUserLogin" msprop:Generator_TableClassName="TUserLoginDataTable" msprop:Generator_TableVarName="tableTUserLogin" msprop:Generator_RowChangedName="TUserLoginRowChanged" msprop:Generator_TablePropName="TUserLogin" msprop:Generator_RowDeletingName="TUserLoginRowDeleting" msprop:Generator_RowChangingName="TUserLoginRowChanging" msprop:Generator_RowEvHandlerName="TUserLoginRowChangeEventHandler" msprop:Generator_RowDeletedName="TUserLoginRowDeleted" msprop:Generator_RowClassName="TUserLoginRow" msprop:Generator_UserTableName="TUserLogin" msprop:Generator_RowEvArgName="TUserLoginRowChangeEvent">
+        <xs:element name="TUserLogin" msprop:Generator_TableClassName="TUserLoginDataTable" msprop:Generator_TableVarName="tableTUserLogin" msprop:Generator_TablePropName="TUserLogin" msprop:Generator_RowDeletingName="TUserLoginRowDeleting" msprop:Generator_RowChangingName="TUserLoginRowChanging" msprop:Generator_RowEvHandlerName="TUserLoginRowChangeEventHandler" msprop:Generator_RowDeletedName="TUserLoginRowDeleted" msprop:Generator_UserTableName="TUserLogin" msprop:Generator_RowChangedName="TUserLoginRowChanged" msprop:Generator_RowEvArgName="TUserLoginRowChangeEvent" msprop:Generator_RowClassName="TUserLoginRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="UserId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserId" msprop:Generator_ColumnPropNameInRow="UserId" msprop:Generator_ColumnPropNameInTable="UserIdColumn" msprop:Generator_UserColumnName="UserId" type="xs:int" />
@@ -454,7 +469,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TSchedule" msprop:Generator_TableClassName="TScheduleDataTable" msprop:Generator_TableVarName="tableTSchedule" msprop:Generator_TablePropName="TSchedule" msprop:Generator_RowDeletingName="TScheduleRowDeleting" msprop:Generator_RowChangingName="TScheduleRowChanging" msprop:Generator_RowEvHandlerName="TScheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="TScheduleRowDeleted" msprop:Generator_UserTableName="TSchedule" msprop:Generator_RowChangedName="TScheduleRowChanged" msprop:Generator_RowEvArgName="TScheduleRowChangeEvent" msprop:Generator_RowClassName="TScheduleRow">
+        <xs:element name="TSchedule" msprop:Generator_TableClassName="TScheduleDataTable" msprop:Generator_TableVarName="tableTSchedule" msprop:Generator_RowChangedName="TScheduleRowChanged" msprop:Generator_TablePropName="TSchedule" msprop:Generator_RowDeletingName="TScheduleRowDeleting" msprop:Generator_RowChangingName="TScheduleRowChanging" msprop:Generator_RowEvHandlerName="TScheduleRowChangeEventHandler" msprop:Generator_RowDeletedName="TScheduleRowDeleted" msprop:Generator_RowClassName="TScheduleRow" msprop:Generator_UserTableName="TSchedule" msprop:Generator_RowEvArgName="TScheduleRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="ScheduleId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnScheduleId" msprop:Generator_ColumnPropNameInRow="ScheduleId" msprop:Generator_ColumnPropNameInTable="ScheduleIdColumn" msprop:Generator_UserColumnName="ScheduleId" type="xs:int" />
@@ -470,7 +485,7 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TTimesheet" msprop:Generator_TableClassName="TTimesheetDataTable" msprop:Generator_TableVarName="tableTTimesheet" msprop:Generator_TablePropName="TTimesheet" msprop:Generator_RowDeletingName="TTimesheetRowDeleting" msprop:Generator_RowChangingName="TTimesheetRowChanging" msprop:Generator_RowEvHandlerName="TTimesheetRowChangeEventHandler" msprop:Generator_RowDeletedName="TTimesheetRowDeleted" msprop:Generator_UserTableName="TTimesheet" msprop:Generator_RowChangedName="TTimesheetRowChanged" msprop:Generator_RowEvArgName="TTimesheetRowChangeEvent" msprop:Generator_RowClassName="TTimesheetRow">
+        <xs:element name="TTimesheet" msprop:Generator_TableClassName="TTimesheetDataTable" msprop:Generator_TableVarName="tableTTimesheet" msprop:Generator_RowChangedName="TTimesheetRowChanged" msprop:Generator_TablePropName="TTimesheet" msprop:Generator_RowDeletingName="TTimesheetRowDeleting" msprop:Generator_RowChangingName="TTimesheetRowChanging" msprop:Generator_RowEvHandlerName="TTimesheetRowChangeEventHandler" msprop:Generator_RowDeletedName="TTimesheetRowDeleted" msprop:Generator_RowClassName="TTimesheetRow" msprop:Generator_UserTableName="TTimesheet" msprop:Generator_RowEvArgName="TTimesheetRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="TimesheetId" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="1" msprop:Generator_ColumnVarNameInTable="columnTimesheetId" msprop:Generator_ColumnPropNameInRow="TimesheetId" msprop:Generator_ColumnPropNameInTable="TimesheetIdColumn" msprop:Generator_UserColumnName="TimesheetId" type="xs:int" />
@@ -507,10 +522,10 @@ SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK__TPayslip__Employ__793DFFAF" msdata:parent="TEmployee" msdata:child="TPayslip" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TPayslip" msprop:Generator_ChildPropName="GetTPayslipRows" msprop:Generator_UserRelationName="FK__TPayslip__Employ__793DFFAF" msprop:Generator_RelationVarName="relationFK__TPayslip__Employ__793DFFAF" msprop:Generator_UserParentTable="TEmployee" msprop:Generator_ParentPropName="TEmployeeRow" />
-      <msdata:Relationship name="FK__TUserLogi__Emplo__7C1A6C5A" msdata:parent="TEmployee" msdata:child="TUserLogin" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TUserLogin" msprop:Generator_ChildPropName="GetTUserLoginRows" msprop:Generator_UserRelationName="FK__TUserLogi__Emplo__7C1A6C5A" msprop:Generator_RelationVarName="relationFK__TUserLogi__Emplo__7C1A6C5A" msprop:Generator_UserParentTable="TEmployee" msprop:Generator_ParentPropName="TEmployeeRow" />
-      <msdata:Relationship name="FK__TSchedule__Emplo__2F9A1060" msdata:parent="TEmployee" msdata:child="TSchedule" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TSchedule" msprop:Generator_ChildPropName="GetTScheduleRows" msprop:Generator_UserRelationName="FK__TSchedule__Emplo__2F9A1060" msprop:Generator_ParentPropName="TEmployeeRow" msprop:Generator_RelationVarName="relationFK__TSchedule__Emplo__2F9A1060" msprop:Generator_UserParentTable="TEmployee" />
-      <msdata:Relationship name="FK__TTimeshee__Emplo__32767D0B" msdata:parent="TEmployee" msdata:child="TTimesheet" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TTimesheet" msprop:Generator_ChildPropName="GetTTimesheetRows" msprop:Generator_UserRelationName="FK__TTimeshee__Emplo__32767D0B" msprop:Generator_ParentPropName="TEmployeeRow" msprop:Generator_RelationVarName="relationFK__TTimeshee__Emplo__32767D0B" msprop:Generator_UserParentTable="TEmployee" />
+      <msdata:Relationship name="FK__TPayslip__Employ__793DFFAF" msdata:parent="TEmployee" msdata:child="TPayslip" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TPayslip" msprop:Generator_ChildPropName="GetTPayslipRows" msprop:Generator_UserRelationName="FK__TPayslip__Employ__793DFFAF" msprop:Generator_ParentPropName="TEmployeeRow" msprop:Generator_RelationVarName="relationFK__TPayslip__Employ__793DFFAF" msprop:Generator_UserParentTable="TEmployee" />
+      <msdata:Relationship name="FK__TUserLogi__Emplo__7C1A6C5A" msdata:parent="TEmployee" msdata:child="TUserLogin" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TUserLogin" msprop:Generator_ChildPropName="GetTUserLoginRows" msprop:Generator_UserRelationName="FK__TUserLogi__Emplo__7C1A6C5A" msprop:Generator_ParentPropName="TEmployeeRow" msprop:Generator_RelationVarName="relationFK__TUserLogi__Emplo__7C1A6C5A" msprop:Generator_UserParentTable="TEmployee" />
+      <msdata:Relationship name="FK__TSchedule__Emplo__2F9A1060" msdata:parent="TEmployee" msdata:child="TSchedule" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TSchedule" msprop:Generator_ChildPropName="GetTScheduleRows" msprop:Generator_UserRelationName="FK__TSchedule__Emplo__2F9A1060" msprop:Generator_RelationVarName="relationFK__TSchedule__Emplo__2F9A1060" msprop:Generator_UserParentTable="TEmployee" msprop:Generator_ParentPropName="TEmployeeRow" />
+      <msdata:Relationship name="FK__TTimeshee__Emplo__32767D0B" msdata:parent="TEmployee" msdata:child="TTimesheet" msdata:parentkey="EmployeeId" msdata:childkey="EmployeeId" msprop:Generator_UserChildTable="TTimesheet" msprop:Generator_ChildPropName="GetTTimesheetRows" msprop:Generator_UserRelationName="FK__TTimeshee__Emplo__32767D0B" msprop:Generator_RelationVarName="relationFK__TTimeshee__Emplo__32767D0B" msprop:Generator_UserParentTable="TEmployee" msprop:Generator_ParentPropName="TEmployeeRow" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

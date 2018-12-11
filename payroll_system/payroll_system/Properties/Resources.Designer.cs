@@ -73,6 +73,16 @@ namespace payroll_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons_847257_640 {
+            get {
+                object obj = ResourceManager.GetObject("icons-847257_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap texture_1668079_1280 {
             get {
                 object obj = ResourceManager.GetObject("texture-1668079_1280", resourceCulture);

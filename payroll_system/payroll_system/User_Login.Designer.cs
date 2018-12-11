@@ -36,6 +36,8 @@
             this.passwordTextBox = new System.Windows.Forms.TextBox();
             this.employeeNumber = new System.Windows.Forms.Label();
             this.employeeNumberTextBox = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // loginButton
@@ -135,6 +137,18 @@
             this.employeeNumberTextBox.Enter += new System.EventHandler(this.employeeNumberTextBox_Enter);
             this.employeeNumberTextBox.Leave += new System.EventHandler(this.employeeNumberTextBox_Leave);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.pictureBox1.Image = global::payroll_system.Properties.Resources.icons_847257_640;
+            this.pictureBox1.Location = new System.Drawing.Point(148, 56);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(130, 96);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 9;
+            this.pictureBox1.TabStop = false;
+            // 
             // User_Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -142,6 +156,7 @@
             this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1063, 649);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.employeeNumberTextBox);
             this.Controls.Add(this.employeeNumber);
             this.Controls.Add(this.passwordTextBox);
@@ -154,6 +169,7 @@
             this.Name = "User_Login";
             this.Text = "User_Login";
             this.Load += new System.EventHandler(this.User_Login_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -169,5 +185,6 @@
         private System.Windows.Forms.TextBox passwordTextBox;
         private System.Windows.Forms.Label employeeNumber;
         private System.Windows.Forms.TextBox employeeNumberTextBox;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
