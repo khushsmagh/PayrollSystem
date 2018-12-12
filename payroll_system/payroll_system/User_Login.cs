@@ -149,7 +149,8 @@ namespace payroll_system
             TimeSpan timeSpan = TimeSpan.Parse(dateTime.ToString(time));
 
             PayrollQuery pq = new PayrollQuery();
-            var employeeGetClockedIn = pq.EmployeeClockIn(EmpId);
+            pq.EmployeeClockIn(EmpId);
+
         }
 
         private void clockOutButton_Click(object sender, EventArgs e)
@@ -157,6 +158,7 @@ namespace payroll_system
             EmpId = Int32.Parse(employeeNumberTextBox.Text);
             PayrollQuery pq = new PayrollQuery();
             pq.EmployeeClockOut(EmpId);
+            pq.InsertTotalHours(EmpId);
             
 
         }

@@ -122,69 +122,69 @@ namespace payroll_system
             }
 
         }
-        private void addToGoogleButton_Click(object sender, EventArgs e)
+
+        private void addToGoogleButton_Click_1(object sender, EventArgs e)
+        {
+            var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
+            string[] getShiftDate = getDate.Split('-');
+            var getYeayOfDate = Convert.ToInt32(getShiftDate[0]);
+            var getMonthOfDate = Convert.ToInt32(getShiftDate[1]);
+            var getDayOfDate = Convert.ToInt32(getShiftDate[2]);
+            var getShiftTime = ScheduleDataGrid.CurrentRow.Cells[2].Value.ToString();
+            MessageBox.Show(getShiftTime);
+            string[] shift = getShiftTime.Split('-');
+            MessageBox.Show("SHift start" + shift[0] + "  Shift End" + shift[1]);
+            var shiftStart = TimeSpan.ParseExact(shift[0], "hhmm", null);
+            var shiftEnd = TimeSpan.ParseExact(shift[1], "hhmm", null);
+            var shiftStartHours = shiftStart.Hours;
+            var shiftStartMinutes = shiftStart.Minutes;
+            var shiftEndHours = shiftEnd.Hours;
+            var shiftEndMinutes = shiftEnd.Minutes;
+            MessageBox.Show(getDayOfDate.ToString() + "   test aa baiu");
+            MessageBox.Show(getMonthOfDate.ToString() + "   test aa baiu");
+            MessageBox.Show(getYeayOfDate.ToString() + "   test aa baiu");
+            MessageBox.Show("Hours1" + shiftStartHours + " Minutes1" + shiftStartMinutes + " : Hours2" + shiftEndHours + " : Minites2" + shiftEndMinutes);
+            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
+            (
+                new ClientSecrets
+                {
+                    ClientId = "731857075546-qtta3f8nfjcd8gthqcfcq1ji5b8bdcmc.apps.googleusercontent.com",
+                    ClientSecret = "1WSos4uhv0rmHrvL-WmUs5FC",
+                },
+                new[] { CalendarService.Scope.Calendar },
+                "user",
+                    CancellationToken.None).Result;
+
+            // Create the service.
+            var service = new CalendarService(new BaseClientService.Initializer()
             {
-                var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
-                string[] getShiftDate = getDate.Split('-');
-                var getYeayOfDate = Convert.ToInt32(getShiftDate[0]);
-                var getMonthOfDate = Convert.ToInt32(getShiftDate[1]);
-                var getDayOfDate = Convert.ToInt32(getShiftDate[2]);
-                var getShiftTime = ScheduleDataGrid.CurrentRow.Cells[2].Value.ToString();
-                MessageBox.Show(getShiftTime);
-                string[] shift = getShiftTime.Split('-');
-                MessageBox.Show("SHift start" + shift[0] + "  Shift End" + shift[1]);
-                var shiftStart = TimeSpan.ParseExact(shift[0], "hhmm", null);
-                var shiftEnd = TimeSpan.ParseExact(shift[1], "hhmm", null);
-                var shiftStartHours = shiftStart.Hours;
-                var shiftStartMinutes = shiftStart.Minutes;
-                var shiftEndHours = shiftEnd.Hours;
-                var shiftEndMinutes = shiftEnd.Minutes;
-                MessageBox.Show(getDayOfDate.ToString() + "   test aa baiu");
-                MessageBox.Show(getMonthOfDate.ToString() + "   test aa baiu");
-                MessageBox.Show(getYeayOfDate.ToString() + "   test aa baiu");
-                MessageBox.Show("HOurs1" + shiftStartHours + " Minutes1" + shiftStartMinutes + " : Hours2" + shiftEndHours + " : Minites2" + shiftEndMinutes);
-                //UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
-                //(
-                //    new ClientSecrets
-                //    {
-                //        ClientId = "421772432711-lr25m8uvjmrtf1l5cgo1otcmuv5oqbrh.apps.googleusercontent.com",
-                //        ClientSecret = "NinSXom7UlHxjP7Emklf77RC",
-                //    },
-                //    new[] { CalendarService.Scope.Calendar },
-                //    "user",
-                //        CancellationToken.None).Result;
-
-                //// Create the service.
-                //var service = new CalendarService(new BaseClientService.Initializer()
-                //{
-                //    HttpClientInitializer = credential,
-                //    ApplicationName = "AppForAddDateToCalender",
-                //});
+                HttpClientInitializer = credential,
+                ApplicationName = "AppForAddDateToCalender",
+            });
 
 
-                //Event myEvent = new Event
-                //{
-                //    Summary = "Testing Adding Schedule",
-                //    Location = "Bow valley",
-                //    Start = new EventDateTime()
-                //    {
-                //        DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
-                //        TimeZone = "America/Los_Angeles"
-                //    },
+            Event myEvent = new Event
+            {
+                Summary = "Testing Adding Schedule",
+                Location = "Bow valley",
+                Start = new EventDateTime()
+                {
+                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
+                    TimeZone = "America/Los_Angeles"
+                },
 
-                //    End = new EventDateTime()
-                //    {
-                //        DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
-                //        TimeZone = "America/Los_Angeles"
-                //    },
+                End = new EventDateTime()
+                {
+                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
+                    TimeZone = "America/Los_Angeles"
+                },
 
-                //    Attendees = new List<EventAttendee>()
-                //    {
-                //        new EventAttendee() { Email = "sainisandeep199627@gmail.com" }
-                //    }
-                //};
-                //Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
-            
+                Attendees = new List<EventAttendee>()
+                {
+                    new EventAttendee() { Email = "sodv2202.jks@gmail.com" }
+                }
+            };
+            Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
         }
     }
 }

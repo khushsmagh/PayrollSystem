@@ -65,16 +65,17 @@
             this.ClockIn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ClockOut = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payslip = new System.Windows.Forms.TabPage();
+            this.GeneratePayslip_Button = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.PS_EndDate = new System.Windows.Forms.DateTimePicker();
+            this.PS_StartDate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.showPayslipOnDataGridView = new System.Windows.Forms.DataGridView();
             this.employee_name = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.printPayslip = new System.Drawing.Printing.PrintDocument();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.PS_EndDate = new System.Windows.Forms.DateTimePicker();
-            this.PS_StartDate = new System.Windows.Forms.DateTimePicker();
-            this.GeneratePayslip_Button = new System.Windows.Forms.Button();
+            this.addToGoogleButton = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             this.schedule.SuspendLayout();
@@ -255,6 +256,7 @@
             // schedule
             // 
             this.schedule.AutoScroll = true;
+            this.schedule.Controls.Add(this.addToGoogleButton);
             this.schedule.Controls.Add(this.S_Search_Button);
             this.schedule.Controls.Add(this.S_ToLabel);
             this.schedule.Controls.Add(this.S_FromLabel);
@@ -273,7 +275,7 @@
             // S_Search_Button
             // 
             this.S_Search_Button.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.S_Search_Button.Location = new System.Drawing.Point(127, 127);
+            this.S_Search_Button.Location = new System.Drawing.Point(127, 122);
             this.S_Search_Button.Name = "S_Search_Button";
             this.S_Search_Button.Size = new System.Drawing.Size(90, 33);
             this.S_Search_Button.TabIndex = 6;
@@ -320,7 +322,7 @@
             this.Date,
             this.Day,
             this.Shift});
-            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 163);
+            this.ScheduleDataGrid.Location = new System.Drawing.Point(25, 160);
             this.ScheduleDataGrid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ScheduleDataGrid.Name = "ScheduleDataGrid";
             this.ScheduleDataGrid.RowTemplate.Height = 24;
@@ -468,6 +470,49 @@
             this.payslip.Text = "Pay Slip";
             this.payslip.UseVisualStyleBackColor = true;
             // 
+            // GeneratePayslip_Button
+            // 
+            this.GeneratePayslip_Button.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.GeneratePayslip_Button.Location = new System.Drawing.Point(123, 333);
+            this.GeneratePayslip_Button.Name = "GeneratePayslip_Button";
+            this.GeneratePayslip_Button.Size = new System.Drawing.Size(150, 29);
+            this.GeneratePayslip_Button.TabIndex = 15;
+            this.GeneratePayslip_Button.Text = "Generate PaySlip";
+            this.GeneratePayslip_Button.UseVisualStyleBackColor = true;
+            this.GeneratePayslip_Button.Click += new System.EventHandler(this.GeneratePayslip_Button_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(51, 285);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(41, 23);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "To:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(25, 235);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 23);
+            this.label8.TabIndex = 13;
+            this.label8.Text = "From:";
+            // 
+            // PS_EndDate
+            // 
+            this.PS_EndDate.Location = new System.Drawing.Point(123, 281);
+            this.PS_EndDate.Name = "PS_EndDate";
+            this.PS_EndDate.Size = new System.Drawing.Size(264, 31);
+            this.PS_EndDate.TabIndex = 12;
+            // 
+            // PS_StartDate
+            // 
+            this.PS_StartDate.Location = new System.Drawing.Point(123, 231);
+            this.PS_StartDate.Name = "PS_StartDate";
+            this.PS_StartDate.Size = new System.Drawing.Size(264, 31);
+            this.PS_StartDate.TabIndex = 11;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(713, 192);
@@ -516,48 +561,15 @@
             // 
             this.printPayslip.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printPayslip_PrintPage);
             // 
-            // label7
+            // addToGoogleButton
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(51, 285);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 23);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "To:";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 235);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 23);
-            this.label8.TabIndex = 13;
-            this.label8.Text = "From:";
-            // 
-            // PS_EndDate
-            // 
-            this.PS_EndDate.Location = new System.Drawing.Point(123, 281);
-            this.PS_EndDate.Name = "PS_EndDate";
-            this.PS_EndDate.Size = new System.Drawing.Size(264, 31);
-            this.PS_EndDate.TabIndex = 12;
-            // 
-            // PS_StartDate
-            // 
-            this.PS_StartDate.Location = new System.Drawing.Point(123, 231);
-            this.PS_StartDate.Name = "PS_StartDate";
-            this.PS_StartDate.Size = new System.Drawing.Size(264, 31);
-            this.PS_StartDate.TabIndex = 11;
-            // 
-            // GeneratePayslip_Button
-            // 
-            this.GeneratePayslip_Button.Font = new System.Drawing.Font("Arial Rounded MT Bold", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.GeneratePayslip_Button.Location = new System.Drawing.Point(123, 333);
-            this.GeneratePayslip_Button.Name = "GeneratePayslip_Button";
-            this.GeneratePayslip_Button.Size = new System.Drawing.Size(150, 29);
-            this.GeneratePayslip_Button.TabIndex = 15;
-            this.GeneratePayslip_Button.Text = "Generate PaySlip";
-            this.GeneratePayslip_Button.UseVisualStyleBackColor = true;
-            this.GeneratePayslip_Button.Click += new System.EventHandler(this.GeneratePayslip_Button_Click);
+            this.addToGoogleButton.Location = new System.Drawing.Point(627, 406);
+            this.addToGoogleButton.Name = "addToGoogleButton";
+            this.addToGoogleButton.Size = new System.Drawing.Size(168, 33);
+            this.addToGoogleButton.TabIndex = 7;
+            this.addToGoogleButton.Text = "Add To Google";
+            this.addToGoogleButton.UseVisualStyleBackColor = true;
+            this.addToGoogleButton.Click += new System.EventHandler(this.addToGoogleButton_Click_1);
             // 
             // Payroll
             // 
@@ -638,6 +650,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DateTimePicker PS_EndDate;
         private System.Windows.Forms.DateTimePicker PS_StartDate;
+        private System.Windows.Forms.Button addToGoogleButton;
     }
 }
 
