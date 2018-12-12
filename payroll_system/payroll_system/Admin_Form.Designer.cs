@@ -113,7 +113,7 @@
             this.adminTabControl.Location = new System.Drawing.Point(0, 132);
             this.adminTabControl.Name = "adminTabControl";
             this.adminTabControl.SelectedIndex = 0;
-            this.adminTabControl.Size = new System.Drawing.Size(1037, 457);
+            this.adminTabControl.Size = new System.Drawing.Size(1110, 553);
             this.adminTabControl.TabIndex = 0;
             // 
             // employeeList
@@ -465,7 +465,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1029, 414);
+            this.tabPage1.Size = new System.Drawing.Size(1102, 510);
             this.tabPage1.TabIndex = 3;
             this.tabPage1.Text = "Advanced Search";
             // 
@@ -539,7 +539,7 @@
             this.searchDataGridView.Location = new System.Drawing.Point(3, 175);
             this.searchDataGridView.Name = "searchDataGridView";
             this.searchDataGridView.RowTemplate.Height = 24;
-            this.searchDataGridView.Size = new System.Drawing.Size(1023, 236);
+            this.searchDataGridView.Size = new System.Drawing.Size(1096, 332);
             this.searchDataGridView.TabIndex = 0;
             // 
             // tScheduleTableAdapter
@@ -576,7 +576,7 @@
             this.adminNameLabel.AutoSize = true;
             this.adminNameLabel.BackColor = System.Drawing.Color.PaleTurquoise;
             this.adminNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminNameLabel.Location = new System.Drawing.Point(616, 77);
+            this.adminNameLabel.Location = new System.Drawing.Point(689, 77);
             this.adminNameLabel.Name = "adminNameLabel";
             this.adminNameLabel.Size = new System.Drawing.Size(78, 29);
             this.adminNameLabel.TabIndex = 2;
@@ -588,7 +588,7 @@
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.BackgroundImage = global::payroll_system.Properties.Resources.user_297330_640;
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(854, 12);
+            this.pictureBox2.Location = new System.Drawing.Point(927, 12);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(173, 103);
             this.pictureBox2.TabIndex = 3;
@@ -600,12 +600,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1039, 587);
+            this.ClientSize = new System.Drawing.Size(1112, 683);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.adminNameLabel);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.adminTabControl);
             this.Name = "Admin_Form";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin_Form";
             this.Load += new System.EventHandler(this.Admin_Form_Load);
             this.adminTabControl.ResumeLayout(false);

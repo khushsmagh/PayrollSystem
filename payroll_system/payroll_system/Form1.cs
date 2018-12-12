@@ -189,7 +189,7 @@ namespace payroll_system
 
                 Event myEvent = new Event
                 {
-                    Summary = "Testing Adding Schedule",
+                    Summary = "Schedule",
                     Location = "Bow valley",
                     Start = new EventDateTime()
                     {

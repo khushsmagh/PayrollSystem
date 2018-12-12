@@ -103,7 +103,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(970, 491);
+            this.tabControl1.Size = new System.Drawing.Size(1088, 581);
             this.tabControl1.TabIndex = 0;
             this.tabControl1.Click += new System.EventHandler(this.PaySlipClick);
             // 
@@ -129,7 +129,7 @@
             this.personal_Info.Name = "personal_Info";
             this.personal_Info.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.personal_Info.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.personal_Info.Size = new System.Drawing.Size(962, 455);
+            this.personal_Info.Size = new System.Drawing.Size(1080, 545);
             this.personal_Info.TabIndex = 0;
             this.personal_Info.Text = "Personal Info";
             // 
@@ -592,7 +592,7 @@
             this.employee_name.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.employee_name.BackColor = System.Drawing.Color.PaleTurquoise;
             this.employee_name.Font = new System.Drawing.Font("Arial Black", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.employee_name.Location = new System.Drawing.Point(590, 60);
+            this.employee_name.Location = new System.Drawing.Point(708, 60);
             this.employee_name.Name = "employee_name";
             this.employee_name.Size = new System.Drawing.Size(267, 33);
             this.employee_name.TabIndex = 1;
@@ -609,7 +609,7 @@
             this.pictureBox1.BackColor = System.Drawing.Color.PaleTurquoise;
             this.pictureBox1.BackgroundImage = global::payroll_system.Properties.Resources.user_297330_640;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox1.Location = new System.Drawing.Point(863, 11);
+            this.pictureBox1.Location = new System.Drawing.Point(981, 11);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(115, 87);
@@ -623,12 +623,13 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(994, 593);
+            this.ClientSize = new System.Drawing.Size(1112, 683);
             this.Controls.Add(this.employee_name);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Payroll";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Payroll";
             this.Load += new System.EventHandler(this.Payroll_Load);
             this.tabControl1.ResumeLayout(false);

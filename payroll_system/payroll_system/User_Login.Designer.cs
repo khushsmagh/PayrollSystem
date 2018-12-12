@@ -66,7 +66,7 @@
             this.splitter1.Location = new System.Drawing.Point(0, 0);
             this.splitter1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 682);
+            this.splitter1.Size = new System.Drawing.Size(3, 683);
             this.splitter1.TabIndex = 1;
             this.splitter1.TabStop = false;
             // 
@@ -157,7 +157,7 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(3, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(319, 682);
+            this.groupBox1.Size = new System.Drawing.Size(319, 683);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Account";
@@ -182,9 +182,9 @@
             this.groupBox2.Controls.Add(this.clockInButton);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Right;
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(796, 0);
+            this.groupBox2.Location = new System.Drawing.Point(793, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(319, 682);
+            this.groupBox2.Size = new System.Drawing.Size(319, 683);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "ClockIn";
@@ -205,7 +205,7 @@
             this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox3.BackgroundImage = global::payroll_system.Properties.Resources.Editing_Circle_SGBerlin1;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Location = new System.Drawing.Point(431, 220);
+            this.pictureBox3.Location = new System.Drawing.Point(430, 220);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(265, 256);
             this.pictureBox3.TabIndex = 12;
@@ -217,13 +217,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1115, 682);
+            this.ClientSize = new System.Drawing.Size(1112, 683);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.splitter1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "User_Login";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "User_Login";
             this.Load += new System.EventHandler(this.User_Login_Load);
             this.groupBox1.ResumeLayout(false);
