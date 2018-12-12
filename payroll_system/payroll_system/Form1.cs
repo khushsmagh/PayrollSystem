@@ -54,6 +54,7 @@ namespace payroll_system
             PayrollQuery payroll = new PayrollQuery();
             employeeName = payroll.GetEmployeeInfo(_UserId).ToList()[0].FirstName + payroll.GetEmployeeInfo(_UserId).ToList()[0].LastName;
             showPayslipOnDataGridView.DataSource = payroll.GetUserPaySlip(_UserId);
+            showPayslipOnDataGridView.Columns.Remove("TEmployee");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -69,6 +70,7 @@ namespace payroll_system
             endDate = showPayslipOnDataGridView.Rows[index].Cells["EndDate"].Value.ToString();
             totalHours = (decimal)showPayslipOnDataGridView.Rows[index].Cells["TotalHours"].Value;
             totalMoney = totalHours * payroll.GetEmployeeInfo(_UserId)[0].HourlyRate;
+
             e.Graphics.DrawString("Employee Name : " + employeeName, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 0));
             e.Graphics.DrawString("DateFrom : " + dateFrom.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 25));
             e.Graphics.DrawString("EndDate : " + endDate.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 50));
@@ -114,7 +116,8 @@ namespace payroll_system
             if ((PS_EndDate.Value - PS_StartDate.Value).Days > 0)
             {
                 Payslip payslip = new Payslip(this.UserId, PS_StartDate.Value, PS_EndDate.Value);
-                payslip.AddPayslipToDB();
+                showPayslipOnDataGridView.DataSource = payslip.AddPayslipToDB();
+                showPayslipOnDataGridView.Columns.Remove("TEmployee");
             }
             else
             {
@@ -125,66 +128,87 @@ namespace payroll_system
 
         private void addToGoogleButton_Click_1(object sender, EventArgs e)
         {
-            var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
-            string[] getShiftDate = getDate.Split('-');
-            var getYeayOfDate = Convert.ToInt32(getShiftDate[0]);
-            var getMonthOfDate = Convert.ToInt32(getShiftDate[1]);
-            var getDayOfDate = Convert.ToInt32(getShiftDate[2]);
+            int getYeayOfDate;
+            int getMonthOfDate;
+            int getDayOfDate;
+
             var getShiftTime = ScheduleDataGrid.CurrentRow.Cells[2].Value.ToString();
-            MessageBox.Show(getShiftTime);
-            string[] shift = getShiftTime.Split('-');
-            MessageBox.Show("SHift start" + shift[0] + "  Shift End" + shift[1]);
-            var shiftStart = TimeSpan.ParseExact(shift[0], "hhmm", null);
-            var shiftEnd = TimeSpan.ParseExact(shift[1], "hhmm", null);
-            var shiftStartHours = shiftStart.Hours;
-            var shiftStartMinutes = shiftStart.Minutes;
-            var shiftEndHours = shiftEnd.Hours;
-            var shiftEndMinutes = shiftEnd.Minutes;
-            MessageBox.Show(getDayOfDate.ToString() + "   test aa baiu");
-            MessageBox.Show(getMonthOfDate.ToString() + "   test aa baiu");
-            MessageBox.Show(getYeayOfDate.ToString() + "   test aa baiu");
-            MessageBox.Show("Hours1" + shiftStartHours + " Minutes1" + shiftStartMinutes + " : Hours2" + shiftEndHours + " : Minites2" + shiftEndMinutes);
-            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
-            (
-                new ClientSecrets
-                {
-                    ClientId = "731857075546-qtta3f8nfjcd8gthqcfcq1ji5b8bdcmc.apps.googleusercontent.com",
-                    ClientSecret = "1WSos4uhv0rmHrvL-WmUs5FC",
-                },
-                new[] { CalendarService.Scope.Calendar },
-                "user",
-                    CancellationToken.None).Result;
-
-            // Create the service.
-            var service = new CalendarService(new BaseClientService.Initializer()
+            if(getShiftTime != "OFF")
             {
-                HttpClientInitializer = credential,
-                ApplicationName = "AppForAddDateToCalender",
-            });
-
-
-            Event myEvent = new Event
-            {
-                Summary = "Testing Adding Schedule",
-                Location = "Bow valley",
-                Start = new EventDateTime()
+                var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
+                string[] getShiftDate = getDate.Split('/');
+                if (getShiftDate.Length <= 0)
                 {
-                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
-                    TimeZone = "America/Los_Angeles"
-                },
-
-                End = new EventDateTime()
+                    getShiftDate = getDate.Split('-');
+                    getYeayOfDate = Convert.ToInt32(getShiftDate[0]);
+                    getMonthOfDate = Convert.ToInt32(getShiftDate[1]);
+                    getDayOfDate = Convert.ToInt32(getShiftDate[2]);
+                }
+                else
                 {
-                    DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
-                    TimeZone = "America/Los_Angeles"
-                },
+                    getYeayOfDate = Convert.ToInt32(getShiftDate[2]);
+                    getMonthOfDate = Convert.ToInt32(getShiftDate[0]);
+                    getDayOfDate = Convert.ToInt32(getShiftDate[1]);
+                }
 
-                Attendees = new List<EventAttendee>()
+                string[] shift = getShiftTime.Split('-');
+
+                var shiftStart = TimeSpan.ParseExact(shift[0], "hhmm", null);
+                var shiftEnd = TimeSpan.ParseExact(shift[1], "hhmm", null);
+
+                var shiftStartHours = shiftStart.Hours;
+                var shiftStartMinutes = shiftStart.Minutes;
+                var shiftEndHours = shiftEnd.Hours;
+                var shiftEndMinutes = shiftEnd.Minutes;
+
+                UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
+                (
+                    new ClientSecrets
+                    {
+                        ClientId = "731857075546-qtta3f8nfjcd8gthqcfcq1ji5b8bdcmc.apps.googleusercontent.com",
+                        ClientSecret = "1WSos4uhv0rmHrvL-WmUs5FC",
+                    },
+                    new[] { CalendarService.Scope.Calendar },
+                    "user",
+                        CancellationToken.None).Result;
+
+                // Create the service.
+                var service = new CalendarService(new BaseClientService.Initializer()
+                {
+                    HttpClientInitializer = credential,
+                    ApplicationName = "AppForAddDateToCalender",
+                });
+
+
+                Event myEvent = new Event
+                {
+                    Summary = "Testing Adding Schedule",
+                    Location = "Bow valley",
+                    Start = new EventDateTime()
+                    {
+                        DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftStartHours, shiftStartMinutes, 0),
+                        TimeZone = "America/Los_Angeles"
+                    },
+
+                    End = new EventDateTime()
+                    {
+                        DateTime = new DateTime(getYeayOfDate, getMonthOfDate, getDayOfDate, shiftEndHours, shiftStartMinutes, 0),
+                        TimeZone = "America/Los_Angeles"
+                    },
+
+                    Attendees = new List<EventAttendee>()
                 {
                     new EventAttendee() { Email = "sodv2202.jks@gmail.com" }
                 }
-            };
-            Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
+                };
+                Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
+                MessageBox.Show("Your schedule has been successfully uploaded to google calendar");
+            }
+            else
+            {
+                MessageBox.Show("You have no shift on this day");
+            }
+            
         }
     }
 }

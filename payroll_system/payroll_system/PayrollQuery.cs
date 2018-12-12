@@ -48,18 +48,21 @@ namespace payroll_system
             return query.ToList();
         }
 
-        public void AddToPayslip(int id, DateTime start, DateTime end, decimal totalHours, decimal totalMoney)
+        public List<TPayslip> AddToPayslip(int id, DateTime start, DateTime end, decimal totalHours, decimal totalMoney)
         {
             LinqToSQLDataContext db = new LinqToSQLDataContext();
             try
             {
-                db.ExecuteQuery<TPayslip>(@"INSERT INTO TPayslip (EmployeeId, DateFrom, EndDate, TotalHours, ToTalMoney) 
-                                        Values (" + id + ", '" + start.ToShortDateString() + "', '" + end.ToShortDateString() + "', " + totalHours + ", " + totalMoney + ")");
+                var query = db.ExecuteQuery<TPayslip>(@"INSERT INTO TPayslip (EmployeeId, DateFrom, EndDate, TotalHours, ToTalMoney)
+                                                        VALUES({0},{1},{2},{3},{4});
+                                                         SELECT * FROM TPayslip WHERE EmployeeId = {5}", id, start.ToShortDateString(), end.ToShortDateString(), totalHours, totalMoney , id).ToList();
+                return query;
             }
             catch (Exception)
             {
 
             }
+            return null;
         }
 
         
@@ -74,7 +77,7 @@ namespace payroll_system
         public List<TPayslip> GetUserPaySlip(int empId)
         {
             LinqToSQLDataContext db = new LinqToSQLDataContext();
-            var query = db.ExecuteQuery<TPayslip>(@"SELECT * FROM TPayslip where EmployeeId = {0}", empId);
+            var query = db.ExecuteQuery<TPayslip>(@"SELECT PaySlipId, EmployeeId, DateFrom, EndDate, TotalHours, TotalMoney FROM TPayslip where EmployeeId = {0}", empId);
             return query.ToList();
         }
 
@@ -152,6 +155,7 @@ namespace payroll_system
             DateTime dateTime = DateTime.Now;
             string time = "HH:mm:ss";
             string date = "yyyy-MM-dd";
+
             LinqToSQLDataContext db = new LinqToSQLDataContext();
             var getClockOutTime = db.ExecuteQuery<TTimesheet>(@"SELECT * FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
             if (getClockOutTime[0].ClockOutTime != TimeSpan.Zero)

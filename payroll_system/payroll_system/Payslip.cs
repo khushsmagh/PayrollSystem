@@ -52,10 +52,11 @@ namespace payroll_system
             TotalPay = TotalHours * PayRate;
         }
 
-        public void AddPayslipToDB()
+        public List<TPayslip> AddPayslipToDB()
         {
             PayrollQuery pq = new PayrollQuery();
-            pq.AddToPayslip(UserId, DateStart, DateEnd, TotalHours, TotalPay);
+            var query = pq.AddToPayslip(UserId, DateStart, DateEnd, TotalHours, TotalPay);
+            return query;
         }
         
     }
