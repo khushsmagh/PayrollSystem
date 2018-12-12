@@ -102,111 +102,100 @@ namespace payroll_system
             string userName = usernameTextBox.Text;
 
             List<TUserLogin> userCredential = pq.GetUserLoginsPermission(userName);
-
-            int empId = (int)userCredential[0].EmployeeId;
-
-            string position = pq.GetEmployeeInfo(empId)[0].Position;
-
-            string userPasswordFromDatabase = userCredential[0].Password;
-            string inputPassword = passwordTextBox.Text;
-
-            if (usernameTextBox.Text == "" & passwordTextBox.Text == "")
-            {
-                MessageBox.Show("fields are required");
-            }
-            else if (userPasswordFromDatabase == inputPassword)
-            {
-                if(position == "Admin")
-                {
-                    MessageBox.Show("loggin successfully");
-                    Admin_Form admin = new Admin_Form();
-                    admin.Show();
-                }
-                else
-                {
-                    MessageBox.Show("loggin successfully");
-                    EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
-                    Payroll payroll = new Payroll(this._EmpId);
-                    payroll.Show();
-                }
-                
-            }
-            else
+            if (userCredential.Count <= 0)
             {
                 MessageBox.Show("information is not correct");
                 usernameTextBox.Text = string.Empty;
                 passwordTextBox.Text = string.Empty;
             }
-            //Method();
+            else
+            {
+                int empId = (int)userCredential[0].EmployeeId;
+
+                string position = pq.GetEmployeeInfo(empId)[0].Position;
+
+                string userPasswordFromDatabase = userCredential[0].Password;
+                string inputPassword = passwordTextBox.Text;
+
+                if (usernameTextBox.Text == "" & passwordTextBox.Text == "")
+                {
+                    MessageBox.Show("fields are required");
+                }
+                else if (userPasswordFromDatabase == inputPassword)
+                {
+                    if (position == "Admin")
+                    {
+                        MessageBox.Show("loggin successfully");
+                        Admin_Form admin = new Admin_Form();
+                        admin.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("loggin successfully");
+                        EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
+                        Payroll payroll = new Payroll(this._EmpId);
+                        payroll.Show();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("information is not correct");
+                    usernameTextBox.Text = string.Empty;
+                    passwordTextBox.Text = string.Empty;
+                }
+            }
         }
 
         private void clockInButton_Click(object sender, EventArgs e)
         {
-            EmpId = Int32.Parse(employeeNumberTextBox.Text);
-            DateTime dateTime = DateTime.Now;
-            string time = "HH:mm:ss";
-            string date = "yyyy-MM-dd";
-            TimeSpan timeSpan = TimeSpan.Parse(dateTime.ToString(time));
-
+            bool validInput = Int32.TryParse(employeeNumberTextBox.Text , out int Id);
             PayrollQuery pq = new PayrollQuery();
-            pq.EmployeeClockIn(EmpId);
+            if (validInput)
+            {
+                if(pq.GetEmployeeInfo(Id).Count <= 0)
+                {
+                    MessageBox.Show("Please enter a valid employee number");
+                    employeeNumberTextBox.Text = "";
+                }
+                else
+                {
+                    pq.EmployeeClockIn(Id);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please enter a valid employee number");
+                employeeNumberTextBox.Text = "";
+            }
 
         }
 
         private void clockOutButton_Click(object sender, EventArgs e)
         {
-            EmpId = Int32.Parse(employeeNumberTextBox.Text);
+
+            bool validInput = Int32.TryParse(employeeNumberTextBox.Text, out int Id);
             PayrollQuery pq = new PayrollQuery();
-            pq.EmployeeClockOut(EmpId);
-            pq.InsertTotalHours(EmpId);
-            
-
-        }
-
-
-        private void Method()
-        {
-            UserCredential credential = GoogleWebAuthorizationBroker.AuthorizeAsync
-            (
-                new ClientSecrets
-                {
-                    ClientId = "421772432711-lr25m8uvjmrtf1l5cgo1otcmuv5oqbrh.apps.googleusercontent.com",
-                    ClientSecret = "NinSXom7UlHxjP7Emklf77RC",
-                },
-                new[] { CalendarService.Scope.Calendar },
-                "user",
-                    CancellationToken.None).Result;
-
-            // Create the service.
-            var service = new CalendarService(new BaseClientService.Initializer()
+            if (validInput)
             {
-                HttpClientInitializer = credential,
-                ApplicationName = "AppForAddDateToCalender",
-            });
-
-
-            Event myEvent = new Event
-            {
-                Summary = "OOP",
-                Location = "Bow valley",
-                Start = new EventDateTime()
+                if (pq.GetEmployeeInfo(Id).Count <= 0)
                 {
-                    DateTime = new DateTime(2019, 1, 15, 10, 0, 0),
-                    TimeZone = "America/Los_Angeles"
-                },
-
-                End = new EventDateTime()
-                {
-                    DateTime = new DateTime(2019, 1, 15, 10, 30, 0),
-                    TimeZone = "America/Los_Angeles"
-                },
-
-                Attendees = new List<EventAttendee>()
-                {
-                    new EventAttendee() { Email = "sainisandeep199627@gmail.com" }
+                    MessageBox.Show("Please enter a valid employee number");
+                    employeeNumberTextBox.Text = "";
                 }
-            };
-            Event recurringEvent = service.Events.Insert(myEvent, "primary").Execute();
+                else
+                {
+                    pq.EmployeeClockOut(Id);
+                    pq.InsertTotalHours(Id);
+                }
+            }
+
+            else
+            {
+                MessageBox.Show("Please enter a valid employee number");
+                employeeNumberTextBox.Text = "";
+            }
         }
     }
 }

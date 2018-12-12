@@ -63,9 +63,69 @@ namespace payroll_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap calendar_2027122_640 {
+            get {
+                object obj = ResourceManager.GetObject("calendar-2027122_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cartoon_1295191_640 {
+            get {
+                object obj = ResourceManager.GetObject("cartoon-1295191_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_icon__the_Noun_Project_30184__svg {
+            get {
+                object obj = ResourceManager.GetObject("Edit_icon_(the_Noun_Project_30184).svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Editing_Circle_SGBerlin {
+            get {
+                object obj = ResourceManager.GetObject("Editing-Circle-SGBerlin", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Editing_Circle_SGBerlin1 {
+            get {
+                object obj = ResourceManager.GetObject("Editing-Circle-SGBerlin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap formbackground1 {
             get {
                 object obj = ResourceManager.GetObject("formbackground1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_2727222_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("icon-2727222_960_720", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,6 +143,16 @@ namespace payroll_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap save_icon_1257065_640 {
+            get {
+                object obj = ResourceManager.GetObject("save-icon-1257065_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap texture_1668079_1280 {
             get {
                 object obj = ResourceManager.GetObject("texture-1668079_1280", resourceCulture);
@@ -93,9 +163,39 @@ namespace payroll_system.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Trash_Heas {
+            get {
+                object obj = ResourceManager.GetObject("Trash_Heas", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_297330_640 {
+            get {
+                object obj = ResourceManager.GetObject("user-297330_640", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap user_icon {
             get {
                 object obj = ResourceManager.GetObject("user_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap www_maxpixel_net_Time_Indicating_Time_Of_Clock_Icon_Time_1606153 {
+            get {
+                object obj = ResourceManager.GetObject("www.maxpixel.net-Time-Indicating-Time-Of-Clock-Icon-Time-1606153", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

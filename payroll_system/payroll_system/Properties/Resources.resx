@@ -121,13 +121,43 @@
   <data name="texture-1668079_1280" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\texture-1668079_1280.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="cartoon-1295191_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\cartoon-1295191_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icons-847257_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icons-847257_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Editing-Circle-SGBerlin" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Editing-Circle-SGBerlin.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="save-icon-1257065_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\save-icon-1257065_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user-297330_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-297330_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendar-2027122_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendar-2027122_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="icon-2727222_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\icon-2727222_960_720.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Trash_Heas" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Trash_Heas.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="www.maxpixel.net-Time-Indicating-Time-Of-Clock-Icon-Time-1606153" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\www.maxpixel.net-Time-Indicating-Time-Of-Clock-Icon-Time-1606153.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Editing-Circle-SGBerlin1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Editing-Circle-SGBerlin1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="formbackground1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\formbackground1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="icons-847257_640" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\icons-847257_640.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Edit_icon_(the_Noun_Project_30184).svg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Edit_icon_(the_Noun_Project_30184).svg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

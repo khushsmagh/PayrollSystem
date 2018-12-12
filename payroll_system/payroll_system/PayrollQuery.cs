@@ -132,8 +132,7 @@ namespace payroll_system
                         var query = db.ExecuteQuery<TTimesheet>(@"UPDATE [dbo].[TTimesheet] SET  [ClockOutTime] = {0} WHERE ([EmployeeId] = {1}) AND ([Date] = {2});
                                                                   SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM TTimesheet",
                                                                   dateTime.ToString(time), EmpId, dateTime.ToString(date));
-
-
+                        MessageBox.Show("successfully clockout");
                     }
                     else
                     {
@@ -165,8 +164,6 @@ namespace payroll_system
                 decimal totalHours = Convert.ToDecimal(timeDiff.TotalHours);
                 var insertTime = db.ExecuteQuery<TTimesheet>(@"UPDATE [dbo].[TTimesheet] SET  [TotalHours] = {0} WHERE ([EmployeeId] = {1}) AND ([Date] = {2});
                                                                         SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM TTimesheet", totalHours, EmpId, dateTime.ToString(date));
-
-                MessageBox.Show("successfully clockout");
 
             }
             else

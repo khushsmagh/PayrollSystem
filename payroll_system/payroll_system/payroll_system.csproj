@@ -189,5 +189,35 @@
   <ItemGroup>
     <None Include="Resources\icons-847257_640.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\user-297330_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\www.maxpixel.net-Time-Indicating-Time-Of-Clock-Icon-Time-1606153.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editing-Circle-SGBerlin.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Editing-Circle-SGBerlin1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar-2027122_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cartoon-1295191_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon-2727222_960_720.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save-icon-1257065_640.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Trash_Heas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Edit_icon_%28the_Noun_Project_30184%29.svg.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
