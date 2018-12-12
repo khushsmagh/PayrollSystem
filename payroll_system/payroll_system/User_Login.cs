@@ -126,7 +126,8 @@ namespace payroll_system
                     if (position == "Admin")
                     {
                         MessageBox.Show("loggin successfully");
-                        Admin_Form admin = new Admin_Form();
+                        EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
+                        Admin_Form admin = new Admin_Form(this._EmpId);
                         admin.Show();
                     }
                     else

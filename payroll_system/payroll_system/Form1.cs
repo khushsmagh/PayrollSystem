@@ -73,7 +73,7 @@ namespace payroll_system
             totalHours = (decimal)showPayslipOnDataGridView.Rows[index].Cells["TotalHours"].Value;
             totalMoney = totalHours * payroll.GetEmployeeInfo(_UserId)[0].HourlyRate;
 
-            e.Graphics.DrawImage(bmp, 300, 0, 150,150);
+            e.Graphics.DrawImage(bmp, 365, 0, 150,150);
             e.Graphics.DrawString("Employee Name : " + employeeName, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 200));
             e.Graphics.DrawString("-----------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 250));
             e.Graphics.DrawString("DateFrom : " + dateFrom.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 300));
@@ -144,7 +144,8 @@ namespace payroll_system
             {
                 var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
                 string[] getShiftDate = getDate.Split('/');
-                if (getShiftDate.Length <= 0)
+                MessageBox.Show(getShiftDate.Length + " ::: " + getShiftDate.Count().ToString());
+                if (getShiftDate.Length <= 1)
                 {
                     getShiftDate = getDate.Split('-');
                     getYeayOfDate = Convert.ToInt32(getShiftDate[0]);

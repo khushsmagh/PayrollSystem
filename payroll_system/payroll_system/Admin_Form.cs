@@ -16,26 +16,34 @@ namespace payroll_system
         public DataTable employeeTable;
         public DataTable selectedEmployeeTable;
         public DataTable selectedEmployeeTimesheetTable;
-        public DateTimePicker dtp;
-        public Admin_Form()
+        private int _UserId;
+        public int UserId
         {
+            get
+            {
+                return _UserId;
+            }
+            set
+            {
+                _UserId = value;
+            }
+        }
+        public Admin_Form(int UserId)
+        {
+            this._UserId = UserId;
             InitializeComponent();
         }
 
         private void Admin_Form_Load(object sender, EventArgs e)
         {
+            PayrollQuery payroll = new PayrollQuery();
+            adminNameLabel.Text = payroll.GetEmployeeInfo(this._UserId).ToList()[0].FirstName + " " + payroll.GetEmployeeInfo(this._UserId).ToList()[0].LastName;
             // TODO: This line of code loads data into the 'payrollDataSet.TTimesheet' table. You can move, or remove it, as needed.
             this.tTimesheetTableAdapter.Fill(this.payrollDataSet.TTimesheet);
             // TODO: This line of code loads data into the 'payrollDataSet.TEmployee' table. You can move, or remove it, as needed.
             this.tEmployeeTableAdapter.Fill(this.payrollDataSet.TEmployee);
             // TODO: This line of code loads data into the 'payrollDataSet.TSchedule' table. You can move, or remove it, as needed.
             this.tScheduleTableAdapter.Fill(this.payrollDataSet.TSchedule);
-            //PopulateDataIntoForm();
-        }
-
-        private void editEmployeeInfoTextBox_TextChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void deleteTimesheetButton_Click(object sender, EventArgs e)
@@ -54,7 +62,7 @@ namespace payroll_system
 
         private void editButton_Click(object sender, EventArgs e)
         {
-            int employee = Convert.ToInt32(employeeListGridView.CurrentRow.Cells[0].Value);
+             int employee = Convert.ToInt32(employeeListGridView.CurrentRow.Cells[0].Value);
             try
             {
                 if (scheduleRadioButton.Checked)
@@ -108,7 +116,6 @@ namespace payroll_system
             {
                 int deleteScheduleId = Convert.ToInt32(editEmployeeScheduleDataGridView.CurrentRow.Cells[0].Value);
                 MessageBox.Show("Are you sure you want to delete schedule at " + deleteScheduleId);
-                //tScheduleBindingSource.RemoveAt(deleteScheduleId-1);
                 tScheduleBindingSource.EndEdit();
                 tScheduleTableAdapter.DeleteScheduleQuery(deleteScheduleId);
                 tScheduleTableAdapter.Fill(this.payrollDataSet.TSchedule);
@@ -139,8 +146,6 @@ namespace payroll_system
             try
             {
                 string schedule = scheduleDate.Value.ToString().Substring(0, 10);
-                MessageBox.Show(schedule);
-                //DataTable employeeTableforschedule = new DataTable();
                 PayrollQuery pq = new PayrollQuery();
                 searchDataGridView.DataSource = pq.GetEmployeeScheduled(schedule);
                 searchDataGridView.Columns.Remove("TEmployee");
@@ -149,33 +154,6 @@ namespace payroll_system
             {
                 MessageBox.Show("Something went wrong! Please check your input");
             }
-        }
-
-        private void scheduleDataGridViewClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.ColumnIndex == 2)
-            {
-                dtp = new DateTimePicker();
-                editEmployeeScheduleDataGridView.Controls.Add(dtp);
-                dtp.Format = DateTimePickerFormat.Short;
-                Rectangle Rectangle = editEmployeeScheduleDataGridView.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, true);
-                dtp.Size = new Size(Rectangle.Width, Rectangle.Height);
-                dtp.Location = new Point(Rectangle.X, Rectangle.Y);
-
-                dtp.CloseUp += new EventHandler(dtp_CloseUp);
-                dtp.TextChanged += new EventHandler(dtp_OnTextChange);
-                dtp.Visible = true;
-            }
-        }
-
-        private void dtp_OnTextChange(object sender, EventArgs e)
-        {
-
-            editEmployeeScheduleDataGridView.CurrentCell.Value = dtp.Text.ToString();
-        }
-        void dtp_CloseUp(object sender, EventArgs e)
-        {
-            dtp.Visible = false;
         }
     }
 }

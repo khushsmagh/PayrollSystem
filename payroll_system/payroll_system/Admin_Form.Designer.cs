@@ -78,6 +78,9 @@
             this.tEmployeeTableAdapter = new payroll_system.PayrollDataSetTableAdapters.TEmployeeTableAdapter();
             this.tTimesheetTableAdapter = new payroll_system.PayrollDataSetTableAdapters.TTimesheetTableAdapter();
             this.payrollDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.adminNameLabel = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.adminTabControl.SuspendLayout();
             this.employeeList.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.employeeListGridView)).BeginInit();
@@ -93,6 +96,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTableBinding)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // adminTabControl
@@ -105,7 +110,7 @@
             this.adminTabControl.Controls.Add(this.editTimesheet);
             this.adminTabControl.Controls.Add(this.tabPage1);
             this.adminTabControl.Font = new System.Drawing.Font("Segoe Print", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.adminTabControl.Location = new System.Drawing.Point(0, 90);
+            this.adminTabControl.Location = new System.Drawing.Point(0, 132);
             this.adminTabControl.Name = "adminTabControl";
             this.adminTabControl.SelectedIndex = 0;
             this.adminTabControl.Size = new System.Drawing.Size(1037, 457);
@@ -310,7 +315,6 @@
             this.editEmployeeScheduleDataGridView.RowTemplate.Height = 24;
             this.editEmployeeScheduleDataGridView.Size = new System.Drawing.Size(1023, 340);
             this.editEmployeeScheduleDataGridView.TabIndex = 0;
-            this.editEmployeeScheduleDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.scheduleDataGridViewClick);
             // 
             // scheduleIdDataGridViewTextBoxColumn
             // 
@@ -555,6 +559,41 @@
             this.payrollDataSetBindingSource.DataSource = this.payrollDataSet;
             this.payrollDataSetBindingSource.Position = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox1.BackgroundImage = global::payroll_system.Properties.Resources.Editing_Circle_SGBerlin;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(4, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(173, 103);
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
+            // 
+            // adminNameLabel
+            // 
+            this.adminNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.adminNameLabel.AutoSize = true;
+            this.adminNameLabel.BackColor = System.Drawing.Color.PaleTurquoise;
+            this.adminNameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.adminNameLabel.Location = new System.Drawing.Point(616, 77);
+            this.adminNameLabel.Name = "adminNameLabel";
+            this.adminNameLabel.Size = new System.Drawing.Size(78, 29);
+            this.adminNameLabel.TabIndex = 2;
+            this.adminNameLabel.Text = "Name";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::payroll_system.Properties.Resources.user_297330_640;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(854, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(173, 103);
+            this.pictureBox2.TabIndex = 3;
+            this.pictureBox2.TabStop = false;
+            // 
             // Admin_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -562,6 +601,9 @@
             this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1039, 587);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.adminNameLabel);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.adminTabControl);
             this.Name = "Admin_Form";
             this.Text = "Admin_Form";
@@ -583,7 +625,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.employeeTableBinding)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.payrollDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -637,5 +682,8 @@
         private System.Windows.Forms.Button searchScheduleForThatDateButton;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker scheduleDate;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label adminNameLabel;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
