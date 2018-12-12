@@ -158,22 +158,32 @@ namespace payroll_system
 
             LinqToSQLDataContext db = new LinqToSQLDataContext();
             var getClockOutTime = db.ExecuteQuery<TTimesheet>(@"SELECT * FROM TTimesheet WHERE EmployeeId = {0} AND [Date] = {1}", EmpId, dateTime.ToString(date)).ToList();
-            if (getClockOutTime[0].ClockOutTime != TimeSpan.Zero)
+            if(getClockOutTime.Count <= 0)
             {
-
-                TimeSpan clockInTime = getClockOutTime[0].CLockInTime;
-                TimeSpan clockOutTime = getClockOutTime[0].ClockOutTime;
-                TimeSpan timeDiff = clockOutTime - clockInTime;
-
-                decimal totalHours = Convert.ToDecimal(timeDiff.TotalHours);
-                var insertTime = db.ExecuteQuery<TTimesheet>(@"UPDATE [dbo].[TTimesheet] SET  [TotalHours] = {0} WHERE ([EmployeeId] = {1}) AND ([Date] = {2});
-                                                                        SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM TTimesheet", totalHours, EmpId, dateTime.ToString(date));
-
+                
             }
             else
             {
-                MessageBox.Show("first clockout Yourself");
+
+                if (getClockOutTime[0].ClockOutTime != TimeSpan.Zero)
+                {
+
+                    TimeSpan clockInTime = getClockOutTime[0].CLockInTime;
+                    TimeSpan clockOutTime = getClockOutTime[0].ClockOutTime;
+                    TimeSpan timeDiff = clockOutTime - clockInTime;
+
+                    decimal totalHours = Convert.ToDecimal(timeDiff.TotalHours);
+                    var insertTime = db.ExecuteQuery<TTimesheet>(@"UPDATE [dbo].[TTimesheet] SET  [TotalHours] = {0} WHERE ([EmployeeId] = {1}) AND ([Date] = {2});
+                                                                        SELECT TimesheetId, EmployeeId, Date, CLockInTime, ClockOutTime, TotalHours FROM TTimesheet", totalHours, EmpId, dateTime.ToString(date));
+
+                }
+                else
+                {
+                    MessageBox.Show("first clockout Yourself");
+                }
+
             }
+
         }
     }
 }

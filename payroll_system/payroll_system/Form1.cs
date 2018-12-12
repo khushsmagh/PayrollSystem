@@ -143,7 +143,6 @@ namespace payroll_system
             {
                 var getDate = ScheduleDataGrid.CurrentRow.Cells[0].Value.ToString();
                 string[] getShiftDate = getDate.Split('/');
-                MessageBox.Show(getShiftDate.Length + " ::: " + getShiftDate.Count().ToString());
                 if (getShiftDate.Length <= 1)
                 {
                     getShiftDate = getDate.Split('-');

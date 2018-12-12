@@ -76,6 +76,7 @@
             this.employee_name = new System.Windows.Forms.Label();
             this.printPayslip = new System.Drawing.Printing.PrintDocument();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.personal_Info.SuspendLayout();
             this.schedule.SuspendLayout();
@@ -85,6 +86,7 @@
             this.payslip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showPayslipOnDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -97,7 +99,7 @@
             this.tabControl1.Controls.Add(this.timesheet);
             this.tabControl1.Controls.Add(this.payslip);
             this.tabControl1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(12, 91);
+            this.tabControl1.Location = new System.Drawing.Point(12, 101);
             this.tabControl1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
@@ -268,7 +270,7 @@
             this.schedule.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.schedule.Name = "schedule";
             this.schedule.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.schedule.Size = new System.Drawing.Size(962, 455);
+            this.schedule.Size = new System.Drawing.Size(1080, 545);
             this.schedule.TabIndex = 1;
             this.schedule.Text = "Schedule";
             // 
@@ -386,7 +388,7 @@
             this.timesheet.Location = new System.Drawing.Point(4, 32);
             this.timesheet.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.timesheet.Name = "timesheet";
-            this.timesheet.Size = new System.Drawing.Size(962, 455);
+            this.timesheet.Size = new System.Drawing.Size(1080, 545);
             this.timesheet.TabIndex = 2;
             this.timesheet.Text = "Timesheet";
             // 
@@ -504,7 +506,7 @@
             this.payslip.Location = new System.Drawing.Point(4, 32);
             this.payslip.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.payslip.Name = "payslip";
-            this.payslip.Size = new System.Drawing.Size(962, 455);
+            this.payslip.Size = new System.Drawing.Size(1080, 545);
             this.payslip.TabIndex = 3;
             this.payslip.Text = "Pay Slip";
             // 
@@ -616,6 +618,17 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
+            this.pictureBox2.BackgroundImage = global::payroll_system.Properties.Resources.Editing_Circle_SGBerlin;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(16, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(115, 87);
+            this.pictureBox2.TabIndex = 2;
+            this.pictureBox2.TabStop = false;
+            // 
             // Payroll
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -624,6 +637,7 @@
             this.BackgroundImage = global::payroll_system.Properties.Resources.texture_1668079_1280;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1112, 683);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.employee_name);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.tabControl1);
@@ -645,6 +659,7 @@
             this.payslip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showPayslipOnDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -699,6 +714,7 @@
         private System.Windows.Forms.DateTimePicker PS_EndDate;
         private System.Windows.Forms.DateTimePicker PS_StartDate;
         private System.Windows.Forms.Button addToGoogleButton;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 
