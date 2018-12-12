@@ -64,6 +64,8 @@ namespace payroll_system
 
         private void printPayslip_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
         {
+            Bitmap bmp = Properties.Resources.Editing_Circle_SGBerlin;
+            Image image = bmp;
             PayrollQuery payroll = new PayrollQuery();
             int index = showPayslipOnDataGridView.CurrentRow.Index;
             dateFrom = showPayslipOnDataGridView.Rows[index].Cells["DateFrom"].Value.ToString();
@@ -71,11 +73,16 @@ namespace payroll_system
             totalHours = (decimal)showPayslipOnDataGridView.Rows[index].Cells["TotalHours"].Value;
             totalMoney = totalHours * payroll.GetEmployeeInfo(_UserId)[0].HourlyRate;
 
-            e.Graphics.DrawString("Employee Name : " + employeeName, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 0));
-            e.Graphics.DrawString("DateFrom : " + dateFrom.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 25));
-            e.Graphics.DrawString("EndDate : " + endDate.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 50));
-            e.Graphics.DrawString("TotalHours : " + totalHours.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 75));
-            e.Graphics.DrawString("TotalMoney :" + totalMoney.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(0, 100));
+            e.Graphics.DrawImage(bmp, 300, 0, 150,150);
+            e.Graphics.DrawString("Employee Name : " + employeeName, new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 200));
+            e.Graphics.DrawString("-----------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 250));
+            e.Graphics.DrawString("DateFrom : " + dateFrom.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 300));
+            e.Graphics.DrawString("-----------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 350));
+            e.Graphics.DrawString("EndDate : " + endDate.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 400));
+            e.Graphics.DrawString("-----------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 450));
+            e.Graphics.DrawString("TotalHours : " + totalHours.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 500));
+            e.Graphics.DrawString("-----------------------------------------------------", new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 550));
+            e.Graphics.DrawString("TotalMoney :" + totalMoney.ToString(), new Font("Arial", 12, FontStyle.Bold), Brushes.Black, new Point(300, 600));
         }
 
 

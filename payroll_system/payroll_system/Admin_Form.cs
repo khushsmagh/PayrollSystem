@@ -143,7 +143,7 @@ namespace payroll_system
                 //DataTable employeeTableforschedule = new DataTable();
                 PayrollQuery pq = new PayrollQuery();
                 searchDataGridView.DataSource = pq.GetEmployeeScheduled(schedule);
-                //searchDataGridView.Columns.Remove("TEmployee");
+                searchDataGridView.Columns.Remove("TEmployee");
             }
             catch(Exception ex)
             {
