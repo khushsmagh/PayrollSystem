@@ -127,7 +127,7 @@
             // 
             // editButton
             // 
-            this.editButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.editButton.BackColor = System.Drawing.Color.FloralWhite;
             this.editButton.BackgroundImage = global::payroll_system.Properties.Resources.Edit_icon__the_Noun_Project_30184__svg;
             this.editButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -141,7 +141,7 @@
             // 
             // timesheetRadioButton
             // 
-            this.timesheetRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.timesheetRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.timesheetRadioButton.AutoSize = true;
             this.timesheetRadioButton.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.timesheetRadioButton.Location = new System.Drawing.Point(408, 347);
@@ -154,7 +154,7 @@
             // 
             // scheduleRadioButton
             // 
-            this.scheduleRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.scheduleRadioButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.scheduleRadioButton.AutoSize = true;
             this.scheduleRadioButton.Font = new System.Drawing.Font("Segoe Print", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scheduleRadioButton.Location = new System.Drawing.Point(184, 347);
@@ -167,6 +167,9 @@
             // 
             // employeeListGridView
             // 
+            this.employeeListGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.employeeListGridView.AutoGenerateColumns = false;
             this.employeeListGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.employeeListGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
@@ -181,7 +184,6 @@
             this.positionDataGridViewTextBoxColumn,
             this.hourlyRateDataGridViewTextBoxColumn});
             this.employeeListGridView.DataSource = this.tEmployeeBindingSource;
-            this.employeeListGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.employeeListGridView.Location = new System.Drawing.Point(3, 3);
             this.employeeListGridView.Name = "employeeListGridView";
             this.employeeListGridView.ReadOnly = true;
@@ -263,7 +265,7 @@
             // 
             // editScheduleButton
             // 
-            this.editScheduleButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editScheduleButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.editScheduleButton.BackColor = System.Drawing.Color.FloralWhite;
             this.editScheduleButton.BackgroundImage = global::payroll_system.Properties.Resources.save_icon_1257065_640;
             this.editScheduleButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -276,7 +278,7 @@
             // 
             // deleteSchedule
             // 
-            this.deleteSchedule.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deleteSchedule.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deleteSchedule.BackColor = System.Drawing.Color.FloralWhite;
             this.deleteSchedule.BackgroundImage = global::payroll_system.Properties.Resources.Trash_Heas;
             this.deleteSchedule.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -289,6 +291,9 @@
             // 
             // editEmployeeScheduleDataGridView
             // 
+            this.editEmployeeScheduleDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.editEmployeeScheduleDataGridView.AutoGenerateColumns = false;
             this.editEmployeeScheduleDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.editEmployeeScheduleDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
@@ -300,7 +305,6 @@
             this.dateDataGridViewTextBoxColumn,
             this.shiftDataGridViewTextBoxColumn});
             this.editEmployeeScheduleDataGridView.DataSource = this.tScheduleBindingSource;
-            this.editEmployeeScheduleDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.editEmployeeScheduleDataGridView.Location = new System.Drawing.Point(3, 3);
             this.editEmployeeScheduleDataGridView.Name = "editEmployeeScheduleDataGridView";
             this.editEmployeeScheduleDataGridView.RowTemplate.Height = 24;
@@ -352,7 +356,7 @@
             // 
             // deleteTimesheetButton
             // 
-            this.deleteTimesheetButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.deleteTimesheetButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.deleteTimesheetButton.BackColor = System.Drawing.Color.FloralWhite;
             this.deleteTimesheetButton.BackgroundImage = global::payroll_system.Properties.Resources.Trash_Heas;
             this.deleteTimesheetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -366,7 +370,7 @@
             // 
             // editTimesheetButton
             // 
-            this.editTimesheetButton.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.editTimesheetButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.editTimesheetButton.BackColor = System.Drawing.Color.FloralWhite;
             this.editTimesheetButton.BackgroundImage = global::payroll_system.Properties.Resources.save_icon_1257065_640;
             this.editTimesheetButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -380,6 +384,9 @@
             // 
             // editEmployeeTimesheetDataGridView
             // 
+            this.editEmployeeTimesheetDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.editEmployeeTimesheetDataGridView.AutoGenerateColumns = false;
             this.editEmployeeTimesheetDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.editEmployeeTimesheetDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
@@ -393,7 +400,6 @@
             this.clockOutTimeDataGridViewTextBoxColumn,
             this.totalHoursDataGridViewTextBoxColumn});
             this.editEmployeeTimesheetDataGridView.DataSource = this.tTimesheetBindingSource;
-            this.editEmployeeTimesheetDataGridView.Dock = System.Windows.Forms.DockStyle.Top;
             this.editEmployeeTimesheetDataGridView.Location = new System.Drawing.Point(0, 0);
             this.editEmployeeTimesheetDataGridView.Name = "editEmployeeTimesheetDataGridView";
             this.editEmployeeTimesheetDataGridView.RowTemplate.Height = 24;
@@ -461,7 +467,6 @@
             // 
             // searchScheduleForThatDateButton
             // 
-            this.searchScheduleForThatDateButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchScheduleForThatDateButton.BackColor = System.Drawing.Color.FloralWhite;
             this.searchScheduleForThatDateButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchScheduleForThatDateButton.BackgroundImage")));
             this.searchScheduleForThatDateButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -475,7 +480,6 @@
             // 
             // label2
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(8, 96);
             this.label2.Name = "label2";
@@ -485,7 +489,6 @@
             // 
             // scheduleDate
             // 
-            this.scheduleDate.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.scheduleDate.Location = new System.Drawing.Point(268, 96);
             this.scheduleDate.Name = "scheduleDate";
             this.scheduleDate.Size = new System.Drawing.Size(200, 38);
@@ -493,7 +496,6 @@
             // 
             // searchEmployeeDetailsButton
             // 
-            this.searchEmployeeDetailsButton.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.searchEmployeeDetailsButton.BackColor = System.Drawing.Color.FloralWhite;
             this.searchEmployeeDetailsButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("searchEmployeeDetailsButton.BackgroundImage")));
             this.searchEmployeeDetailsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
@@ -507,7 +509,6 @@
             // 
             // getEmployeeTextBox
             // 
-            this.getEmployeeTextBox.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.getEmployeeTextBox.Location = new System.Drawing.Point(268, 21);
             this.getEmployeeTextBox.Name = "getEmployeeTextBox";
             this.getEmployeeTextBox.Size = new System.Drawing.Size(200, 38);
@@ -515,7 +516,6 @@
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(8, 21);
             this.label1.Name = "label1";
@@ -525,11 +525,13 @@
             // 
             // searchDataGridView
             // 
+            this.searchDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.searchDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.searchDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders;
             this.searchDataGridView.BackgroundColor = System.Drawing.Color.CadetBlue;
             this.searchDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.searchDataGridView.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.searchDataGridView.Location = new System.Drawing.Point(3, 175);
             this.searchDataGridView.Name = "searchDataGridView";
             this.searchDataGridView.RowTemplate.Height = 24;

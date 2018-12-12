@@ -40,7 +40,7 @@ namespace payroll_system
 
         public void LoadInfo(Label employeeName, Label firstN, Label lastN, Label dob, Label pos, Label dateH, Label hr)
         {
-            employeeName.Text = FirstName + LastName;
+            employeeName.Text = FirstName + " " + LastName;
             firstN.Text = FirstName;
             lastN.Text = LastName;
             dob.Text = DateOfBirth;
