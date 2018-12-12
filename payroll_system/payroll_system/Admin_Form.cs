@@ -70,7 +70,7 @@ namespace payroll_system
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Something went wrong");
+                MessageBox.Show("Something went wrong! Please check your input");
             }
         }
 
@@ -84,7 +84,7 @@ namespace payroll_system
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Something went wrong");
+                MessageBox.Show("Something went wrong! Please check your input");
             }
         }
 
@@ -98,35 +98,57 @@ namespace payroll_system
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Something went wrong");
+                MessageBox.Show("Something went wrong! Please check your input");
             }
         }
 
         private void deleteSchedule_Click(object sender, EventArgs e)
         {
-            int deleteScheduleId = Convert.ToInt32(editEmployeeScheduleDataGridView.CurrentRow.Cells[0].Value);
-            MessageBox.Show("Are you sure you want to delete schedule at " + deleteScheduleId);
-            //tScheduleBindingSource.RemoveAt(deleteScheduleId-1);
-            tScheduleBindingSource.EndEdit();
-            tScheduleTableAdapter.DeleteScheduleQuery(deleteScheduleId);
-            tScheduleTableAdapter.Fill(this.payrollDataSet.TSchedule);
+            try
+            {
+                int deleteScheduleId = Convert.ToInt32(editEmployeeScheduleDataGridView.CurrentRow.Cells[0].Value);
+                MessageBox.Show("Are you sure you want to delete schedule at " + deleteScheduleId);
+                //tScheduleBindingSource.RemoveAt(deleteScheduleId-1);
+                tScheduleBindingSource.EndEdit();
+                tScheduleTableAdapter.DeleteScheduleQuery(deleteScheduleId);
+                tScheduleTableAdapter.Fill(this.payrollDataSet.TSchedule);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Something went wrong! Please check your input");
+            }
         }
 
         private void searchEmployeeDetailsButton_Click(object sender, EventArgs e)
         {
-            string firstName = getEmployeeTextBox.Text;
-            employeeTable = new DataTable();
-            PayrollQuery pq = new PayrollQuery();
-            searchDataGridView.DataSource = pq.GetEmployeeDetails(firstName);
+            try
+            {
+                string firstName = getEmployeeTextBox.Text;
+                employeeTable = new DataTable();
+                PayrollQuery pq = new PayrollQuery();
+                searchDataGridView.DataSource = pq.GetEmployeeDetails(firstName);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Something went wrong! Please check your input");
+            }
         }
 
         private void searchScheduleForThatDateButton_Click(object sender, EventArgs e)
         {
-            string schedule = scheduleDate.Value.ToString().Substring(0, 10);
-            MessageBox.Show(schedule);
-            //DataTable employeeTableforschedule = new DataTable();
-            PayrollQuery pq = new PayrollQuery();
-            searchDataGridView.DataSource = pq.GetEmployeeScheduled(schedule);
+            try
+            {
+                string schedule = scheduleDate.Value.ToString().Substring(0, 10);
+                MessageBox.Show(schedule);
+                //DataTable employeeTableforschedule = new DataTable();
+                PayrollQuery pq = new PayrollQuery();
+                searchDataGridView.DataSource = pq.GetEmployeeScheduled(schedule);
+                //searchDataGridView.Columns.Remove("TEmployee");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("Something went wrong! Please check your input");
+            }
         }
 
         private void scheduleDataGridViewClick(object sender, DataGridViewCellEventArgs e)
