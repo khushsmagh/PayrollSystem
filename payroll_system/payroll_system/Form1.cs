@@ -51,10 +51,7 @@ namespace payroll_system
 
         private void PaySlipClick(object sender, EventArgs e)
         {
-            PayrollQuery payroll = new PayrollQuery();
-            employeeName = payroll.GetEmployeeInfo(_UserId).ToList()[0].FirstName + payroll.GetEmployeeInfo(_UserId).ToList()[0].LastName;
-            showPayslipOnDataGridView.DataSource = payroll.GetUserPaySlip(_UserId);
-            showPayslipOnDataGridView.Columns.Remove("TEmployee");
+            Payslip.LoadPayslip(showPayslipOnDataGridView, this._UserId);      
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -68,6 +65,7 @@ namespace payroll_system
             Image image = bmp;
             PayrollQuery payroll = new PayrollQuery();
             int index = showPayslipOnDataGridView.CurrentRow.Index;
+            employeeName = payroll.GetEmployeeInfo(_UserId).ToList()[0].FirstName + payroll.GetEmployeeInfo(_UserId).ToList()[0].LastName;
             dateFrom = showPayslipOnDataGridView.Rows[index].Cells["DateFrom"].Value.ToString();
             endDate = showPayslipOnDataGridView.Rows[index].Cells["EndDate"].Value.ToString();
             totalHours = (decimal)showPayslipOnDataGridView.Rows[index].Cells["TotalHours"].Value;
@@ -124,7 +122,8 @@ namespace payroll_system
             {
                 Payslip payslip = new Payslip(this.UserId, PS_StartDate.Value, PS_EndDate.Value);
                 showPayslipOnDataGridView.DataSource = payslip.AddPayslipToDB();
-                showPayslipOnDataGridView.Columns.Remove("TEmployee");
+                Payslip.LoadPayslip(showPayslipOnDataGridView, this._UserId);
+                //showPayslipOnDataGridView.Columns.Remove("TEmployee");
             }
             else
             {

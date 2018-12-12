@@ -36,7 +36,7 @@ namespace payroll_system
                 {
                     shift = pq.GetScheduleInfo(UserId, dateInc)[0].Shift;
                 }
-                catch 
+                catch (Exception)
                 {
                     shift = "OFF";
                 }

@@ -28,6 +28,14 @@ namespace payroll_system
 
         }
 
+        public static void LoadPayslip(DataGridView payslipDataGrid, int id)
+        {
+            PayrollQuery payroll = new PayrollQuery();
+            //employeeName = payroll.GetEmployeeInfo(UserId).ToList()[0].FirstName + payroll.GetEmployeeInfo(UserId).ToList()[0].LastName;
+            payslipDataGrid.DataSource = payroll.GetUserPaySlip(id);
+            payslipDataGrid.Columns.Remove("TEmployee");
+        }
+
 
         void CalculatePay()
         {

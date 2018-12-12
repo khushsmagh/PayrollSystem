@@ -35,7 +35,7 @@ namespace payroll_system
                 {
                     clockIn = pq.GetTimesheetInfo(UserId, dateInc)[0].CLockInTime.ToString();
                 }
-                catch 
+                catch (Exception)
                 {
                     clockIn = "---";
                 }
@@ -43,7 +43,7 @@ namespace payroll_system
                 {
                     clockOut = pq.GetTimesheetInfo(UserId, dateInc)[0].ClockOutTime.ToString();
                 }
-                catch
+                catch (Exception)
                 {
                     clockOut = "---";
                 }
@@ -51,7 +51,7 @@ namespace payroll_system
                 {
                     shift = pq.GetScheduleInfo(UserId, dateInc)[0].Shift;
                 }
-                catch
+                catch (Exception)
                 {
                     shift = "OFF";
                 }

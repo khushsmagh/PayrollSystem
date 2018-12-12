@@ -104,7 +104,7 @@ namespace payroll_system
             List<TUserLogin> userCredential = pq.GetUserLoginsPermission(userName);
             if (userCredential.Count <= 0)
             {
-                MessageBox.Show("information is not correct");
+                MessageBox.Show("Username or Password is incorrect!");
                 usernameTextBox.Text = string.Empty;
                 passwordTextBox.Text = string.Empty;
             }
@@ -119,20 +119,20 @@ namespace payroll_system
 
                 if (usernameTextBox.Text == "" & passwordTextBox.Text == "")
                 {
-                    MessageBox.Show("fields are required");
+                    MessageBox.Show("Fields are required");
                 }
                 else if (userPasswordFromDatabase == inputPassword)
                 {
                     if (position == "Admin")
                     {
-                        MessageBox.Show("loggin successfully");
+                        MessageBox.Show("Login Successful");
                         EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
                         Admin_Form admin = new Admin_Form(this._EmpId);
                         admin.Show();
                     }
                     else
                     {
-                        MessageBox.Show("loggin successfully");
+                        MessageBox.Show("Login Successful");
                         EmpId = Int32.Parse((pq.GetUserLoginsPermission(userName)[0].EmployeeId).ToString());
                         Payroll payroll = new Payroll(this._EmpId);
                         payroll.Show();
@@ -141,7 +141,7 @@ namespace payroll_system
                 }
                 else
                 {
-                    MessageBox.Show("information is not correct");
+                    MessageBox.Show("Username or Password is incorrect!");
                     usernameTextBox.Text = string.Empty;
                     passwordTextBox.Text = string.Empty;
                 }
@@ -156,7 +156,7 @@ namespace payroll_system
             {
                 if(pq.GetEmployeeInfo(Id).Count <= 0)
                 {
-                    MessageBox.Show("Please enter a valid employee number");
+                    MessageBox.Show("Please enter a valid employee number!");
                     employeeNumberTextBox.Text = "";
                 }
                 else
@@ -167,7 +167,7 @@ namespace payroll_system
 
             else
             {
-                MessageBox.Show("Please enter a valid employee number");
+                MessageBox.Show("Please enter a valid employee number!");
                 employeeNumberTextBox.Text = "";
             }
 
@@ -182,7 +182,7 @@ namespace payroll_system
             {
                 if (pq.GetEmployeeInfo(Id).Count <= 0)
                 {
-                    MessageBox.Show("Please enter a valid employee number");
+                    MessageBox.Show("Please enter a valid employee number!");
                     employeeNumberTextBox.Text = "";
                 }
                 else
@@ -194,7 +194,7 @@ namespace payroll_system
 
             else
             {
-                MessageBox.Show("Please enter a valid employee number");
+                MessageBox.Show("Please enter a valid employee number!");
                 employeeNumberTextBox.Text = "";
             }
         }
