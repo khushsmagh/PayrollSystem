@@ -29,12 +29,9 @@ namespace payroll_system
             PayrollQuery payroll = new PayrollQuery();
             this.FirstName = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].FirstName;
             this.LastName = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].LastName;
-            string dobM = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].DOB.Month.ToString();
-            string dobD = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].DOB.Day.ToString();
-            string dobY = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].DOB.Year.ToString();
-            this.DateOfBirth = dobM + "-" + dobD + "-" + dobY;
+            this.DateOfBirth = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].DOB.ToShortDateString();
             this.Position = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].Position;
-            this.DateHired = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].DateHired.ToString();
+            this.DateHired = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].DateHired.ToShortDateString();
             this.PayRate = payroll.GetEmployeeInfo(EmployeeId).ToList()[0].HourlyRate;
         }
 
