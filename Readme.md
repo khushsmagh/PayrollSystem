@@ -1,0 +1,1 @@
+•	Developed a payroll system which keep tracks of employees schedule, punch in and punch outs. Manager can change schedule, add schedule and change clock in timimgs. We used C# with forms to make a UI for our application and for backend we used SQL server. This application can be used and launched successfully.
